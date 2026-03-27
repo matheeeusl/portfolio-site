@@ -1,0 +1,32 @@
+{
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "cta": "View my work"
+  },
+  "sections": {
+    "about": "About me",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills"
+  },
+  "experience": {
+    "present": "Present"
+  },
+  "projects": {
+    "viewCode": "View Code",
+    "viewLive": "View Live"
+  },
+  "locale": {
+    "switchTo": "Português"
+  },
+  "theme": {
+    "light": "Light mode",
+    "dark": "Dark mode"
+  }
+}
