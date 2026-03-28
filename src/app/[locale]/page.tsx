@@ -19,7 +19,7 @@ export default async function Home({
       <Header />
       <main>
         <Hero />
-        <div className="divide-y divide-zinc-100 dark:divide-zinc-800">
+        <div className="divide-y divide-gray-100 dark:divide-slate-800">
           <About />
           <ExperienceSection />
           <ProjectsSection />

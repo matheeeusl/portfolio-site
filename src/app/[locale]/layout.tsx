@@ -34,9 +34,9 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased bg-white text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased bg-white text-gray-900 dark:bg-slate-950 dark:text-slate-100`}
       >
         <LocaleProvider locale={locale}>{children}</LocaleProvider>
       </body>
