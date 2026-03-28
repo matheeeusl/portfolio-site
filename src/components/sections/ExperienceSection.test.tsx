@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import { experiences } from "@/data/resume";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
@@ -38,49 +38,64 @@ describe("ExperienceSection", () => {
       }
     });
 
-    it("renders all roles in English", () => {
+    it("renders all roles in English inside the correct experience", () => {
       renderWithLocale("en");
 
       for (const experience of experiences) {
-        expect(screen.getByText(experience.role.en)).toBeInTheDocument();
+        const item = screen.getByTestId(`experience-${experience.id}`);
+        expect(within(item).getByText(experience.role.en)).toBeInTheDocument();
       }
     });
 
-    it("renders all roles in Portuguese", () => {
+    it("renders all roles in Portuguese inside the correct experience", () => {
       renderWithLocale("pt-BR");
 
       for (const experience of experiences) {
-        expect(screen.getByText(experience.role["pt-BR"])).toBeInTheDocument();
+        const item = screen.getByTestId(`experience-${experience.id}`);
+        expect(
+          within(item).getByText(experience.role["pt-BR"]),
+        ).toBeInTheDocument();
       }
     });
 
-    it("renders all start dates", () => {
+    it("renders the start date inside the correct experience", () => {
       renderWithLocale("en");
 
       for (const experience of experiences) {
-        expect(screen.getByText(new RegExp(experience.startDate))).toBeInTheDocument();
+        const item = screen.getByTestId(`experience-${experience.id}`);
+        expect(
+          within(item).getByText(new RegExp(experience.startDate)),
+        ).toBeInTheDocument();
       }
     });
 
-    it("renders end dates, showing present label for current role", () => {
+    it("renders the end date inside the correct experience", () => {
       renderWithLocale("en");
 
       for (const experience of experiences) {
+        const item = screen.getByTestId(`experience-${experience.id}`);
         if (experience.endDate === null) {
-          expect(screen.getByText(new RegExp(en.experience.present, "i"))).toBeInTheDocument();
+          expect(
+            within(item).getByText(new RegExp(en.experience.present, "i")),
+          ).toBeInTheDocument();
         } else {
-          expect(screen.getByText(new RegExp(experience.endDate))).toBeInTheDocument();
+          expect(
+            within(item).getByText(new RegExp(experience.endDate)),
+          ).toBeInTheDocument();
         }
       }
     });
 
-    it("renders present label in Portuguese for current role", () => {
+    it("renders present label in Portuguese inside the correct experience", () => {
       renderWithLocale("pt-BR");
 
       const currentRole = experiences.find((e) => e.endDate === null);
       if (currentRole) {
+        const item = screen.getByTestId(`experience-${currentRole.id}`);
         expect(
-          screen.getByText(new RegExp(ptBR.experience.present, "i")),
+          within(item).getByText(
+            new RegExp(`\\b${ptBR.experience.present}\\b`, "i"),
+          ),
         ).toBeInTheDocument();
       }
     });
@@ -103,12 +118,13 @@ describe("ExperienceSection", () => {
       }
     });
 
-    it("renders all technologies for each experience", () => {
+    it("renders all technologies inside the correct experience", () => {
       renderWithLocale("en");
 
       for (const experience of experiences) {
+        const item = screen.getByTestId(`experience-${experience.id}`);
         for (const tech of experience.technologies) {
-          expect(screen.getAllByText(tech).length).toBeGreaterThan(0);
+          expect(within(item).getByText(tech)).toBeInTheDocument();
         }
       }
     });

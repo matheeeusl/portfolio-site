@@ -1,21 +1,32 @@
 import type { Locale } from "@/types";
-import { getDictionary } from "@/i18n/getDictionary";
-import { personalInfo } from "@/data/resume";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { Hero } from "@/components/sections/Hero";
+import { About } from "@/components/sections/About";
+import { ExperienceSection } from "@/components/sections/ExperienceSection";
+import { ProjectsSection } from "@/components/sections/ProjectsSection";
+import { SkillsSection } from "@/components/sections/SkillsSection";
 
 export default async function Home({
   params,
 }: {
   params: Promise<{ locale: Locale }>;
 }) {
-  const { locale } = await params;
-  const dict = await getDictionary(locale);
+  await params;
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-8">
-      <h1 className="text-4xl font-bold">
-        {dict.hero.greeting} {personalInfo.name}
-      </h1>
-      <p className="mt-4 text-xl text-gray-600">{personalInfo.title[locale]}</p>
-    </main>
+    <>
+      <Header />
+      <main>
+        <Hero />
+        <div className="divide-y divide-zinc-100 dark:divide-zinc-800">
+          <About />
+          <ExperienceSection />
+          <ProjectsSection />
+          <SkillsSection />
+        </div>
+      </main>
+      <Footer />
+    </>
   );
 }

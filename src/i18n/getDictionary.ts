@@ -1,10 +1,12 @@
 import type { Locale } from "@/types";
+import en from "./en/common.json";
+import ptBR from "./pt-BR/common.json";
 
 const dictionaries = {
-  en: () => import("./en/common.json").then((m) => m.default),
-  "pt-BR": () => import("./pt-BR/common.json").then((m) => m.default),
+  en,
+  "pt-BR": ptBR,
 };
 
-export async function getDictionary(locale: Locale) {
-  return dictionaries[locale]();
+export function getDictionary(locale: Locale) {
+  return dictionaries[locale];
 }

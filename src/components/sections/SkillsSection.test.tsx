@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import { skills } from "@/data/resume";
 import type { SkillCategory } from "@/types";
@@ -72,8 +72,9 @@ describe("SkillsSection", () => {
       renderWithLocale("en");
 
       for (const skill of skills) {
+        const skillItem = screen.getByTestId(`skill-${skill.name}`);
         expect(
-          screen.getByRole("img", { name: new RegExp(skill.level, "i") }),
+          within(skillItem).getByRole("img", { name: new RegExp(skill.level, "i") }),
         ).toBeInTheDocument();
       }
     });
@@ -82,7 +83,8 @@ describe("SkillsSection", () => {
       renderWithLocale("en");
 
       for (const skill of skills) {
-        const indicator = screen.getByRole("img", {
+        const skillItem = screen.getByTestId(`skill-${skill.name}`);
+        const indicator = within(skillItem).getByRole("img", {
           name: new RegExp(skill.level, "i"),
         });
         expect(indicator).toHaveAccessibleName(new RegExp(skill.level, "i"));
