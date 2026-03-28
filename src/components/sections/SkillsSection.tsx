@@ -19,7 +19,7 @@ export const SkillsSection = () => {
   const t = getDictionary(locale);
 
   return (
-    <section id="skills" className="py-16">
+    <section id="skills" className="py-16 scroll-mt-14">
       <div className="mx-auto max-w-4xl px-4">
         <h2 className="mb-10 text-3xl font-bold">{t.sections.skills}</h2>
         <div className="grid gap-6 md:grid-cols-2">

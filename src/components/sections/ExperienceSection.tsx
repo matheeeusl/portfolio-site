@@ -9,7 +9,7 @@ export const ExperienceSection = () => {
   const t = getDictionary(locale);
 
   return (
-    <section id="experience" className="py-16">
+    <section id="experience" className="py-16 scroll-mt-14">
       <div className="mx-auto max-w-4xl px-4">
         <h2 className="mb-10 text-3xl font-bold">{t.sections.experience}</h2>
 

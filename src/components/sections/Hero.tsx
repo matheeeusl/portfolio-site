@@ -9,7 +9,7 @@ export const Hero = () => {
   const t = getDictionary(locale);
 
   return (
-    <section id="hero" className="flex min-h-screen flex-col justify-center py-16">
+    <section id="hero" className="flex min-h-screen flex-col justify-center py-16 scroll-mt-14">
       <div className="mx-auto max-w-4xl px-4">
         <p className="mb-2 text-sm font-medium uppercase tracking-widest text-zinc-500">
           {t.hero.greeting}
