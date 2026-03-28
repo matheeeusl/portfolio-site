@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "@/app/globals.css";
 import type { Locale } from "@/types";
 import { locales } from "@/i18n/config";
+import { LocaleProvider } from "@/i18n/LocaleProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Matheus | Frontend Developer",
-  description: "Frontend developer portfolio built with Next.js and TypeScript",
+  title: "Matheus Laureano | Software Engineer",
+  description: "Software engineer portfolio built with Next.js and TypeScript",
 };
 
 export function generateStaticParams() {
@@ -37,7 +38,7 @@ export default async function LocaleLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-screen antialiased`}
       >
-        {children}
+        <LocaleProvider locale={locale}>{children}</LocaleProvider>
       </body>
     </html>
   );

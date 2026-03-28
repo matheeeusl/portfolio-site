@@ -13,7 +13,8 @@
     "about": "About me",
     "experience": "Experience",
     "projects": "Projects",
-    "skills": "Skills"
+    "skills": "Skills",
+    "education": "Education"
   },
   "experience": {
     "present": "Present"

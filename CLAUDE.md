@@ -33,7 +33,7 @@ src/
 │   └── page.tsx           # Redirect to default locale
 ├── components/
 │   ├── layout/            # Header, Footer, LocaleSwitcher
-│   ├── sections/          # Hero, About, Experience, Projects, Skills
+│   ├── sections/          # Hero, About (includes Education), Experience, Projects, Skills
 │   └── ui/                # Button, Card, Badge, ThemeToggle
 ├── data/                  # Static resume data (typed)
 ├── i18n/

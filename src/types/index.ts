@@ -7,4 +7,5 @@ export type {
   Skill,
   SkillCategory,
   SkillLevel,
+  Education,
 } from "./resume";

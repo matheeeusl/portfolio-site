@@ -1,4 +1,10 @@
-import type { PersonalInfo, Experience, Project, Skill } from "@/types";
+import type {
+  PersonalInfo,
+  Experience,
+  Project,
+  Skill,
+  Education,
+} from "@/types";
 
 export const personalInfo: PersonalInfo = {
   name: "Matheus Laureano",
@@ -160,8 +166,36 @@ export const skills: Skill[] = [
   { name: "Git", category: "tools", level: "advanced" },
   { name: "Automated Testing", category: "tools", level: "advanced" },
 
+  // AI
+  { name: "AI-Assisted Development", category: "tools", level: "beginner" },
+
   // Languages
   { name: "JavaScript", category: "languages", level: "expert" },
   { name: "HTML5", category: "languages", level: "expert" },
   { name: "CSS3/SASS/LESS", category: "languages", level: "expert" },
+];
+
+export const education: Education[] = [
+  {
+    id: "edu-ufsc",
+    institution: "Federal University of Santa Catarina (UFSC)",
+    degree: {
+      en: "Bachelor of Information Systems",
+      "pt-BR": "Bacharelado em Sistemas de Informação",
+    },
+    startYear: 2015,
+    endYear: 2022,
+    location: "Florianópolis, Brazil",
+  },
+  {
+    id: "edu-senai",
+    institution: "SENAI",
+    degree: {
+      en: "Web Developer",
+      "pt-BR": "Desenvolvedor Web",
+    },
+    startYear: 2012,
+    endYear: 2014,
+    location: "Tubarão, Brazil",
+  },
 ];

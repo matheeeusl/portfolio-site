@@ -41,6 +41,15 @@ export interface Skill {
   level: SkillLevel;
 }
 
+export interface Education {
+  id: string;
+  institution: string;
+  degree: LocalizedString;
+  startYear: number;
+  endYear: number;
+  location: string;
+}
+
 export type SkillCategory = "frontend" | "backend" | "tools" | "languages";
 
 export type SkillLevel = "beginner" | "intermediate" | "advanced" | "expert";

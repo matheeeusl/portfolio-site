@@ -24,6 +24,7 @@ Single-page layout with smooth scroll between sections:
 2. **About Section**
    - Longer bio text (localized)
    - Photo or avatar (optional)
+   - Education subsection: institution name, degree (localized), year range (startYear–endYear)
 
 3. **Experience Section**
    - Timeline layout (vertical)
