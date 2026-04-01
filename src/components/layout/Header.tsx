@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { getDictionary } from "@/i18n/getDictionary";
@@ -20,10 +20,12 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
 
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDark);
+  }, [isDark]);
+
   const toggleTheme = () => {
-    const next = !isDark;
-    setIsDark(next);
-    document.documentElement.classList.toggle("dark", next);
+    setIsDark((prev) => !prev);
   };
 
   const switchLocale = () => {
@@ -40,12 +42,12 @@ export const Header = () => {
           aria-hidden="true"
         />
       )}
-      <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/90 backdrop-blur dark:border-zinc-800 dark:bg-zinc-900/90">
-        <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-4">
+      <header className="sticky top-0 z-50 border-b border-gray-200 bg-white/80 backdrop-blur dark:border-slate-800 dark:bg-slate-950/80">
+        <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">
           {/* Logo */}
           <a
             href="#hero"
-            className="text-sm font-semibold text-zinc-900 hover:text-zinc-600 dark:text-zinc-100 dark:hover:text-zinc-400"
+            className="text-sm font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-500 dark:text-slate-100 dark:hover:text-blue-400"
           >
             ML
           </a>
@@ -57,7 +59,7 @@ export const Header = () => {
                 key={href}
                 href={href}
                 tabIndex={-1}
-                className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+                className="text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-blue-500 dark:text-slate-400 dark:hover:text-blue-400"
               >
                 {t.nav[key]}
               </a>
@@ -66,17 +68,28 @@ export const Header = () => {
 
           {/* Controls */}
           <div className="flex items-center gap-1">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              tabIndex={-1}
+              aria-hidden="true"
+              className="hidden rounded-md px-3 py-1.5 text-sm font-medium text-gray-600 transition-colors duration-200 hover:bg-gray-100 dark:text-slate-400 dark:hover:bg-slate-800 md:block"
+            >
+              {t.nav.resume}
+            </a>
+
             <button
               onClick={toggleTheme}
               aria-label={isDark ? t.theme.light : t.theme.dark}
-              className="rounded-md p-2 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
+              className="rounded-md p-2 text-gray-500 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-900 dark:hover:bg-slate-800 dark:hover:text-slate-100"
             >
               {isDark ? "☀" : "☾"}
             </button>
 
             <button
               onClick={switchLocale}
-              className="rounded-md px-3 py-1.5 text-sm font-medium text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800"
+              className="rounded-md px-3 py-1.5 text-sm font-medium text-gray-600 transition-colors duration-200 hover:bg-gray-100 dark:text-slate-400 dark:hover:bg-slate-800"
             >
               {t.locale.switchTo}
             </button>
@@ -85,7 +98,7 @@ export const Header = () => {
             <button
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="rounded-md p-2 text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 md:hidden dark:hover:bg-zinc-800 dark:hover:text-zinc-100"
+              className="rounded-md p-2 text-gray-500 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-900 md:hidden dark:hover:bg-slate-800 dark:hover:text-slate-100"
             >
               {isMenuOpen ? "✕" : "☰"}
             </button>
@@ -106,7 +119,7 @@ export const Header = () => {
                   borderWidth: 0,
                 }
           }
-          className="border-t border-zinc-200 px-4 py-3 md:hidden dark:border-zinc-800"
+          className="border-t border-gray-200 px-4 py-3 md:hidden dark:border-slate-800"
         >
           <ul className="flex flex-col gap-3">
             {NAV_LINKS.map(({ key, href }) => (
@@ -114,12 +127,23 @@ export const Header = () => {
                 <a
                   href={href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-sm font-medium text-zinc-600 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+                  className="text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-blue-500 dark:text-slate-400 dark:hover:text-blue-400"
                 >
                   {t.nav[key]}
                 </a>
               </li>
             ))}
+            <li>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-blue-500 dark:text-slate-400 dark:hover:text-blue-400"
+              >
+                {t.nav.resume}
+              </a>
+            </li>
           </ul>
         </nav>
       </header>

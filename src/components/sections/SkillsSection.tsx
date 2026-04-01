@@ -20,40 +20,43 @@ export const SkillsSection = () => {
 
   return (
     <section id="skills" className="py-16 scroll-mt-14">
-      <div className="mx-auto max-w-4xl px-4">
-        <h2 className="mb-10 text-3xl font-bold">{t.sections.skills}</h2>
+      <div className="mx-auto max-w-5xl px-4">
+        <div className="mb-10">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-slate-100">{t.sections.skills}</h2>
+          <div className="mt-2 h-0.5 w-10 rounded-full bg-blue-500" />
+        </div>
         <div className="grid gap-6 md:grid-cols-2">
           {categories.map((category) => (
             <section
               key={category}
               aria-label={category}
-              className="rounded-xl border border-zinc-200 p-6 dark:border-zinc-800"
+              className="rounded-xl border border-gray-200 p-6 dark:border-slate-800 dark:bg-slate-900"
             >
-              <h3 className="mb-4 text-lg font-semibold capitalize text-zinc-700 dark:text-zinc-300">
+              <h3 className="mb-4 text-lg font-semibold capitalize text-gray-700 dark:text-slate-300">
                 {category}
               </h3>
-              <ul className="space-y-3">
+              <ul className="flex flex-wrap gap-2">
                 {skills
                   .filter((s) => s.category === category)
                   .map((skill) => (
                     <li
                       key={skill.name}
                       data-testid={`skill-${skill.name}`}
-                      className="flex items-center justify-between"
+                      className="flex items-center gap-1.5 rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700 transition-colors duration-200 hover:bg-blue-500/20 hover:text-blue-500 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-blue-500/20 dark:hover:text-blue-400"
                     >
-                      <span className="text-sm font-medium">{skill.name}</span>
+                      <span>{skill.name}</span>
                       <div
                         role="img"
                         aria-label={skill.level}
-                        className="flex gap-1"
+                        className="flex gap-0.5"
                       >
                         {Array.from({ length: 4 }, (_, i) => (
                           <span
                             key={i}
-                            className={`h-2 w-2 rounded-full ${
+                            className={`h-1.5 w-1.5 rounded-full ${
                               i < LEVEL_STEPS[skill.level]
-                                ? "bg-zinc-800 dark:bg-zinc-200"
-                                : "bg-zinc-200 dark:bg-zinc-700"
+                                ? "bg-blue-500 dark:bg-blue-400"
+                                : "bg-gray-300 dark:bg-slate-600"
                             }`}
                           />
                         ))}
