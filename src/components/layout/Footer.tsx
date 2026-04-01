@@ -6,15 +6,15 @@ export const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-zinc-200 py-8 dark:border-zinc-800">
-      <div className="mx-auto flex max-w-4xl flex-col items-center gap-4 px-4 md:flex-row md:justify-between">
+    <footer className="border-t border-gray-200 py-8 dark:border-slate-800">
+      <div className="mx-auto flex max-w-5xl flex-col items-center gap-4 px-4 md:flex-row md:justify-between">
         <div className="flex gap-6">
           <a
             href={personalInfo.github}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="text-zinc-500 transition-colors hover:text-zinc-900 dark:hover:text-zinc-100"
+            className="text-gray-500 transition-colors duration-200 hover:text-gray-900 dark:hover:text-slate-100"
           >
             GitHub
           </a>
@@ -23,12 +23,21 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-zinc-500 transition-colors hover:text-zinc-900 dark:hover:text-zinc-100"
+            className="text-gray-500 transition-colors duration-200 hover:text-gray-900 dark:hover:text-slate-100"
           >
             LinkedIn
           </a>
+          <a
+            href={`mailto:${personalInfo.email}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Email"
+            className="text-gray-500 transition-colors duration-200 hover:text-gray-900 dark:hover:text-slate-100"
+          >
+            Email
+          </a>
         </div>
-        <p className="text-sm text-zinc-500">
+        <p className="text-sm text-gray-500 dark:text-slate-500">
           © {year} {personalInfo.name}
         </p>
       </div>

@@ -17,9 +17,9 @@ export const personalInfo: PersonalInfo = {
   github: "https://github.com/matheeeusl",
   linkedin: "https://www.linkedin.com/in/matheus-laureano-02876453/",
   bio: {
-    en: "Frontend Engineer with 8+ years of experience building scalable web and mobile applications for global companies. Specialized in modern JavaScript frameworks, functional programming, and e-commerce platforms.",
+    en: "Front-end Engineer with over 8 years of experience building scalable web and mobile applications for global companies. Specialized in modern JavaScript frameworks, functional programming, and e-commerce platforms. Known for fast adaptation, ownership of delivery, and consistent positive feedback from clients.",
     "pt-BR":
-      "Engenheiro Frontend com mais de 8 anos de experiência construindo aplicações web e mobile escaláveis para empresas globais. Especializado em frameworks JavaScript modernos, programação funcional e plataformas de e-commerce.",
+      "Engenheiro Front-end com mais de 8 anos de experiência construindo aplicações web e mobile escaláveis para empresas globais. Especializado em frameworks JavaScript modernos, programação funcional e plataformas de e-commerce. Reconhecido pela rápida adaptação, senso de ownership e feedbacks positivos consistentes de clientes.",
   },
 };
 
@@ -34,34 +34,38 @@ export const experiences: Experience[] = [
     startDate: "2021-11",
     endDate: null,
     description: {
-      en: "Developing complex frontend solutions for major clients (Lighthouse, MGM Resorts) in international agile teams. Building mortgage forms, e-commerce features, and adopting functional programming at scale.",
+      en: "Software consultancy providing top-tier engineering talent for diverse client projects. Developed complex front-end solutions for major clients (Lighthouse, MGM Resorts) in international agile teams (3-5 devs). Built user-friendly mortgage forms and e-commerce features (entertainment packages, shopping cart) adopting functional programming. Successfully delivered features with improved performance and consistent positive client feedback.",
       "pt-BR":
-        "Desenvolvendo soluções frontend complexas para grandes clientes (Lighthouse, MGM Resorts) em times ágeis internacionais. Construindo formulários de hipoteca, features de e-commerce e adotando programação funcional em escala.",
+        "Consultoria de software que provê talentos de engenharia para projetos de grandes clientes. Desenvolveu soluções front-end complexas para clientes como Lighthouse e MGM Resorts em times ágeis internacionais (3-5 devs). Construiu formulários de hipoteca e features de e-commerce (pacotes de entretenimento, carrinho) adotando programação funcional. Entregou funcionalidades com melhoria de performance e feedbacks positivos consistentes.",
     },
     technologies: [
       "React",
       "Next.js",
-      "React Native",
       "TypeScript",
       "GraphQL",
       "Tailwind CSS",
       "Storybook",
       "Docker",
+      "Functional Programming",
+      "Automated Testing",
+      "JavaScript",
+      "MVC",
+      "HTML5",
     ],
   },
   {
     id: "exp-kyte",
     company: "Kyte",
     role: {
-      en: "Frontend Developer",
-      "pt-BR": "Desenvolvedor Frontend",
+      en: "Front-end Developer",
+      "pt-BR": "Desenvolvedor Front-end",
     },
     startDate: "2021-06",
     endDate: "2021-11",
     description: {
-      en: "Contributed to a global SaaS platform serving 40k+ SMBs across 180+ countries. Developed Pro plan web features and mobile app updates with React and React Native.",
+      en: "A global SaaS startup offering sales & inventory solutions to 40k+ SMBs across 180+ countries. Contributed to platform development within a versatile startup team (~6 devs). Assisted in developing Pro plan web features and mobile app banners, delivering essential components for new features and mobile updates.",
       "pt-BR":
-        "Contribuí para uma plataforma SaaS global atendendo mais de 40 mil PMEs em 180+ países. Desenvolvi features web do plano Pro e atualizações do app mobile com React e React Native.",
+        "Startup SaaS global oferecendo soluções de vendas e estoque para mais de 40 mil PMEs em 180+ países. Contribuiu para o desenvolvimento da plataforma em um time de startup versátil (~6 devs). Auxiliou no desenvolvimento de features web do plano Pro e banners do app mobile, entregando componentes essenciais para novas funcionalidades.",
     },
     technologies: [
       "React",
@@ -69,31 +73,42 @@ export const experiences: Experience[] = [
       "TypeScript",
       "Storybook",
       "JavaScript",
+      "Automated Testing",
+      "LESS",
+      "CSS",
     ],
   },
   {
     id: "exp-mcfadyen",
     company: "McFadyen Digital",
     role: {
-      en: "Frontend Developer",
-      "pt-BR": "Desenvolvedor Frontend",
+      en: "Front-end Developer",
+      "pt-BR": "Desenvolvedor Front-end",
     },
     startDate: "2016-12",
     endDate: "2021-06",
     description: {
-      en: "Progressed from Java Intern to Frontend Developer at an e-commerce consultancy. Built UI components for MiMercado B2B marketplace and Zebra's OCC platform. Created internal onboarding tools adopted company-wide.",
+      en: "Specialized e-commerce consultancy implementing large-scale solutions for global clients on platforms like OCC, Shopify, ATG, and Magento. Progressed from Java Intern to Front-end Developer, working in international teams (3-5 devs). Developed key UI components for MiMercado B2B marketplace and Zebra's OCC platform. Built internal onboarding tools and technical challenges adopted company-wide.",
       "pt-BR":
-        "Evoluí de Estagiário Java para Desenvolvedor Frontend em uma consultoria de e-commerce. Construí componentes de UI para o marketplace B2B MiMercado e a plataforma OCC da Zebra. Criei ferramentas internas de onboarding adotadas pela empresa.",
+        "Consultoria especializada em e-commerce implementando soluções de grande escala para clientes globais em plataformas como OCC, Shopify, ATG e Magento. Evoluiu de Estagiário Java para Desenvolvedor Front-end, atuando em times internacionais (3-5 devs). Desenvolveu componentes de UI para o marketplace B2B MiMercado e a plataforma OCC da Zebra. Construiu ferramentas de onboarding internas adotadas pela empresa.",
     },
     technologies: [
       "React",
       "Vue.js",
       "TypeScript",
+      "JavaScript",
       "SASS",
-      "Shopify",
+      "Storybook",
+      "Automated Testing",
+      "Docker",
+      "MVC",
+      "MVVM",
+      "Microservices",
+      "Mentoring",
+      "Vuestorefront",
+      "Shopify (Liquid)",
       "Magento",
       "OCC",
-      "Docker",
     ],
   },
 ];
@@ -155,6 +170,8 @@ export const skills: Skill[] = [
   { name: "Tailwind CSS", category: "frontend", level: "advanced" },
   { name: "GraphQL", category: "frontend", level: "intermediate" },
   { name: "Storybook", category: "frontend", level: "advanced" },
+  { name: "Functional Programming", category: "frontend", level: "advanced" },
+  { name: "Vuestorefront", category: "frontend", level: "intermediate" },
 
   // Backend
   { name: "Node.js", category: "backend", level: "intermediate" },
@@ -165,9 +182,11 @@ export const skills: Skill[] = [
   { name: "Docker", category: "tools", level: "intermediate" },
   { name: "Git", category: "tools", level: "advanced" },
   { name: "Automated Testing", category: "tools", level: "advanced" },
-
-  // AI
-  { name: "AI-Assisted Development", category: "tools", level: "beginner" },
+  { name: "AI-Assisted Development", category: "tools", level: "intermediate" },
+  { name: "Mentoring", category: "tools", level: "intermediate" },
+  { name: "Shopify (Liquid)", category: "tools", level: "intermediate" },
+  { name: "Magento", category: "tools", level: "intermediate" },
+  { name: "Oracle Commerce Cloud", category: "tools", level: "intermediate" },
 
   // Languages
   { name: "JavaScript", category: "languages", level: "expert" },
@@ -189,7 +208,7 @@ export const education: Education[] = [
   },
   {
     id: "edu-senai",
-    institution: "SENAI",
+    institution: "National Industrial Apprenticeship Service - SENAI",
     degree: {
       en: "Web Developer",
       "pt-BR": "Desenvolvedor Web",

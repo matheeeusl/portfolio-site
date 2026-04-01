@@ -3,7 +3,8 @@
     "about": "About",
     "experience": "Experience",
     "projects": "Projects",
-    "skills": "Skills"
+    "skills": "Skills",
+    "resume": "Resume"
   },
   "hero": {
     "greeting": "Hi, I'm",
