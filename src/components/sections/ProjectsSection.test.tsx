@@ -114,4 +114,24 @@ describe("ProjectsSection", () => {
       }
     });
   });
+
+  describe("project images", () => {
+    it("renders an img for projects that have imageUrl", () => {
+      renderWithLocale("en");
+
+      const projectsWithImage = projects.filter((p) => p.imageUrl);
+      const images = screen.getAllByRole("img");
+
+      expect(images.length).toBeGreaterThanOrEqual(projectsWithImage.length);
+    });
+
+    it("renders a fallback placeholder for projects without imageUrl", () => {
+      renderWithLocale("en");
+
+      const projectsWithoutImage = projects.filter((p) => !p.imageUrl);
+
+      const fallbacks = screen.getAllByTestId("project-image-fallback");
+      expect(fallbacks).toHaveLength(projectsWithoutImage.length);
+    });
+  });
 });
