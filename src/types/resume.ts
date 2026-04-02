@@ -15,6 +15,11 @@ export interface PersonalInfo {
   bio: LocalizedString;
 }
 
+export interface ExperienceProject {
+  name: string;
+  description: LocalizedString;
+}
+
 export interface Experience {
   id: string;
   company: string;
@@ -23,6 +28,7 @@ export interface Experience {
   endDate: string | null;
   description: LocalizedString;
   technologies: string[];
+  projects?: ExperienceProject[];
 }
 
 export interface Project {
@@ -32,6 +38,7 @@ export interface Project {
   technologies: string[];
   githubUrl: string;
   liveUrl?: string;
+  imageUrl?: string;
   featured: boolean;
 }
 
@@ -48,6 +55,15 @@ export interface Education {
   startYear: number;
   endYear: number;
   location: string;
+}
+
+export interface Volunteer {
+  id: string;
+  organization: string;
+  role: LocalizedString;
+  startDate: string;
+  endDate: string | null;
+  description: LocalizedString;
 }
 
 export type SkillCategory = "frontend" | "backend" | "tools" | "languages";

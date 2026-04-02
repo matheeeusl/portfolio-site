@@ -6,6 +6,8 @@ import { About } from "@/components/sections/About";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
+import { VolunteerSection } from "@/components/sections/VolunteerSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 
 export default async function Home({
   params,
@@ -19,11 +21,13 @@ export default async function Home({
       <Header />
       <main>
         <Hero />
-        <div className="divide-y divide-zinc-100 dark:divide-zinc-800">
+        <div>
           <About />
           <ExperienceSection />
           <ProjectsSection />
           <SkillsSection />
+          <VolunteerSection />
+          <ContactSection />
         </div>
       </main>
       <Footer />

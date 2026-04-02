@@ -1,5 +1,5 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import { render, screen, fireEvent, act } from "@testing-library/react";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import en from "@/i18n/en/common.json";
 import ptBR from "@/i18n/pt-BR/common.json";
@@ -156,6 +156,116 @@ describe("Header", () => {
 
       // Theme must still be dark after locale switch
       expect(document.documentElement.classList.contains("dark")).toBe(true);
+    });
+  });
+
+  describe("social links", () => {
+    it("renders a GitHub link in the desktop header", () => {
+      renderWithLocale("en");
+
+      const link = document.querySelector('[data-testid="header-github"]');
+      expect(link).toBeInTheDocument();
+      expect(link).toHaveAttribute("href", expect.stringContaining("github.com"));
+    });
+
+    it("renders a LinkedIn link in the desktop header", () => {
+      renderWithLocale("en");
+
+      const link = document.querySelector('[data-testid="header-linkedin"]');
+      expect(link).toBeInTheDocument();
+      expect(link).toHaveAttribute("href", expect.stringContaining("linkedin.com"));
+    });
+
+    it("social links open in a new tab", () => {
+      renderWithLocale("en");
+
+      const github = document.querySelector('[data-testid="header-github"]');
+      const linkedin = document.querySelector('[data-testid="header-linkedin"]');
+
+      expect(github).toHaveAttribute("target", "_blank");
+      expect(linkedin).toHaveAttribute("target", "_blank");
+    });
+  });
+
+  describe("scroll-spy", () => {
+    beforeEach(() => {
+      // jsdom has no real layout: scrollHeight ≈ 0, so isNearBottom would always
+      // be true. Mock a tall page so tests that scroll mid-page work correctly.
+      vi.spyOn(window, "scrollY", "get").mockReturnValue(500);
+      vi.spyOn(window, "innerHeight", "get").mockReturnValue(800);
+      vi.spyOn(document.body, "scrollHeight", "get").mockReturnValue(5000);
+    });
+
+    afterEach(() => {
+      vi.restoreAllMocks();
+    });
+
+    it("marks the nav link as active when the section top is above the header", () => {
+      const section = document.createElement("section");
+      section.id = "about";
+      vi.spyOn(section, "getBoundingClientRect").mockReturnValue({
+        top: 50,
+      } as DOMRect);
+      document.body.appendChild(section);
+
+      renderWithLocale("en");
+
+      act(() => {
+        window.dispatchEvent(new Event("scroll"));
+      });
+
+      const desktopNav = document.querySelector('nav[aria-hidden="true"]');
+      expect(desktopNav?.querySelector('[data-active="true"]')).toHaveTextContent(
+        en.nav.about,
+      );
+
+      document.body.removeChild(section);
+    });
+
+    it("activates the last nav link when scrolled near the bottom of the page", () => {
+      vi.spyOn(window, "scrollY", "get").mockReturnValue(4300);
+
+      renderWithLocale("en");
+
+      act(() => {
+        window.dispatchEvent(new Event("scroll"));
+      });
+
+      const desktopNav = document.querySelector('nav[aria-hidden="true"]');
+      expect(desktopNav?.querySelector('[data-active="true"]')).toHaveTextContent(
+        en.nav.contact,
+      );
+    });
+
+    it("switches active link to the last section whose top is above the header", () => {
+      const aboutSection = document.createElement("section");
+      aboutSection.id = "about";
+      vi.spyOn(aboutSection, "getBoundingClientRect").mockReturnValue({
+        top: 20,
+      } as DOMRect);
+
+      const expSection = document.createElement("section");
+      expSection.id = "experience";
+      vi.spyOn(expSection, "getBoundingClientRect").mockReturnValue({
+        top: 40,
+      } as DOMRect);
+
+      document.body.appendChild(aboutSection);
+      document.body.appendChild(expSection);
+
+      renderWithLocale("en");
+
+      act(() => {
+        window.dispatchEvent(new Event("scroll"));
+      });
+
+      const desktopNav = document.querySelector('nav[aria-hidden="true"]');
+      expect(desktopNav?.querySelector('[data-active="true"]')).toHaveTextContent(
+        en.nav.experience,
+      );
+
+      document.body.removeChild(aboutSection);
+      document.body.removeChild(expSection);
     });
   });
 

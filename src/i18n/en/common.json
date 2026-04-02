@@ -4,25 +4,55 @@
     "experience": "Experience",
     "projects": "Projects",
     "skills": "Skills",
+    "volunteer": "Volunteer",
+    "contact": "Contact",
     "resume": "Resume"
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "cta": "View my work"
+    "cta": "See my work",
+    "tagline": "I build scalable, user-friendly web experiences.",
+    "stats": {
+      "years": "8+ Years",
+      "yearsLabel": "of experience",
+      "projects": "10+ Projects",
+      "projectsLabel": "Worked On",
+      "languages": "Professional",
+      "languagesLabel": "English"
+    }
   },
   "sections": {
     "about": "About me",
     "experience": "Experience",
     "projects": "Projects",
     "skills": "Skills",
-    "education": "Education"
+    "education": "Education",
+    "volunteer": "Volunteer",
+    "contact": "Contact"
   },
   "experience": {
-    "present": "Present"
+    "present": "Present",
+    "showProjects": "Show projects",
+    "hideProjects": "Hide projects"
   },
   "projects": {
     "viewCode": "View Code",
     "viewLive": "View Live"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's build something together",
+    "description": "Have a project in mind or just want to say hi? My inbox is always open.",
+    "emailLabel": "Send an email",
+    "githubLabel": "View GitHub",
+    "linkedinLabel": "View LinkedIn",
+    "copyEmail": "Copy email",
+    "emailCopied": "Copied!"
+  },
+  "volunteer": {
+    "title": "Beyond the Code",
+    "subtitle": "Volunteering & community activities that shape who I am outside of work.",
+    "present": "Present"
   },
   "locale": {
     "switchTo": "Português"

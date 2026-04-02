@@ -3,9 +3,11 @@ export type {
   LocalizedString,
   PersonalInfo,
   Experience,
+  ExperienceProject,
   Project,
   Skill,
   SkillCategory,
   SkillLevel,
   Education,
+  Volunteer,
 } from "./resume";

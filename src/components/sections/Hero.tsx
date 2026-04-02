@@ -20,9 +20,23 @@ export const Hero = () => {
         <h2 className="mb-6 text-2xl font-medium text-blue-500 md:text-3xl">
           {personalInfo.title[locale]}
         </h2>
-        <p className="mb-10 max-w-xl leading-relaxed text-gray-500 dark:text-slate-400">
-          {personalInfo.bio[locale]}
+        <p className="mb-8 max-w-xl text-lg leading-relaxed text-gray-500 dark:text-slate-400">
+          {t.hero.tagline}
         </p>
+        <div className="mb-10 flex gap-8">
+          <div>
+            <p className="text-2xl font-bold text-gray-900 dark:text-slate-100">{t.hero.stats.years}</p>
+            <p className="text-sm text-gray-500 dark:text-slate-400">{t.hero.stats.yearsLabel}</p>
+          </div>
+          <div>
+            <p className="text-2xl font-bold text-gray-900 dark:text-slate-100">{t.hero.stats.projects}</p>
+            <p className="text-sm text-gray-500 dark:text-slate-400">{t.hero.stats.projectsLabel}</p>
+          </div>
+          <div>
+            <p className="text-2xl font-bold text-gray-900 dark:text-slate-100">{t.hero.stats.languages}</p>
+            <p className="text-sm text-gray-500 dark:text-slate-400">{t.hero.stats.languagesLabel}</p>
+          </div>
+        </div>
         <a
           href="#projects"
           className="inline-block rounded-lg bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-blue-400"

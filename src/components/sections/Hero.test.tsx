@@ -2,6 +2,8 @@ import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import { personalInfo } from "@/data/resume";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
+import en from "@/i18n/en/common.json";
+import ptBR from "@/i18n/pt-BR/common.json";
 import { Hero } from "./Hero";
 
 function renderWithLocale(locale: "en" | "pt-BR") {
@@ -31,24 +33,46 @@ describe("Hero", () => {
     expect(screen.getByText(personalInfo.title["pt-BR"])).toBeInTheDocument();
   });
 
-  it("renders the bio in the correct locale", () => {
+  it("renders the tagline in English", () => {
     renderWithLocale("en");
 
-    expect(screen.getByText(personalInfo.bio.en)).toBeInTheDocument();
+    expect(screen.getByText(en.hero.tagline)).toBeInTheDocument();
+  });
+
+  it("renders the tagline in Portuguese", () => {
+    renderWithLocale("pt-BR");
+
+    expect(screen.getByText(ptBR.hero.tagline)).toBeInTheDocument();
+  });
+
+  it("renders the stats grid in English", () => {
+    renderWithLocale("en");
+
+    expect(screen.getByText(en.hero.stats.years)).toBeInTheDocument();
+    expect(screen.getByText(en.hero.stats.projects)).toBeInTheDocument();
+    expect(screen.getByText(en.hero.stats.languages)).toBeInTheDocument();
+  });
+
+  it("renders the stats grid in Portuguese", () => {
+    renderWithLocale("pt-BR");
+
+    expect(screen.getByText(ptBR.hero.stats.years)).toBeInTheDocument();
+    expect(screen.getByText(ptBR.hero.stats.projects)).toBeInTheDocument();
+    expect(screen.getByText(ptBR.hero.stats.languages)).toBeInTheDocument();
   });
 
   it("renders a CTA button", () => {
     renderWithLocale("en");
 
     expect(
-      screen.getByRole("link", { name: /view my work/i }),
+      screen.getByRole("link", { name: /see my work/i }),
     ).toBeInTheDocument();
   });
 
   it("CTA links to projects section", () => {
     renderWithLocale("en");
 
-    const cta = screen.getByRole("link", { name: /view my work/i });
+    const cta = screen.getByRole("link", { name: /see my work/i });
     expect(cta).toHaveAttribute("href", "#projects");
   });
 });

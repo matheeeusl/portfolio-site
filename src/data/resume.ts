@@ -4,6 +4,7 @@ import type {
   Project,
   Skill,
   Education,
+  Volunteer,
 } from "@/types";
 
 export const personalInfo: PersonalInfo = {
@@ -52,6 +53,22 @@ export const experiences: Experience[] = [
       "MVC",
       "HTML5",
     ],
+    projects: [
+      {
+        name: "Lighthouse",
+        description: {
+          en: "Mortgage platform — built complex form flows and UI components in a large-scale React codebase.",
+          "pt-BR": "Plataforma de hipotecas — formulários complexos e componentes UI em codebase React de grande escala.",
+        },
+      },
+      {
+        name: "MGM Resorts",
+        description: {
+          en: "Entertainment & hospitality platform — developed e-commerce features (packages, shopping cart) in an international agile team.",
+          "pt-BR": "Plataforma de entretenimento e hospitalidade — funcionalidades de e-commerce em equipe ágil internacional.",
+        },
+      },
+    ],
   },
   {
     id: "exp-kyte",
@@ -76,6 +93,15 @@ export const experiences: Experience[] = [
       "Automated Testing",
       "LESS",
       "CSS",
+    ],
+    projects: [
+      {
+        name: "Kyte Platform",
+        description: {
+          en: "Web and mobile SaaS for 40k+ SMBs — contributed to Pro plan features and mobile app improvements.",
+          "pt-BR": "SaaS web e mobile para 40k+ PMEs — contribuiu com funcionalidades do plano Pro e melhorias no app mobile.",
+        },
+      },
     ],
   },
   {
@@ -109,6 +135,29 @@ export const experiences: Experience[] = [
       "Shopify (Liquid)",
       "Magento",
       "OCC",
+    ],
+    projects: [
+      {
+        name: "MiMercado",
+        description: {
+          en: "E-commerce storefront on Oracle Commerce Cloud (OCC) for Latin American market.",
+          "pt-BR": "Storefront de e-commerce em Oracle Commerce Cloud (OCC) para mercado latino-americano.",
+        },
+      },
+      {
+        name: "Zebra Technologies",
+        description: {
+          en: "B2B e-commerce portal on OCC — complex product catalog and ordering flows.",
+          "pt-BR": "Portal B2B de e-commerce em OCC — catálogo de produtos complexo e fluxos de pedido.",
+        },
+      },
+      {
+        name: "Shopify & Magento Projects",
+        description: {
+          en: "Multiple client storefronts using Shopify Liquid and Magento — customizations, theming, and feature development.",
+          "pt-BR": "Múltiplos storefronts em Shopify Liquid e Magento — customizações, temas e desenvolvimento de features.",
+        },
+      },
     ],
   },
 ];
@@ -144,6 +193,7 @@ export const projects: Project[] = [
     technologies: ["Next.js", "CSS", "Storytelling", "Web Design"],
     githubUrl: "https://github.com/matheeeusl",
     liveUrl: "https://early-two-thousand.vercel.app",
+    imageUrl: "/beyondtheveil2k.jpg",
     featured: true,
   },
   {
@@ -156,6 +206,7 @@ export const projects: Project[] = [
     },
     technologies: ["Python", "Machine Learning", "AI", "Audio Processing"],
     githubUrl: "https://github.com/matheeeusl/reconhecimentoMusical",
+    imageUrl: "/reconhecimentoMusical.jpg",
     featured: true,
   },
 ];
@@ -192,6 +243,37 @@ export const skills: Skill[] = [
   { name: "JavaScript", category: "languages", level: "expert" },
   { name: "HTML5", category: "languages", level: "expert" },
   { name: "CSS3/SASS/LESS", category: "languages", level: "expert" },
+];
+
+export const volunteers: Volunteer[] = [
+  {
+    id: "vol-trumpet",
+    organization: "Independent / Community",
+    role: {
+      en: "Trumpet Teacher",
+      "pt-BR": "Professor de Trompete",
+    },
+    startDate: "2023-01",
+    endDate: null,
+    description: {
+      en: "Sharing my passion for music by teaching trumpet to students of different levels. Music has always been a big part of my life outside of engineering.",
+      "pt-BR": "Compartilhando minha paixão pela música ensinando trompete para alunos de diferentes níveis. A música sempre foi uma parte importante da minha vida fora da engenharia.",
+    },
+  },
+  {
+    id: "vol-rpg",
+    organization: "Tabletop RPG Community",
+    role: {
+      en: "Player & Worldbuilder",
+      "pt-BR": "Jogador e Construtor de Mundos",
+    },
+    startDate: "2018-01",
+    endDate: null,
+    description: {
+      en: "Active tabletop RPG player — collaborating on storytelling, world-building, and problem-solving around the table. A great exercise in creativity and teamwork.",
+      "pt-BR": "Jogador ativo de RPG de mesa — colaborando em narrativas, construção de mundos e resolução de problemas ao redor da mesa. Um ótimo exercício de criatividade e trabalho em equipe.",
+    },
+  },
 ];
 
 export const education: Education[] = [
