@@ -26,7 +26,7 @@ function VolunteerCard({
     >
       <div className="mb-3">
         <h3 className="font-semibold text-gray-900 dark:text-slate-100">
-          {entry.organization}
+          {entry.organization[locale]}
         </h3>
         <p className="text-sm font-medium text-teal-600 dark:text-teal-400">
           {entry.role[locale]}

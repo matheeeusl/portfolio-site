@@ -59,7 +59,7 @@ export interface Education {
 
 export interface Volunteer {
   id: string;
-  organization: string;
+  organization: LocalizedString;
   role: LocalizedString;
   startDate: string;
   endDate: string | null;

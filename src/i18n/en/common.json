@@ -4,19 +4,19 @@
     "experience": "Experience",
     "projects": "Projects",
     "skills": "Skills",
-    "volunteer": "Volunteer",
+    "volunteer": "Activities",
     "contact": "Contact",
     "resume": "Resume"
   },
   "hero": {
     "greeting": "Hi, I'm",
     "cta": "See my work",
-    "tagline": "I build scalable, user-friendly web experiences.",
+    "tagline": "I build scalable web applications that balance performance, usability, and real-world impact.",
     "stats": {
       "years": "8+ Years",
       "yearsLabel": "of experience",
       "projects": "10+ Projects",
-      "projectsLabel": "Worked On",
+      "projectsLabel": "Worked on",
       "languages": "Professional",
       "languagesLabel": "English"
     }
@@ -27,7 +27,7 @@
     "projects": "Projects",
     "skills": "Skills",
     "education": "Education",
-    "volunteer": "Volunteer",
+    "volunteer": "Beyond the Code",
     "contact": "Contact"
   },
   "experience": {
@@ -53,6 +53,9 @@
     "title": "Beyond the Code",
     "subtitle": "Volunteering & community activities that shape who I am outside of work.",
     "present": "Present"
+  },
+  "about": {
+    "downloadResume": "Download Resume"
   },
   "locale": {
     "switchTo": "Português"

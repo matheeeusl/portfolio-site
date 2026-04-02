@@ -7,7 +7,6 @@ import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { ProjectsSection } from "@/components/sections/ProjectsSection";
 import { SkillsSection } from "@/components/sections/SkillsSection";
 import { VolunteerSection } from "@/components/sections/VolunteerSection";
-import { ContactSection } from "@/components/sections/ContactSection";
 
 export default async function Home({
   params,
@@ -27,7 +26,6 @@ export default async function Home({
           <ProjectsSection />
           <SkillsSection />
           <VolunteerSection />
-          <ContactSection />
         </div>
       </main>
       <Footer />

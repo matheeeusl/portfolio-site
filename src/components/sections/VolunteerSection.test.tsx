@@ -49,8 +49,9 @@ describe("VolunteerSection", () => {
 
     it("renders each organization name", () => {
       renderWithLocale("en");
-      for (const entry of volunteers) {
-        expect(screen.getByText(entry.organization)).toBeInTheDocument();
+      const uniqueOrgs = [...new Set(volunteers.map((e) => e.organization.en))];
+      for (const org of uniqueOrgs) {
+        expect(screen.getAllByText(org).length).toBeGreaterThan(0);
       }
     });
 

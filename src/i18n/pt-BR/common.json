@@ -4,14 +4,14 @@
     "experience": "Experiência",
     "projects": "Projetos",
     "skills": "Skills",
-    "volunteer": "Voluntariado",
+    "volunteer": "Atuação",
     "contact": "Contato",
     "resume": "Currículo"
   },
   "hero": {
     "greeting": "Olá, eu sou",
     "cta": "Veja meu trabalho",
-    "tagline": "Construo experiências web escaláveis e centradas no usuário.",
+    "tagline": "Construo aplicações web escaláveis com foco em performance, usabilidade e em criar experiências que as pessoas gostam de usar.",
     "stats": {
       "years": "8+ Anos",
       "yearsLabel": "de experiência",
@@ -27,7 +27,7 @@
     "projects": "Projetos",
     "skills": "Skills",
     "education": "Formação",
-    "volunteer": "Voluntariado",
+    "volunteer": "Além do Código",
     "contact": "Contato"
   },
   "experience": {
@@ -53,6 +53,9 @@
     "title": "Além do Código",
     "subtitle": "Atividades voluntárias e de comunidade que moldam quem sou fora do trabalho.",
     "present": "Atual"
+  },
+  "about": {
+    "downloadResume": "Baixar Currículo"
   },
   "locale": {
     "switchTo": "English"

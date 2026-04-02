@@ -1,5 +1,7 @@
 import { render, screen, fireEvent, act } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { personalInfo } from "@/data/resume";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import en from "@/i18n/en/common.json";
 import ptBR from "@/i18n/pt-BR/common.json";
@@ -73,7 +75,7 @@ describe("Header", () => {
       renderWithLocale("en");
 
       expect(
-        screen.getByRole("button", { name: en.locale.switchTo }),
+        screen.getByRole("button", { name: /switch to português/i }),
       ).toBeInTheDocument();
     });
 
@@ -81,7 +83,7 @@ describe("Header", () => {
       renderWithLocale("pt-BR");
 
       expect(
-        screen.getByRole("button", { name: ptBR.locale.switchTo }),
+        screen.getByRole("button", { name: /switch to english/i }),
       ).toBeInTheDocument();
     });
   });
@@ -137,7 +139,7 @@ describe("Header", () => {
       expect(document.documentElement.classList.contains("dark")).toBe(false);
 
       // Switch locale
-      fireEvent.click(screen.getByRole("button", { name: en.locale.switchTo }));
+      fireEvent.click(screen.getByRole("button", { name: /switch to português/i }));
 
       // Theme must still be light after locale switch
       expect(document.documentElement.classList.contains("dark")).toBe(false);
@@ -152,45 +154,108 @@ describe("Header", () => {
       expect(document.documentElement.classList.contains("dark")).toBe(true);
 
       // Switch locale
-      fireEvent.click(screen.getByRole("button", { name: en.locale.switchTo }));
+      fireEvent.click(screen.getByRole("button", { name: /switch to português/i }));
 
       // Theme must still be dark after locale switch
       expect(document.documentElement.classList.contains("dark")).toBe(true);
     });
   });
 
-  describe("social links", () => {
-    it("renders a GitHub link in the desktop header", () => {
-      renderWithLocale("en");
-
-      const link = document.querySelector('[data-testid="header-github"]');
-      expect(link).toBeInTheDocument();
-      expect(link).toHaveAttribute("href", expect.stringContaining("github.com"));
+  describe("contact dropdown", () => {
+    beforeEach(() => {
+      Object.defineProperty(navigator, "clipboard", {
+        value: { writeText: vi.fn().mockResolvedValue(undefined) },
+        writable: true,
+        configurable: true,
+      });
     });
 
-    it("renders a LinkedIn link in the desktop header", () => {
-      renderWithLocale("en");
-
-      const link = document.querySelector('[data-testid="header-linkedin"]');
-      expect(link).toBeInTheDocument();
-      expect(link).toHaveAttribute("href", expect.stringContaining("linkedin.com"));
+    afterEach(() => {
+      vi.restoreAllMocks();
     });
 
-    it("social links open in a new tab", () => {
+    it("dropdown is hidden by default", () => {
       renderWithLocale("en");
 
-      const github = document.querySelector('[data-testid="header-github"]');
-      const linkedin = document.querySelector('[data-testid="header-linkedin"]');
+      expect(
+        document.querySelector('[data-testid="contact-dropdown-email"]'),
+      ).not.toBeInTheDocument();
+    });
 
-      expect(github).toHaveAttribute("target", "_blank");
-      expect(linkedin).toHaveAttribute("target", "_blank");
+    it("clicking Contact button opens the dropdown", async () => {
+      const user = userEvent.setup();
+      renderWithLocale("en");
+
+      await user.click(document.querySelector('[data-testid="contact-btn"]')!);
+
+      expect(
+        document.querySelector('[data-testid="contact-dropdown-email"]'),
+      ).toBeInTheDocument();
+    });
+
+    it("dropdown email link has correct href", async () => {
+      const user = userEvent.setup();
+      renderWithLocale("en");
+
+      await user.click(document.querySelector('[data-testid="contact-btn"]')!);
+
+      const emailLink = document.querySelector('[data-testid="contact-dropdown-email"]');
+      expect(emailLink).toHaveAttribute("href", `mailto:${personalInfo.email}`);
+    });
+
+    it("dropdown GitHub link has correct href and opens in new tab", async () => {
+      const user = userEvent.setup();
+      renderWithLocale("en");
+
+      await user.click(document.querySelector('[data-testid="contact-btn"]')!);
+
+      const githubLink = document.querySelector('[data-testid="contact-dropdown-github"]');
+      expect(githubLink).toHaveAttribute("href", personalInfo.github);
+      expect(githubLink).toHaveAttribute("target", "_blank");
+    });
+
+    it("dropdown LinkedIn link has correct href and opens in new tab", async () => {
+      const user = userEvent.setup();
+      renderWithLocale("en");
+
+      await user.click(document.querySelector('[data-testid="contact-btn"]')!);
+
+      const linkedinLink = document.querySelector('[data-testid="contact-dropdown-linkedin"]');
+      expect(linkedinLink).toHaveAttribute("href", personalInfo.linkedin);
+      expect(linkedinLink).toHaveAttribute("target", "_blank");
+    });
+
+    it("copy button shows copied feedback", async () => {
+      const user = userEvent.setup();
+      renderWithLocale("en");
+
+      await user.click(document.querySelector('[data-testid="contact-btn"]')!);
+
+      const copyBtn = document.querySelector('[data-testid="contact-dropdown-copy"]');
+      await user.click(copyBtn!);
+
+      expect(screen.getByText(en.contact.emailCopied)).toBeInTheDocument();
+    });
+
+    it("clicking outside closes the dropdown", async () => {
+      const user = userEvent.setup();
+      renderWithLocale("en");
+
+      await user.click(document.querySelector('[data-testid="contact-btn"]')!);
+      expect(
+        document.querySelector('[data-testid="contact-dropdown-email"]'),
+      ).toBeInTheDocument();
+
+      await user.click(document.querySelector('.fixed.inset-0')!);
+
+      expect(
+        document.querySelector('[data-testid="contact-dropdown-email"]'),
+      ).not.toBeInTheDocument();
     });
   });
 
   describe("scroll-spy", () => {
     beforeEach(() => {
-      // jsdom has no real layout: scrollHeight ≈ 0, so isNearBottom would always
-      // be true. Mock a tall page so tests that scroll mid-page work correctly.
       vi.spyOn(window, "scrollY", "get").mockReturnValue(500);
       vi.spyOn(window, "innerHeight", "get").mockReturnValue(800);
       vi.spyOn(document.body, "scrollHeight", "get").mockReturnValue(5000);
@@ -233,7 +298,7 @@ describe("Header", () => {
 
       const desktopNav = document.querySelector('nav[aria-hidden="true"]');
       expect(desktopNav?.querySelector('[data-active="true"]')).toHaveTextContent(
-        en.nav.contact,
+        en.nav.volunteer,
       );
     });
 
