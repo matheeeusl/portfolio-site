@@ -18,9 +18,9 @@ export const personalInfo: PersonalInfo = {
   github: "https://github.com/matheeeusl",
   linkedin: "https://www.linkedin.com/in/matheus-laureano-02876453/",
   bio: {
-    en: "Front-end Engineer with over 8 years of experience building scalable web and mobile applications for global companies. Specialized in modern JavaScript frameworks, functional programming, and e-commerce platforms. Known for fast adaptation, ownership of delivery, and consistent positive feedback from clients.",
+    en: "For over 8 years, I have been building resilient, high-scale digital products for global markets. As a Senior Front-end Engineer, I specialize in modern JavaScript frameworks and functional programming, with a deep focus on e-commerce architecture. By combining technical precision with a strong sense of responsibility and delivery, I ensure high-quality results even in fast-paced environments.",
     "pt-BR":
-      "Engenheiro Front-end com mais de 8 anos de experiência construindo aplicações web e mobile escaláveis para empresas globais. Especializado em frameworks JavaScript modernos, programação funcional e plataformas de e-commerce. Reconhecido pela rápida adaptação, senso de ownership e feedbacks positivos consistentes de clientes.",
+      "Há mais de 8 anos construindo produtos digitais resilientes e de alta escala para mercados globais. Como Engenheiro Front-end Sênior, me especializo em frameworks JavaScript modernos e programação funcional, com foco profundo em arquitetura de e-commerce. Unindo precisão técnica a um forte senso de responsabilidade e entrega, garanto resultados de alta qualidade mesmo em ambientes dinâmicos.",
   },
 };
 
@@ -35,9 +35,9 @@ export const experiences: Experience[] = [
     startDate: "2021-11",
     endDate: null,
     description: {
-      en: "Software consultancy providing top-tier engineering talent for diverse client projects. Developed complex front-end solutions for major clients (Lighthouse, MGM Resorts) in international agile teams (3-5 devs). Built user-friendly mortgage forms and e-commerce features (entertainment packages, shopping cart) adopting functional programming. Successfully delivered features with improved performance and consistent positive client feedback.",
+      en: "FullStack Labs is a global consultancy focused on providing high-performance engineering for mission-critical projects at major corporations. Within this environment, I developed complex front-end interfaces for clients such as Lighthouse and MGM Resorts in international agile teams. Focused on architecting e-commerce and financial workflows using functional programming to ensure resilient code and performance optimization.",
       "pt-BR":
-        "Consultoria de software que provê talentos de engenharia para projetos de grandes clientes. Desenvolveu soluções front-end complexas para clientes como Lighthouse e MGM Resorts em times ágeis internacionais (3-5 devs). Construiu formulários de hipoteca e features de e-commerce (pacotes de entretenimento, carrinho) adotando programação funcional. Entregou funcionalidades com melhoria de performance e feedbacks positivos consistentes.",
+        "A FullStack Labs é uma consultoria global focada em alocar engenharia de alta performance para projetos de grandes corporações. Atuando nesse ecossistema, desenvolvi interfaces front-end complexas para clientes como Lighthouse e MGM Resorts em times ágeis internacionais. Foco na arquitetura de fluxos de e-commerce e sistemas financeiros, aplicando programação funcional para garantir código resiliente e otimização de performance.",
     },
     technologies: [
       "React",
@@ -82,9 +82,9 @@ export const experiences: Experience[] = [
     startDate: "2021-06",
     endDate: "2021-11",
     description: {
-      en: "A global SaaS startup offering sales & inventory solutions to 40k+ SMBs across 180+ countries. Contributed to platform development within a versatile startup team (~6 devs). Assisted in developing Pro plan web features and mobile app banners, delivering essential components for new features and mobile updates.",
+      en: "Kyte is a global SaaS startup providing sales and inventory solutions to 40k+ SMBs across 180 countries. Working within a versatile and agile team, I was responsible for developing Kyte Pro web features and implementing dynamic UI components for the mobile ecosystem. Focused on delivering modular and scalable components, ensuring continuous platform evolution and enhancing the overall user experience.",
       "pt-BR":
-        "Startup SaaS global oferecendo soluções de vendas e estoque para mais de 40 mil PMEs em 180+ países. Contribuiu para o desenvolvimento da plataforma em um time de startup versátil (~6 devs). Auxiliou no desenvolvimento de features web do plano Pro e banners do app mobile, entregando componentes essenciais para novas funcionalidades.",
+        "A Kyte é uma startup SaaS global que provê soluções de vendas e estoque para mais de 40 mil PMEs em 180 países. Atuando em um time ágil e versátil, fui responsável pelo desenvolvimento de funcionalidades do plano Kyte Pro para web e pela implementação de componentes dinâmicos de interface para o ecossistema mobile. Foco na entrega de componentes modulares e escaláveis, garantindo a evolução contínua da plataforma e a melhoria da experiência do usuário final.",
     },
     technologies: [
       "React",
@@ -117,9 +117,9 @@ export const experiences: Experience[] = [
     startDate: "2016-12",
     endDate: "2021-06",
     description: {
-      en: "Specialized e-commerce consultancy implementing large-scale solutions for global clients on platforms like OCC, Shopify, ATG, and Magento. Progressed from Java Intern to Front-end Developer, working in international teams (3-5 devs). Developed key UI components for MiMercado B2B marketplace and Zebra's OCC platform. Built internal onboarding tools and technical challenges adopted company-wide.",
+      en: "McFadyen Digital is a global consultancy specialized in e-commerce and large-scale marketplace solutions. Progressing from a Java Intern to a Front-end Developer, I worked on international projects for major brands such as Zebra Technologies and the MiMercado B2B marketplace. I was responsible for developing UI components across complex ecosystems (OCC, Magento, Shopify) and building internal onboarding tools and technical challenges adopted company-wide.",
       "pt-BR":
-        "Consultoria especializada em e-commerce implementando soluções de grande escala para clientes globais em plataformas como OCC, Shopify, ATG e Magento. Evoluiu de Estagiário Java para Desenvolvedor Front-end, atuando em times internacionais (3-5 devs). Desenvolveu componentes de UI para o marketplace B2B MiMercado e a plataforma OCC da Zebra. Construiu ferramentas de onboarding internas adotadas pela empresa.",
+        "A McFadyen Digital é uma consultoria global especializada em e-commerce e marketplaces de larga escala. Iniciando minha trajetória como estagiário em Java e evoluindo rapidamente para Desenvolvedor Front-end, atuei em projetos internacionais para grandes marcas como Zebra Technologies e o marketplace B2B MiMercado. Fui responsável pelo desenvolvimento de componentes de interface em ecossistemas complexos (OCC, Magento, Shopify) e pela criação de ferramentas internas de onboarding e desafios técnicos adotados em toda a companhia.",
     },
     technologies: [
       "React",
@@ -173,9 +173,9 @@ export const projects: Project[] = [
     id: "proj-portfolio",
     title: "Portfolio Site",
     description: {
-      en: "Personal portfolio built with Next.js 16, TypeScript, and Tailwind CSS inside a Docker AI Jail with Claude Code.",
+      en: "High-performance portfolio architected with Next.js 16 and TypeScript. The project leverages Docker containers and was developed using AI-assisted engineering, focusing on modern CI/CD practices and a clean, responsive UI.",
       "pt-BR":
-        "Portfólio pessoal construído com Next.js 16, TypeScript e Tailwind CSS dentro de um Docker AI Jail com Claude Code.",
+        "Portfólio de alta performance arquitetado com Next.js 16 e TypeScript. O projeto utiliza containers Docker e foi desenvolvido com auxílio de agentes de IA, focando em práticas modernas de CI/CD e uma interface limpa e responsiva.",
     },
     technologies: [
       "Next.js",
@@ -192,9 +192,9 @@ export const projects: Project[] = [
     id: "proj-early-2000",
     title: "Beyond The Veil 2k!",
     description: {
-      en: "A website simulating an early 2000s blog/forum, built as a prop for a tabletop RPG oneshot. Features authentic era aesthetics with GIFs, table layouts, and in-character forum posts.",
+      en: "A website built as an immersive prop for a tabletop RPG oneshot. It simulates the authentic look and feel of early 2000s blogs and forums, featuring table-based layouts, GIFs, and in-character posts to add a layer of real-time interactivity and atmosphere to the game session.",
       "pt-BR":
-        "Um site simulando um blog/fórum dos anos 2000, construído como cenário para uma oneshot de RPG de mesa. Possui estética autêntica da era com GIFs, layouts tabelados e posts de fórum em personagem.",
+        "Site desenvolvido como um acessório imersivo (prop) para uma sessão única (oneshot) de RPG de mesa. O projeto simula a estética autêntica de blogs e fóruns dos anos 2000, utilizando layouts de tabelas, GIFs e postagens em personagem para criar uma camada extra de interatividade e ambientação durante o jogo.",
     },
     technologies: ["Next.js", "CSS", "Storytelling", "Web Design"],
     githubUrl: "https://github.com/matheeeusl",
@@ -206,9 +206,9 @@ export const projects: Project[] = [
     id: "proj-musical-recognition",
     title: "Musical Recognition AI",
     description: {
-      en: "Bachelor's thesis experiment comparing an AI model trained with limited data against a traditional tuner for musical note identification.",
+      en: "Research and development in AI applied to music. A comparative study between machine learning models trained on small datasets and traditional tuners for pitch detection, exploring audio processing with Python.",
       "pt-BR":
-        "Experimento de TCC comparando um modelo de IA treinado com poucos dados contra um afinador tradicional para identificação de notas musicais.",
+        "Pesquisa e desenvolvimento em IA aplicada à música. Comparação entre modelos de aprendizado de máquina treinados com datasets reduzidos e afinadores tradicionais para identificação de notas musicais, explorando processamento de áudio com Python.",
     },
     technologies: ["Python", "Machine Learning", "AI", "Audio Processing"],
     githubUrl: "https://github.com/matheeeusl/reconhecimentoMusical",
@@ -218,37 +218,43 @@ export const projects: Project[] = [
 ];
 
 export const skills: Skill[] = [
-  // Frontend
+  // Frontend & Core
   { name: "React", category: "frontend", level: "expert" },
-  { name: "React Native", category: "frontend", level: "advanced" },
-  { name: "Next.js", category: "frontend", level: "advanced" },
+  { name: "Next.js", category: "frontend", level: "expert" },
   { name: "TypeScript", category: "frontend", level: "expert" },
+  { name: "Functional Programming", category: "frontend", level: "advanced" },
   { name: "Vue.js", category: "frontend", level: "advanced" },
+  { name: "Vuestorefront", category: "frontend", level: "advanced" },
   { name: "Tailwind CSS", category: "frontend", level: "advanced" },
   { name: "GraphQL", category: "frontend", level: "intermediate" },
-  { name: "Storybook", category: "frontend", level: "advanced" },
-  { name: "Functional Programming", category: "frontend", level: "advanced" },
-  { name: "Vuestorefront", category: "frontend", level: "intermediate" },
+  { name: "JavaScript (ES6+)", category: "frontend", level: "expert" },
+  { name: "HTML5 / CSS3 / SASS", category: "frontend", level: "expert" },
+  { name: "React Native", category: "frontend", level: "advanced" },
 
-  // Backend
-  { name: "Node.js", category: "backend", level: "intermediate" },
-  { name: "PostgreSQL", category: "backend", level: "beginner" },
-  { name: "Prisma", category: "backend", level: "beginner" },
+  // Backend & Data
+  { name: "Node.js", category: "backend", level: "advanced" },
+  { name: "PostgreSQL", category: "backend", level: "intermediate" },
+  { name: "Prisma", category: "backend", level: "intermediate" },
+  { name: "REST APIs", category: "backend", level: "advanced" },
+  { name: "Microservices", category: "backend", level: "intermediate" },
 
-  // Tools
-  { name: "Docker", category: "tools", level: "intermediate" },
-  { name: "Git", category: "tools", level: "advanced" },
-  { name: "Automated Testing", category: "tools", level: "advanced" },
-  { name: "AI-Assisted Development", category: "tools", level: "intermediate" },
-  { name: "Mentoring", category: "tools", level: "intermediate" },
-  { name: "Shopify (Liquid)", category: "tools", level: "intermediate" },
-  { name: "Magento", category: "tools", level: "intermediate" },
-  { name: "Oracle Commerce Cloud", category: "tools", level: "intermediate" },
+  // E-commerce & Platforms
+  { name: "Oracle Commerce Cloud", category: "ecommerce", level: "advanced" },
+  { name: "Shopify (Liquid)", category: "ecommerce", level: "advanced" },
+  { name: "Magento", category: "ecommerce", level: "intermediate" },
+  { name: "Storybook", category: "ecommerce", level: "advanced" },
 
-  // Languages
-  { name: "JavaScript", category: "languages", level: "expert" },
-  { name: "HTML5", category: "languages", level: "expert" },
-  { name: "CSS3/SASS/LESS", category: "languages", level: "expert" },
+  // DevOps & Leadership
+  { name: "Docker", category: "devops", level: "intermediate" },
+  { name: "Git", category: "devops", level: "advanced" },
+  { name: "Automated Testing", category: "devops", level: "advanced" },
+  { name: "Mentoring", category: "devops", level: "advanced" },
+  { name: "Agile (Scrum/Kanban)", category: "devops", level: "advanced" },
+  {
+    name: "AI-Assisted Development",
+    category: "devops",
+    level: "intermediate",
+  },
 ];
 
 export const volunteers: Volunteer[] = [
@@ -274,7 +280,7 @@ export const volunteers: Volunteer[] = [
       en: "Orchestra Musician",
       "pt-BR": "Músico de Orquestra",
     },
-    startDate: "2023-01",
+    startDate: "2018-01",
     endDate: null,
     description: {
       en: "Perform in a collaborative orchestra environment, requiring teamwork, discipline, and consistency during live events, while contributing to meaningful moments through music in my community.",
@@ -283,13 +289,34 @@ export const volunteers: Volunteer[] = [
     },
   },
   {
+    id: "vol-muaythai",
+    organization: {
+      en: "Muay Thai (Chute Boxe)",
+      "pt-BR": "Muay Thai (Chute Boxe)",
+    },
+    role: {
+      en: "Dedicated Practitioner",
+      "pt-BR": "Praticante Dedicado",
+    },
+    startDate: "2022-01",
+    endDate: null,
+    description: {
+      en: "Strengthening discipline and resilience through consistent training at the world-renowned Chute Boxe academy. A hobby that demands focus, regularity, and mastering fundamentals under pressure—high-performance principles I apply daily in software engineering to ensure consistent, high-quality delivery.",
+      "pt-BR":
+        "Fortalecimento da disciplina e resiliência através do treino constante na Chute Boxe. Um hobby que exige foco, regularidade e o domínio de fundamentos sob pressão — princípios de alta performance que aplico na engenharia de software para garantir entregas consistentes e de alta qualidade.",
+    },
+  },
+  {
     id: "vol-rpg",
-    organization: { en: "Tabletop RPG Community", "pt-BR": "Comunidade de RPG de Mesa" },
+    organization: {
+      en: "Tabletop RPG Community",
+      "pt-BR": "Comunidade de RPG de Mesa",
+    },
     role: {
       en: "Player & Worldbuilder",
       "pt-BR": "Jogador e Construtor de Mundos",
     },
-    startDate: "2018-01",
+    startDate: "2012-01",
     endDate: null,
     description: {
       en: "Collaborate in storytelling and worldbuilding, strengthening creativity, problem-solving, and real-time decision-making, while engaging in a hobby I genuinely enjoy and value.",
@@ -302,7 +329,10 @@ export const volunteers: Volunteer[] = [
 export const education: Education[] = [
   {
     id: "edu-ufsc",
-    institution: "Federal University of Santa Catarina (UFSC)",
+    institution: {
+      en: "Federal University of Santa Catarina (UFSC)",
+      "pt-BR": "UFSC (Univ. Federal de Santa Catarina)",
+    },
     degree: {
       en: "Bachelor of Information Systems",
       "pt-BR": "Bacharelado em Sistemas de Informação",
@@ -310,16 +340,26 @@ export const education: Education[] = [
     startYear: 2015,
     endYear: 2022,
     location: "Florianópolis, Brazil",
+    description: {
+      en: "Solid foundation in computer science fundamentals, algorithms, and software engineering at one of Brazil's leading technical universities.",
+      "pt-BR":
+        "Formação sólida em fundamentos de computação, algoritmos e engenharia de software em uma das principais referências técnicas do país.",
+    },
   },
   {
     id: "edu-senai",
-    institution: "National Industrial Apprenticeship Service - SENAI",
+    institution: { en: "SENAI", "pt-BR": "SENAI" },
     degree: {
       en: "Web Developer",
-      "pt-BR": "Desenvolvedor Web",
+      "pt-BR": "Programador Web",
     },
     startYear: 2012,
     endYear: 2014,
     location: "Tubarão, Brazil",
+    description: {
+      en: "Early technical foundation focused on web development and programming logic.",
+      "pt-BR":
+        "Base técnica inicial focada em desenvolvimento web e lógica de programação.",
+    },
   },
 ];

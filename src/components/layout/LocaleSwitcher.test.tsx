@@ -12,14 +12,16 @@ function renderWithLocale(locale: "en" | "pt-BR") {
 }
 
 describe("LocaleSwitcher", () => {
-  it("shows the US flag when locale is en", () => {
+  it("shows the US flag image when locale is en", () => {
     renderWithLocale("en");
-    expect(screen.getByRole("button")).toHaveTextContent("🇺🇸");
+    const img = screen.getByRole("img", { name: /english/i });
+    expect(img).toHaveAttribute("src", expect.stringContaining("us.svg"));
   });
 
-  it("shows the Brazilian flag when locale is pt-BR", () => {
+  it("shows the Brazilian flag image when locale is pt-BR", () => {
     renderWithLocale("pt-BR");
-    expect(screen.getByRole("button")).toHaveTextContent("🇧🇷");
+    const img = screen.getByRole("img", { name: /português/i });
+    expect(img).toHaveAttribute("src", expect.stringContaining("br.svg"));
   });
 
   it("has aria-label indicating switch to Portuguese when in English", () => {

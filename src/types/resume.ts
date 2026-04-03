@@ -50,11 +50,12 @@ export interface Skill {
 
 export interface Education {
   id: string;
-  institution: string;
+  institution: LocalizedString;
   degree: LocalizedString;
   startYear: number;
   endYear: number;
   location: string;
+  description: LocalizedString;
 }
 
 export interface Volunteer {
@@ -66,6 +67,6 @@ export interface Volunteer {
   description: LocalizedString;
 }
 
-export type SkillCategory = "frontend" | "backend" | "tools" | "languages";
+export type SkillCategory = "frontend" | "backend" | "ecommerce" | "devops";
 
 export type SkillLevel = "beginner" | "intermediate" | "advanced" | "expert";

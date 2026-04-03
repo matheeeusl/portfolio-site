@@ -4,40 +4,7 @@ import { useLocale } from "@/i18n/LocaleProvider";
 import { getDictionary } from "@/i18n/getDictionary";
 import { volunteers } from "@/data/resume";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
-import type { Volunteer, Locale } from "@/types";
-
-function VolunteerCard({
-  entry,
-  index,
-  locale,
-}: {
-  entry: Volunteer;
-  index: number;
-  locale: Locale;
-}) {
-  const { ref, className, style } = useScrollReveal({ delay: index * 100 });
-
-  return (
-    <article
-      ref={ref}
-      data-testid={`volunteer-${entry.id}`}
-      className={`rounded-xl border border-teal-500/20 bg-teal-500/5 p-6 dark:border-teal-500/10 dark:bg-slate-900 ${className}`}
-      style={style}
-    >
-      <div className="mb-3">
-        <h3 className="font-semibold text-gray-900 dark:text-slate-100">
-          {entry.organization[locale]}
-        </h3>
-        <p className="text-sm font-medium text-teal-600 dark:text-teal-400">
-          {entry.role[locale]}
-        </p>
-      </div>
-      <p className="text-sm leading-relaxed text-gray-500 dark:text-slate-400">
-        {entry.description[locale]}
-      </p>
-    </article>
-  );
-}
+import { VolunteerCard } from "./VolunteerCard";
 
 export const VolunteerSection = () => {
   const locale = useLocale();

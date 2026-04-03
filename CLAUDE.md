@@ -34,6 +34,7 @@ src/
 ├── components/
 │   ├── layout/            # Header, Footer, LocaleSwitcher
 │   ├── sections/          # Hero, About (includes Education), Experience, Projects, Skills
+│   │   └── [section]          # AboutBio, EducationItem
 │   └── ui/                # Button, Card, Badge, ThemeToggle
 ├── data/                  # Static resume data (typed)
 ├── i18n/

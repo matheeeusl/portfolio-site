@@ -63,16 +63,11 @@ describe("Hero", () => {
 
   it("renders a CTA button", () => {
     renderWithLocale("en");
-
-    expect(
-      screen.getByRole("link", { name: /see my work/i }),
-    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: en.hero.cta })).toBeInTheDocument();
   });
 
   it("CTA links to projects section", () => {
     renderWithLocale("en");
-
-    const cta = screen.getByRole("link", { name: /see my work/i });
-    expect(cta).toHaveAttribute("href", "#projects");
+    expect(screen.getByRole("link", { name: en.hero.cta })).toHaveAttribute("href", "#projects");
   });
 });

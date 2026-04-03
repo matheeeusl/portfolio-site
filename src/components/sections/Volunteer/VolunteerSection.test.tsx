@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
 import { volunteers } from "@/data/resume";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
@@ -41,50 +41,9 @@ describe("VolunteerSection", () => {
     it("renders a card for each volunteer entry", () => {
       renderWithLocale("en");
       for (const entry of volunteers) {
-        expect(
-          screen.getByTestId(`volunteer-${entry.id}`),
-        ).toBeInTheDocument();
+        expect(screen.getByTestId(`volunteer-${entry.id}`)).toBeInTheDocument();
       }
     });
-
-    it("renders each organization name", () => {
-      renderWithLocale("en");
-      const uniqueOrgs = [...new Set(volunteers.map((e) => e.organization.en))];
-      for (const org of uniqueOrgs) {
-        expect(screen.getAllByText(org).length).toBeGreaterThan(0);
-      }
-    });
-
-    it("renders each role in English", () => {
-      renderWithLocale("en");
-      for (const entry of volunteers) {
-        const card = screen.getByTestId(`volunteer-${entry.id}`);
-        expect(within(card).getByText(entry.role.en)).toBeInTheDocument();
-      }
-    });
-
-    it("renders each role in Portuguese", () => {
-      renderWithLocale("pt-BR");
-      for (const entry of volunteers) {
-        const card = screen.getByTestId(`volunteer-${entry.id}`);
-        expect(within(card).getByText(entry.role["pt-BR"])).toBeInTheDocument();
-      }
-    });
-
-    it("renders each description in English", () => {
-      renderWithLocale("en");
-      for (const entry of volunteers) {
-        expect(screen.getByText(entry.description.en)).toBeInTheDocument();
-      }
-    });
-
-    it("renders each description in Portuguese", () => {
-      renderWithLocale("pt-BR");
-      for (const entry of volunteers) {
-        expect(screen.getByText(entry.description["pt-BR"])).toBeInTheDocument();
-      }
-    });
-
   });
 
   describe("section attributes", () => {

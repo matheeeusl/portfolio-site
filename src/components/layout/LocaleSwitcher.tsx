@@ -1,11 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter, usePathname } from "next/navigation";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 const FLAGS: Record<string, string> = {
-  en: "🇺🇸",
-  "pt-BR": "🇧🇷",
+  en: "/flags/us.svg",
+  "pt-BR": "/flags/br.svg",
 };
 
 const LABELS: Record<string, string> = {
@@ -29,9 +30,15 @@ export const LocaleSwitcher = () => {
       onClick={switchLocale}
       aria-label={`Switch to ${LABELS[nextLocale]}`}
       title={`Switch to ${LABELS[nextLocale]}`}
-      className="rounded-md px-2 py-1.5 text-base transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-slate-800"
+      className="cursor-pointer rounded-md px-2 py-1.5 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-slate-800"
     >
-      {FLAGS[locale]}
+      <Image
+        src={FLAGS[locale]}
+        alt={LABELS[locale]}
+        width={24}
+        height={16}
+        className="rounded-sm"
+      />
     </button>
   );
 };

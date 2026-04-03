@@ -4,19 +4,19 @@
     "experience": "Experience",
     "projects": "Projects",
     "skills": "Skills",
-    "volunteer": "Activities",
+    "volunteer": "Beyond the Code",
     "contact": "Contact",
     "resume": "Resume"
   },
   "hero": {
     "greeting": "Hi, I'm",
-    "cta": "See my work",
-    "tagline": "I build scalable web applications that balance performance, usability, and real-world impact.",
+    "cta": "Explore Projects",
+    "tagline": "Architecting resilient, high-performance front-end solutions. For over 8 years, transforming complex challenges into exceptional digital experiences for the global market.",
     "stats": {
       "years": "8+ Years",
       "yearsLabel": "of experience",
-      "projects": "10+ Projects",
-      "projectsLabel": "Worked on",
+      "projects": "10+ Solutions",
+      "projectsLabel": "Delivered",
       "languages": "Professional",
       "languagesLabel": "English"
     }
@@ -26,7 +26,7 @@
     "experience": "Experience",
     "projects": "Projects",
     "skills": "Skills",
-    "education": "Education",
+    "education": "Academic Background",
     "volunteer": "Beyond the Code",
     "contact": "Contact"
   },

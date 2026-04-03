@@ -4,19 +4,19 @@
     "experience": "Experiência",
     "projects": "Projetos",
     "skills": "Skills",
-    "volunteer": "Atuação",
+    "volunteer": "Além do Código",
     "contact": "Contato",
     "resume": "Currículo"
   },
   "hero": {
     "greeting": "Olá, eu sou",
-    "cta": "Veja meu trabalho",
-    "tagline": "Construo aplicações web escaláveis com foco em performance, usabilidade e em criar experiências que as pessoas gostam de usar.",
+    "cta": "Explorar Projetos",
+    "tagline": "Arquiteto soluções front-end resilientes e de alta performance. Há mais de 8 anos transformando desafios complexos em experiências digitais excepcionais para o mercado global.",
     "stats": {
       "years": "8+ Anos",
       "yearsLabel": "de experiência",
-      "projects": "10+ Projetos",
-      "projectsLabel": "Trabalhados",
+      "projects": "10+ Soluções",
+      "projectsLabel": "Entregues",
       "languages": "Inglês",
       "languagesLabel": "Profissional"
     }
@@ -26,7 +26,7 @@
     "experience": "Experiência",
     "projects": "Projetos",
     "skills": "Skills",
-    "education": "Formação",
+    "education": "Formação Acadêmica",
     "volunteer": "Além do Código",
     "contact": "Contato"
   },

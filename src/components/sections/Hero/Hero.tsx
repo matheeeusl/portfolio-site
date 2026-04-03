@@ -3,10 +3,17 @@
 import { useLocale } from "@/i18n/LocaleProvider";
 import { getDictionary } from "@/i18n/getDictionary";
 import { personalInfo } from "@/data/resume";
+import { HeroStats } from "./HeroStats";
 
 export const Hero = () => {
   const locale = useLocale();
   const t = getDictionary(locale);
+
+  const stats = [
+    { value: t.hero.stats.years, label: t.hero.stats.yearsLabel },
+    { value: t.hero.stats.projects, label: t.hero.stats.projectsLabel },
+    { value: t.hero.stats.languages, label: t.hero.stats.languagesLabel },
+  ];
 
   return (
     <section id="hero" className="flex min-h-screen flex-col justify-center py-16 scroll-mt-14">
@@ -23,19 +30,8 @@ export const Hero = () => {
         <p className="mb-8 max-w-xl text-lg leading-relaxed text-gray-500 dark:text-slate-400">
           {t.hero.tagline}
         </p>
-        <div className="mb-10 flex gap-8">
-          <div>
-            <p className="text-2xl font-bold text-gray-900 dark:text-slate-100">{t.hero.stats.years}</p>
-            <p className="text-sm text-gray-500 dark:text-slate-400">{t.hero.stats.yearsLabel}</p>
-          </div>
-          <div>
-            <p className="text-2xl font-bold text-gray-900 dark:text-slate-100">{t.hero.stats.projects}</p>
-            <p className="text-sm text-gray-500 dark:text-slate-400">{t.hero.stats.projectsLabel}</p>
-          </div>
-          <div>
-            <p className="text-2xl font-bold text-gray-900 dark:text-slate-100">{t.hero.stats.languages}</p>
-            <p className="text-sm text-gray-500 dark:text-slate-400">{t.hero.stats.languagesLabel}</p>
-          </div>
+        <div className="mb-10">
+          <HeroStats stats={stats} />
         </div>
         <a
           href="#projects"

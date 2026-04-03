@@ -5,6 +5,7 @@ import { useLocale } from "@/i18n/LocaleProvider";
 import { getDictionary } from "@/i18n/getDictionary";
 import { projects } from "@/data/resume";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { Card } from "@/components/ui/Card";
 import type { Project, Locale } from "@/types";
 
 type Dictionary = ReturnType<typeof getDictionary>;
@@ -20,17 +21,16 @@ function ProjectCard({
   locale: Locale;
   t: Dictionary;
 }) {
-  const { ref, className, style } = useScrollReveal({ delay: index * 100 });
-
   return (
-    <div ref={ref} className={`h-full ${className}`} style={style}>
-      <article
-        className={`group flex h-full flex-col rounded-xl border transition-all duration-200 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-slate-900 ${
-          project.featured
-            ? "border-blue-500/30 bg-blue-500/5 dark:border-blue-500/20 dark:bg-slate-900"
-            : "border-gray-200 bg-gray-50 dark:border-slate-800 dark:bg-slate-900"
-        }`}
-      >
+    <Card
+      as="article"
+      index={index}
+      className={`group flex h-full flex-col transition-all duration-200 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-slate-900 ${
+        project.featured
+          ? "border-blue-500/30 bg-blue-500/5 dark:border-blue-500/20"
+          : "border-gray-200 bg-gray-50 dark:border-slate-800"
+      }`}
+    >
         <div className="relative h-44 overflow-hidden rounded-t-xl">
           {project.imageUrl ? (
             <Image
@@ -92,8 +92,7 @@ function ProjectCard({
             )}
           </div>
         </div>
-      </article>
-    </div>
+      </Card>
   );
 }
 
