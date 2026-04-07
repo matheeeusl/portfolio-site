@@ -1,8 +1,13 @@
+import Image from "next/image";
+
 export const Logo = () => (
-  <a
-    href="#hero"
-    className="text-sm font-semibold text-gray-900 transition-colors duration-200 hover:text-blue-500 dark:text-slate-100 dark:hover:text-blue-400"
-  >
-    ML
+  <a href="#hero" aria-label="ML">
+    <Image
+      src="/logo.svg"
+      alt="ML"
+      width={32}
+      height={32}
+      className="transition-opacity duration-200 hover:opacity-80"
+    />
   </a>
 );

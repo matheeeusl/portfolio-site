@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Matheus Laureano | Software Engineer",
   description: "Software engineer portfolio built with Next.js and TypeScript",
+  icons: {
+    icon: "/logo.svg",
+  },
 };
 
 export function generateStaticParams() {

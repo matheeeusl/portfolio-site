@@ -215,6 +215,53 @@ export const projects: Project[] = [
     imageUrl: "/reconhecimentoMusical.jpg",
     featured: true,
   },
+  {
+    id: "proj-hipertension",
+    title: "Hipertension",
+    description: {
+      en: "A full-stack blood pressure and weight tracking app with guest mode, interactive charts, and bilingual support. Features Supabase Auth, Redux Toolkit, BP category classification (ACC/AHA 2017), and static export deployment to GitHub Pages.",
+      "pt-BR":
+        "Aplicação full-stack de monitoramento de pressão arterial e peso com modo visitante, gráficos interativos e suporte bilíngue. Utiliza Supabase Auth, Redux Toolkit, classificação de categorias de PA (ACC/AHA 2017) e deploy estático via GitHub Pages.",
+    },
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "Redux Toolkit",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Recharts",
+      "React Hook Form",
+      "Zod",
+    ],
+    githubUrl: "https://github.com/matheeeusl/hipertension",
+    liveUrl: "https://matheeeusl.github.io/hipertension",
+    imageUrl: "/hipertension.jpg",
+    featured: true,
+  },
+  {
+    id: "proj-baluarte-terminal",
+    title: "Baluarte Terminal",
+    description: {
+      en: "An immersive RPG terminal interface inspired by Fallout 4's RobCo terminals. Players explore a fictional facility through password-locked folders with audio logs and interactable systems. Game logic runs on a finite state machine (FSM) via useReducer, and a rogue AI — the Janitor — adds ambient unease through random screen flickers.",
+      "pt-BR":
+        "Interface de terminal RPG imersiva inspirada nos terminais RobCo de Fallout 4. Jogadores exploram uma instalação fictícia por meio de pastas protegidas por senha, logs de áudio e sistemas interagíveis. A lógica do jogo é gerenciada por uma máquina de estados finitos (FSM) via useReducer, e uma IA rogue — o Zelador — adiciona tensão com flickerings aleatórios na tela.",
+    },
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Howler.js",
+      "Storytelling",
+      "Web Design",
+    ],
+    githubUrl: "https://github.com/matheeeusl/baluarte-terminal",
+    liveUrl: "https://matheeeusl.github.io/baluarte-terminal/",
+    imageUrl: "/baluarte_terminal.jpg",
+    featured: true,
+  },
 ];
 
 export const skills: Skill[] = [

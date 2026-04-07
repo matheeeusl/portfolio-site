@@ -33,8 +33,8 @@ export const LocaleSwitcher = () => {
       className="cursor-pointer rounded-md px-2 py-1.5 transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-slate-800"
     >
       <Image
-        src={FLAGS[locale]}
-        alt={LABELS[locale]}
+        src={FLAGS[nextLocale]}
+        alt={LABELS[nextLocale]}
         width={24}
         height={16}
         className="rounded-sm"

@@ -1,6 +1,6 @@
 FROM node:22-bookworm-slim
 
-LABEL maintainer="seu-nome <seu@email.com>"
+LABEL maintainer="Matheus Laureano <matheuslaureanol1@gmail.com>"
 LABEL description="AI-jailed dev environment for portfolio site"
 
 ENV DEBIAN_FRONTEND=noninteractive
