@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { getDictionary } from "@/i18n/getDictionary";
@@ -9,6 +10,65 @@ import { Card } from "@/components/ui/Card";
 import type { Project, Locale } from "@/types";
 
 type Dictionary = ReturnType<typeof getDictionary>;
+
+function ProjectModal({
+  project,
+  locale,
+  t,
+  onClose,
+}: {
+  project: Project;
+  locale: Locale;
+  t: Dictionary;
+  onClose: () => void;
+}) {
+  return (
+    <div
+      data-testid="modal-backdrop"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+        className="relative max-h-[80vh] w-full max-w-lg overflow-y-auto rounded-2xl border border-gray-200 bg-white p-6 shadow-2xl dark:border-slate-700 dark:bg-slate-900"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="mb-4 flex items-start justify-between gap-4">
+          <h3
+            id="modal-title"
+            className="text-lg font-semibold text-gray-900 dark:text-slate-100"
+          >
+            {project.title}
+          </h3>
+          <button
+            onClick={onClose}
+            aria-label={t.projects.close}
+            className="shrink-0 rounded-lg p-1 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-slate-800 dark:hover:text-slate-300"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <p className="text-sm leading-relaxed text-gray-600 dark:text-slate-300">
+          {project.description[locale]}
+        </p>
+      </div>
+    </div>
+  );
+}
 
 function ProjectCard({
   project,
@@ -21,16 +81,27 @@ function ProjectCard({
   locale: Locale;
   t: Dictionary;
 }) {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [isCropped, setIsCropped] = useState(false);
+  const descContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = descContainerRef.current;
+    if (!el) return;
+    setIsCropped(el.scrollHeight > el.clientHeight);
+  }, []);
+
   return (
-    <Card
-      as="article"
-      index={index}
-      className={`group flex h-full flex-col transition-all duration-200 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-slate-900 ${
-        project.featured
-          ? "border-blue-500/30 bg-blue-500/5 dark:border-blue-500/20"
-          : "border-gray-200 bg-gray-50 dark:border-slate-800"
-      }`}
-    >
+    <>
+      <Card
+        as="article"
+        index={index}
+        className={`group flex h-full flex-col transition-all duration-200 hover:scale-[1.02] hover:shadow-lg dark:hover:shadow-slate-900 ${
+          project.featured
+            ? "border-blue-500/30 bg-blue-500/5 dark:border-blue-500/20"
+            : "border-gray-200 bg-gray-50 dark:border-slate-800"
+        }`}
+      >
         <div className="relative h-44 overflow-hidden rounded-t-xl">
           {project.imageUrl ? (
             <Image
@@ -42,9 +113,9 @@ function ProjectCard({
           ) : (
             <div
               data-testid="project-image-fallback"
-              className="flex h-full w-full items-center justify-center bg-gradient-to-br from-blue-500/20 to-slate-700/40"
+              className="flex h-full w-full items-center justify-center bg-linear-to-br from-blue-500/20 to-slate-700/40"
             >
-              <span className="select-none text-4xl font-bold text-blue-400/40">
+              <span className="text-4xl font-bold text-blue-400/40 select-none">
                 {project.title.slice(0, 2).toUpperCase()}
               </span>
             </div>
@@ -56,11 +127,45 @@ function ProjectCard({
             {project.title}
           </h3>
 
-          <p className="mb-4 flex-1 text-sm leading-relaxed text-gray-500 dark:text-slate-400">
-            {project.description[locale]}
-          </p>
+          {isCropped ? (
+            <button
+              data-testid={`description-toggle-${project.id}`}
+              onClick={() => setModalOpen(true)}
+              className="mb-4 w-full cursor-pointer text-left"
+              aria-label={t.projects.readMore}
+            >
+              <div
+                ref={descContainerRef}
+                className="relative max-h-50 overflow-hidden"
+              >
+                <p className="text-sm leading-relaxed text-gray-500 dark:text-slate-400">
+                  {project.description[locale]}
+                </p>
+              </div>
+              <div className="flex items-end justify-end">
+                <span className="text-xs font-medium text-blue-500 dark:text-blue-400">
+                  [+]
+                </span>
+              </div>
+            </button>
+          ) : (
+            <div
+              data-testid={`description-toggle-${project.id}`}
+              className="mb-4 w-full"
+            >
+              <div
+                ref={descContainerRef}
+                className="relative max-h-50 overflow-hidden"
+              >
+                <p className="text-sm leading-relaxed text-gray-500 dark:text-slate-400">
+                  {project.description[locale]}
+                </p>
+              </div>
+            </div>
+          )}
+          <div className="flex-1" />
 
-          <ul className="mb-4 flex flex-wrap gap-2">
+          <ul className="my-4 flex flex-wrap gap-2">
             {project.technologies.map((tech) => (
               <li
                 key={tech}
@@ -93,25 +198,51 @@ function ProjectCard({
           </div>
         </div>
       </Card>
+
+      {modalOpen && (
+        <ProjectModal
+          project={project}
+          locale={locale}
+          t={t}
+          onClose={() => setModalOpen(false)}
+        />
+      )}
+    </>
   );
 }
 
 export const ProjectsSection = () => {
   const locale = useLocale();
   const t = getDictionary(locale);
-  const { ref: headingRef, className: headingClass, style: headingStyle } = useScrollReveal({ delay: 0 });
+  const {
+    ref: headingRef,
+    className: headingClass,
+    style: headingStyle,
+  } = useScrollReveal({ delay: 0 });
 
   return (
-    <section id="projects" className="py-16 scroll-mt-14">
+    <section id="projects" className="scroll-mt-14 py-16">
       <div className="mx-auto max-w-5xl px-4">
-        <div ref={headingRef} className={`mb-10 ${headingClass}`} style={headingStyle}>
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-slate-100">{t.sections.projects}</h2>
+        <div
+          ref={headingRef}
+          className={`mb-10 ${headingClass}`}
+          style={headingStyle}
+        >
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-slate-100">
+            {t.sections.projects}
+          </h2>
           <div className="mt-2 h-0.5 w-10 rounded-full bg-blue-500" />
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
-            <ProjectCard key={project.id} project={project} index={i} locale={locale} t={t} />
+            <ProjectCard
+              key={project.id}
+              project={project}
+              index={i}
+              locale={locale}
+              t={t}
+            />
           ))}
         </div>
       </div>

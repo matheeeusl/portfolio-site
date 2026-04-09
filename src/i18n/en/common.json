@@ -37,7 +37,9 @@
   },
   "projects": {
     "viewCode": "View Code",
-    "viewLive": "View Live"
+    "viewLive": "View Live",
+    "readMore": "Read more",
+    "close": "Close"
   },
   "contact": {
     "title": "Contact",

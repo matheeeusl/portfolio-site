@@ -1,5 +1,6 @@
-import { render, screen } from "@testing-library/react";
-import { describe, it, expect } from "vitest";
+import { render, screen, within } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { describe, it, expect, beforeEach, afterEach } from "vitest";
 import { projects } from "@/data/resume";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import en from "@/i18n/en/common.json";
@@ -132,6 +133,88 @@ describe("ProjectsSection", () => {
 
       const fallbacks = screen.getAllByTestId("project-image-fallback");
       expect(fallbacks).toHaveLength(projectsWithoutImage.length);
+    });
+  });
+
+  describe("description modal", () => {
+    beforeEach(() => {
+      Object.defineProperty(HTMLElement.prototype, "scrollHeight", {
+        configurable: true,
+        get: () => 500,
+      });
+    });
+
+    afterEach(() => {
+      Object.defineProperty(HTMLElement.prototype, "scrollHeight", {
+        configurable: true,
+        get: () => 0,
+      });
+    });
+
+    it("opens a modal with the full description when clicking the description area", async () => {
+      const user = userEvent.setup();
+      renderWithLocale("en");
+
+      const firstProject = projects[0];
+      const descriptionButton = screen.getByTestId(
+        `description-toggle-${firstProject.id}`,
+      );
+
+      await user.click(descriptionButton);
+
+      const modal = screen.getByRole("dialog");
+      expect(modal).toBeInTheDocument();
+      expect(
+        within(modal).getByText(firstProject.description.en),
+      ).toBeInTheDocument();
+    });
+
+    it("closes the modal when clicking the close button", async () => {
+      const user = userEvent.setup();
+      renderWithLocale("en");
+
+      const firstProject = projects[0];
+      const descriptionButton = screen.getByTestId(
+        `description-toggle-${firstProject.id}`,
+      );
+
+      await user.click(descriptionButton);
+      expect(screen.getByRole("dialog")).toBeInTheDocument();
+
+      const closeButton = screen.getByRole("button", {
+        name: en.projects.close,
+      });
+      await user.click(closeButton);
+
+      expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    });
+
+    it("closes the modal when clicking the backdrop", async () => {
+      const user = userEvent.setup();
+      renderWithLocale("en");
+
+      const firstProject = projects[0];
+      await user.click(
+        screen.getByTestId(`description-toggle-${firstProject.id}`),
+      );
+      expect(screen.getByRole("dialog")).toBeInTheDocument();
+
+      await user.click(screen.getByTestId("modal-backdrop"));
+
+      expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    });
+
+    it("shows the project title in the modal header", async () => {
+      const user = userEvent.setup();
+      renderWithLocale("en");
+
+      const firstProject = projects[0];
+      await user.click(
+        screen.getByTestId(`description-toggle-${firstProject.id}`),
+      );
+
+      const modal = screen.getByRole("dialog");
+      expect(within(modal).getByText(firstProject.title)).toBeInTheDocument();
     });
   });
 });

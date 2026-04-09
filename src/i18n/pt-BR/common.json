@@ -37,7 +37,9 @@
   },
   "projects": {
     "viewCode": "Ver Código",
-    "viewLive": "Ver Projeto"
+    "viewLive": "Ver Projeto",
+    "readMore": "Ler mais",
+    "close": "Fechar"
   },
   "contact": {
     "title": "Contato",
