@@ -5,6 +5,7 @@ import type { Locale } from "@/types";
 import { locales } from "@/i18n/config";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import { getDictionary } from "@/i18n/getDictionary";
+import { Analytics } from "@/components/Analytics";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://matheeeusl.com";
 
@@ -98,7 +99,10 @@ export default async function LocaleLayout({
         >
           {dict.a11y.skipToContent}
         </a>
-        <LocaleProvider locale={locale}>{children}</LocaleProvider>
+        <LocaleProvider locale={locale}>
+          <Analytics />
+          {children}
+        </LocaleProvider>
       </body>
     </html>
   );
