@@ -14,13 +14,13 @@ function renderWithLocale(locale: "en" | "pt-BR") {
 describe("LocaleSwitcher", () => {
   it("shows the BR flag image when locale is en", () => {
     renderWithLocale("en");
-    const img = screen.getByRole("img", { name: /english/i });
+    const img = screen.getByRole("img", { name: /português/i });
     expect(img).toHaveAttribute("src", expect.stringContaining("br.svg"));
   });
 
   it("shows the US flag image when locale is pt-BR", () => {
     renderWithLocale("pt-BR");
-    const img = screen.getByRole("img", { name: /português/i });
+    const img = screen.getByRole("img", { name: /english/i });
     expect(img).toHaveAttribute("src", expect.stringContaining("us.svg"));
   });
 

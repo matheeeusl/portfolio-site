@@ -45,7 +45,7 @@ function ProjectModal({
           <button
             onClick={onClose}
             aria-label={t.projects.close}
-            className="shrink-0 rounded-lg p-1 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-slate-800 dark:hover:text-slate-300"
+            className="shrink-0 rounded-lg p-1 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:hover:bg-slate-800 dark:hover:text-slate-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -181,7 +181,7 @@ function ProjectCard({
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm font-medium text-blue-500 transition-colors duration-200 hover:text-blue-400 dark:text-blue-400 dark:hover:text-blue-300"
+              className="rounded text-sm font-medium text-blue-500 transition-colors duration-200 hover:text-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
             >
               {t.projects.viewCode}
             </a>
@@ -190,7 +190,7 @@ function ProjectCard({
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-blue-500 transition-colors duration-200 hover:text-blue-400 dark:text-blue-400 dark:hover:text-blue-300"
+                className="rounded text-sm font-medium text-blue-500 transition-colors duration-200 hover:text-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
               >
                 {t.projects.viewLive}
               </a>
@@ -221,14 +221,14 @@ export const ProjectsSection = () => {
   } = useScrollReveal({ delay: 0 });
 
   return (
-    <section id="projects" className="scroll-mt-14 py-16">
+    <section id="projects" className="scroll-mt-14 py-16" aria-labelledby="projects-heading">
       <div className="mx-auto max-w-5xl px-4">
         <div
           ref={headingRef}
           className={`mb-10 ${headingClass}`}
           style={headingStyle}
         >
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-slate-100">
+          <h2 id="projects-heading" className="text-3xl font-bold text-gray-900 dark:text-slate-100">
             {t.sections.projects}
           </h2>
           <div className="mt-2 h-0.5 w-10 rounded-full bg-blue-500" />

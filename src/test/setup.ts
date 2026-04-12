@@ -1,5 +1,7 @@
 import "@testing-library/jest-dom/vitest";
-import { vi } from "vitest";
+import * as vitestAxeMatchers from "vitest-axe/matchers";
+import { expect, vi } from "vitest";
+expect.extend(vitestAxeMatchers);
 
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push: vi.fn(), replace: vi.fn(), prefetch: vi.fn() }),

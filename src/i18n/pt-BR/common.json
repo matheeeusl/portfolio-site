@@ -65,5 +65,12 @@
   "theme": {
     "light": "Modo claro",
     "dark": "Modo escuro"
+  },
+  "a11y": {
+    "skipToContent": "Ir para o conteúdo"
+  },
+  "seo": {
+    "title": "Matheus Laureano | Engenheiro de Software Sênior",
+    "description": "Engenheiro Front-end Sênior com mais de 8 anos construindo produtos digitais resilientes e de alta escala para mercados globais. Especializado em React, Next.js, TypeScript e arquitetura de e-commerce."
   }
 }

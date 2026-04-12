@@ -15,10 +15,10 @@ export const VolunteerSection = () => {
     useScrollReveal({ delay: 50 });
 
   return (
-    <section id="volunteer" className="scroll-mt-14 py-16">
+    <section id="volunteer" className="scroll-mt-14 py-16" aria-labelledby="volunteer-heading">
       <div className="mx-auto max-w-5xl px-4">
         <div ref={headingRef} className={`mb-4 ${headingClass}`} style={headingStyle}>
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-slate-100">
+          <h2 id="volunteer-heading" className="text-3xl font-bold text-gray-900 dark:text-slate-100">
             {t.volunteer.title}
           </h2>
           <div className="mt-2 h-0.5 w-10 rounded-full bg-teal-500" />

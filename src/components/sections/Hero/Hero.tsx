@@ -16,12 +16,12 @@ export const Hero = () => {
   ];
 
   return (
-    <section id="hero" className="flex min-h-screen flex-col justify-center py-16 scroll-mt-14">
+    <section id="hero" className="flex min-h-screen flex-col justify-center py-16 scroll-mt-14" aria-labelledby="hero-name">
       <div className="mx-auto max-w-5xl px-4">
         <p className="mb-3 text-sm font-medium uppercase tracking-widest text-blue-500">
           {t.hero.greeting}
         </p>
-        <h1 className="mb-3 text-5xl font-bold tracking-tight text-gray-900 dark:text-slate-100 md:text-7xl">
+        <h1 id="hero-name" className="mb-3 text-5xl font-bold tracking-tight text-gray-900 dark:text-slate-100 md:text-7xl">
           {personalInfo.name}
         </h1>
         <h2 className="mb-6 text-2xl font-medium text-blue-500 md:text-3xl">
@@ -35,7 +35,7 @@ export const Hero = () => {
         </div>
         <a
           href="#projects"
-          className="inline-block rounded-lg bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-blue-400"
+          className="inline-block rounded-lg bg-blue-500 px-6 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
         >
           {t.hero.cta}
         </a>

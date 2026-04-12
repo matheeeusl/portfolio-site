@@ -22,6 +22,7 @@ interface MobileNavProps {
 export const MobileNav = ({ isOpen, onClose, links, contactLinks }: MobileNavProps) => {
   return (
     <nav
+      id="mobile-nav"
       aria-label="mobile navigation"
       style={
         isOpen
@@ -36,7 +37,7 @@ export const MobileNav = ({ isOpen, onClose, links, contactLinks }: MobileNavPro
             <a
               href={href}
               onClick={onClose}
-              className="text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-blue-500 dark:text-slate-400 dark:hover:text-blue-400"
+              className="rounded text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-slate-400 dark:hover:text-blue-400"
             >
               {label}
             </a>
@@ -46,7 +47,7 @@ export const MobileNav = ({ isOpen, onClose, links, contactLinks }: MobileNavPro
           <a
             href={`mailto:${contactLinks.email}`}
             onClick={onClose}
-            className="text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-blue-500 dark:text-slate-400 dark:hover:text-blue-400"
+            className="rounded text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-slate-400 dark:hover:text-blue-400"
           >
             {contactLinks.emailLabel}
           </a>
@@ -57,7 +58,7 @@ export const MobileNav = ({ isOpen, onClose, links, contactLinks }: MobileNavPro
             target="_blank"
             rel="noopener noreferrer"
             onClick={onClose}
-            className="text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-blue-500 dark:text-slate-400 dark:hover:text-blue-400"
+            className="rounded text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-slate-400 dark:hover:text-blue-400"
           >
             GitHub
           </a>
@@ -68,7 +69,7 @@ export const MobileNav = ({ isOpen, onClose, links, contactLinks }: MobileNavPro
             target="_blank"
             rel="noopener noreferrer"
             onClick={onClose}
-            className="text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-blue-500 dark:text-slate-400 dark:hover:text-blue-400"
+            className="rounded text-sm font-medium text-gray-600 transition-colors duration-200 hover:text-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-slate-400 dark:hover:text-blue-400"
           >
             LinkedIn
           </a>

@@ -12,10 +12,10 @@ export const ExperienceSection = () => {
   const { ref: headingRef, className: headingClass, style: headingStyle } = useScrollReveal({ delay: 0 });
 
   return (
-    <section id="experience" className="scroll-mt-14 py-16">
+    <section id="experience" className="scroll-mt-14 py-16" aria-labelledby="experience-heading">
       <div className="mx-auto max-w-5xl px-4">
         <div ref={headingRef} className={`mb-10 ${headingClass}`} style={headingStyle}>
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-slate-100">
+          <h2 id="experience-heading" className="text-3xl font-bold text-gray-900 dark:text-slate-100">
             {t.sections.experience}
           </h2>
           <div className="mt-2 h-0.5 w-10 rounded-full bg-blue-500" />

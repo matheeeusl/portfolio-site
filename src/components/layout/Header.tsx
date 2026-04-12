@@ -110,8 +110,10 @@ export const Header = () => {
             {/* Hamburger */}
             <button
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-nav"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="rounded-md p-2 text-gray-500 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-900 md:hidden dark:hover:bg-slate-800 dark:hover:text-slate-100"
+              className="rounded-md p-2 text-gray-500 transition-colors duration-200 hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 md:hidden dark:hover:bg-slate-800 dark:hover:text-slate-100"
             >
               {isMenuOpen ? "✕" : "☰"}
             </button>

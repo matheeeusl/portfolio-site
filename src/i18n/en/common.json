@@ -65,5 +65,12 @@
   "theme": {
     "light": "Light mode",
     "dark": "Dark mode"
+  },
+  "a11y": {
+    "skipToContent": "Skip to content"
+  },
+  "seo": {
+    "title": "Matheus Laureano | Senior Software Engineer",
+    "description": "Senior Front-end Engineer with 8+ years building resilient, high-scale digital products for global markets. Specialized in React, Next.js, TypeScript and e-commerce architecture."
   }
 }

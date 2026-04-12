@@ -14,7 +14,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="text-gray-500 transition-colors duration-200 hover:text-gray-900 dark:hover:text-slate-100"
+            className="rounded text-gray-500 transition-colors duration-200 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:hover:text-slate-100"
           >
             GitHub
           </a>
@@ -23,7 +23,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="text-gray-500 transition-colors duration-200 hover:text-gray-900 dark:hover:text-slate-100"
+            className="rounded text-gray-500 transition-colors duration-200 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:hover:text-slate-100"
           >
             LinkedIn
           </a>
@@ -32,7 +32,7 @@ export const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Email"
-            className="text-gray-500 transition-colors duration-200 hover:text-gray-900 dark:hover:text-slate-100"
+            className="rounded text-gray-500 transition-colors duration-200 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:hover:text-slate-100"
           >
             Email
           </a>

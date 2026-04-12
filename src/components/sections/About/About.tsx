@@ -16,10 +16,10 @@ export const About = () => {
   const { ref: eduHeadingRef, className: eduHeadingClass, style: eduHeadingStyle } = useScrollReveal({ delay: 0 });
 
   return (
-    <section id="about" className="py-16 scroll-mt-14">
+    <section id="about" className="py-16 scroll-mt-14" aria-labelledby="about-heading">
       <div className="mx-auto max-w-5xl px-4">
         <div ref={headingRef} className={`mb-10 ${headingClass}`} style={headingStyle}>
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-slate-100">{t.sections.about}</h2>
+          <h2 id="about-heading" className="text-3xl font-bold text-gray-900 dark:text-slate-100">{t.sections.about}</h2>
           <div className="mt-2 h-0.5 w-10 rounded-full bg-blue-500" />
         </div>
 
