@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { getDictionary } from "@/i18n/getDictionary";
@@ -45,7 +45,7 @@ function ProjectModal({
           <button
             onClick={onClose}
             aria-label={t.projects.close}
-            className="shrink-0 rounded-lg p-1 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:hover:bg-slate-800 dark:hover:text-slate-300"
+            className="shrink-0 rounded-lg p-1 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none dark:hover:bg-slate-800 dark:hover:text-slate-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -60,6 +60,24 @@ function ProjectModal({
               />
             </svg>
           </button>
+        </div>
+
+        <div className="relative mb-4 h-48 w-full overflow-hidden rounded-xl">
+          {project.imageUrl ? (
+            <Image
+              src={project.imageUrl}
+              alt={project.title}
+              fill
+              sizes="512px"
+              className="object-cover"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center bg-linear-to-br from-blue-500/20 to-slate-700/40">
+              <span className="text-4xl font-bold text-blue-400/40 select-none">
+                {project.title.slice(0, 2).toUpperCase()}
+              </span>
+            </div>
+          )}
         </div>
 
         <p className="text-sm leading-relaxed text-gray-600 dark:text-slate-300">
@@ -82,14 +100,6 @@ function ProjectCard({
   t: Dictionary;
 }) {
   const [modalOpen, setModalOpen] = useState(false);
-  const [isCropped, setIsCropped] = useState(false);
-  const descContainerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = descContainerRef.current;
-    if (!el) return;
-    setIsCropped(el.scrollHeight > el.clientHeight);
-  }, []);
 
   return (
     <>
@@ -102,7 +112,16 @@ function ProjectCard({
             : "border-gray-200 bg-gray-50 dark:border-slate-800"
         }`}
       >
-        <div className="relative h-44 overflow-hidden rounded-t-xl">
+        <div
+          className="relative h-44 cursor-pointer overflow-hidden rounded-t-xl"
+          onClick={() => setModalOpen(true)}
+          role="button"
+          tabIndex={0}
+          aria-label={t.projects.readMore}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") setModalOpen(true);
+          }}
+        >
           {project.imageUrl ? (
             <Image
               src={project.imageUrl}
@@ -128,42 +147,16 @@ function ProjectCard({
             {project.title}
           </h3>
 
-          {isCropped ? (
-            <button
-              data-testid={`description-toggle-${project.id}`}
-              onClick={() => setModalOpen(true)}
-              className="mb-4 w-full cursor-pointer text-left"
-              aria-label={t.projects.readMore}
-            >
-              <div
-                ref={descContainerRef}
-                className="relative max-h-50 overflow-hidden"
-              >
-                <p className="text-sm leading-relaxed text-gray-500 dark:text-slate-400">
-                  {project.description[locale]}
-                </p>
-              </div>
-              <div className="flex items-end justify-end">
-                <span className="text-xs font-medium text-blue-500 dark:text-blue-400">
-                  [+]
-                </span>
-              </div>
-            </button>
-          ) : (
-            <div
-              data-testid={`description-toggle-${project.id}`}
-              className="mb-4 w-full"
-            >
-              <div
-                ref={descContainerRef}
-                className="relative max-h-50 overflow-hidden"
-              >
-                <p className="text-sm leading-relaxed text-gray-500 dark:text-slate-400">
-                  {project.description[locale]}
-                </p>
-              </div>
-            </div>
-          )}
+          <button
+            data-testid={`description-toggle-${project.id}`}
+            onClick={() => setModalOpen(true)}
+            className="mb-4 w-full cursor-pointer text-left"
+            aria-label={t.projects.readMore}
+          >
+            <p className="line-clamp-4 text-sm leading-relaxed text-gray-500 dark:text-slate-400">
+              {project.description[locale]}
+            </p>
+          </button>
           <div className="flex-1" />
 
           <ul className="my-4 flex flex-wrap gap-2">
@@ -182,7 +175,7 @@ function ProjectCard({
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded text-sm font-medium text-blue-500 transition-colors duration-200 hover:text-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+              className="rounded text-sm font-medium text-blue-500 transition-colors duration-200 hover:text-blue-400 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none dark:text-blue-400 dark:hover:text-blue-300"
             >
               {t.projects.viewCode}
             </a>
@@ -191,7 +184,7 @@ function ProjectCard({
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded text-sm font-medium text-blue-500 transition-colors duration-200 hover:text-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:text-blue-400 dark:hover:text-blue-300"
+                className="rounded text-sm font-medium text-blue-500 transition-colors duration-200 hover:text-blue-400 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none dark:text-blue-400 dark:hover:text-blue-300"
               >
                 {t.projects.viewLive}
               </a>
@@ -222,14 +215,21 @@ export const ProjectsSection = () => {
   } = useScrollReveal({ delay: 0 });
 
   return (
-    <section id="projects" className="scroll-mt-14 py-16" aria-labelledby="projects-heading">
+    <section
+      id="projects"
+      className="scroll-mt-14 py-16"
+      aria-labelledby="projects-heading"
+    >
       <div className="mx-auto max-w-5xl px-4">
         <div
           ref={headingRef}
           className={`mb-10 ${headingClass}`}
           style={headingStyle}
         >
-          <h2 id="projects-heading" className="text-3xl font-bold text-gray-900 dark:text-slate-100">
+          <h2
+            id="projects-heading"
+            className="text-3xl font-bold text-gray-900 dark:text-slate-100"
+          >
             {t.sections.projects}
           </h2>
           <div className="mt-2 h-0.5 w-10 rounded-full bg-blue-500" />

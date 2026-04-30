@@ -45,7 +45,7 @@ export const ContactDropdown = ({ labels, contactInfo }: ContactDropdownProps) =
         aria-expanded={isOpen}
         aria-haspopup="true"
         onClick={() => setIsOpen((prev) => !prev)}
-        className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors duration-200 hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:hover:bg-slate-800 ${
+        className={`cursor-pointer rounded-md px-3 py-1.5 text-sm font-medium transition-colors duration-200 hover:bg-gray-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:hover:bg-slate-800 ${
           isOpen
             ? "text-blue-500 dark:text-blue-400"
             : "text-gray-600 dark:text-slate-400"

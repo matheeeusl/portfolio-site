@@ -1,6 +1,6 @@
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import type { Project } from "@/types";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import en from "@/i18n/en/common.json";
@@ -168,20 +168,6 @@ describe("ProjectsSection", () => {
   });
 
   describe("description modal", () => {
-    beforeEach(() => {
-      Object.defineProperty(HTMLElement.prototype, "scrollHeight", {
-        configurable: true,
-        get: () => 500,
-      });
-    });
-
-    afterEach(() => {
-      Object.defineProperty(HTMLElement.prototype, "scrollHeight", {
-        configurable: true,
-        get: () => 0,
-      });
-    });
-
     it("opens a modal with the full description when clicking the description area", async () => {
       const user = userEvent.setup();
       renderWithLocale("en");

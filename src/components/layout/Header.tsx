@@ -88,7 +88,7 @@ export const Header = () => {
           </nav>
 
           {/* Controls */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-2">
             <ContactDropdown
               labels={{
                 contact: t.nav.contact,
