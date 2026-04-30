@@ -38,6 +38,7 @@ export const LocaleSwitcher = () => {
         width={24}
         height={16}
         className="rounded-sm"
+        style={{ height: "auto" }}
       />
     </button>
   );

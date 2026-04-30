@@ -1,6 +1,6 @@
 ## Project
 
-Personal portfolio/resume website with bilingual support (en, pt-BR), authentication, and a secret backstage area.
+Personal portfolio/resume website with bilingual support (en, pt-BR), dark mode, analytics, and a PostgreSQL backend.
 
 ## Stack
 
@@ -18,7 +18,8 @@ Personal portfolio/resume website with bilingual support (en, pt-BR), authentica
 - Build: `pnpm build`
 - Lint: `pnpm lint`
 - Test: `pnpm test`
-- Test watch: `pnpm test -- --watch`
+- Test watch: `pnpm test:watch`
+- Test coverage: `pnpm test:coverage`
 - Prisma generate: `pnpm prisma generate`
 - Prisma migrate: `pnpm prisma migrate dev`
 
@@ -28,22 +29,25 @@ Personal portfolio/resume website with bilingual support (en, pt-BR), authentica
 src/
 ├── app/
 │   ├── [locale]/          # Public pages (pt-BR, en)
-│   ├── api/               # Backend endpoints (auth, analytics)
-│   ├── backstage/         # Protected area (post-login)
+│   ├── api/analytics/     # Page view analytics endpoint
 │   └── page.tsx           # Redirect to default locale
 ├── components/
-│   ├── layout/            # Header, Footer, LocaleSwitcher
-│   ├── sections/          # Hero, About (includes Education), Experience, Projects, Skills
-│   │   └── [section]          # AboutBio, EducationItem
-│   └── ui/                # Button, Card, Badge, ThemeToggle
+│   ├── layout/            # Header, Footer, Logo, LocaleSwitcher, MobileNav, ContactDropdown
+│   ├── sections/          # Hero, About (includes Education), Experience, Projects, Skills, Volunteer
+│   │   └── [section]/     # Sub-components (AboutBio, EducationItem, …)
+│   └── ui/                # Card, ThemeToggle
 ├── data/                  # Static resume data (typed)
+├── hooks/                 # useScrollReveal
 ├── i18n/
 │   ├── en/                # English translations (JSON per section)
 │   ├── pt-BR/             # Portuguese translations (JSON per section)
-│   └── config.ts          # Locale config
-├── lib/                   # Utils, auth config, db client, helpers
+│   ├── config.ts          # Locale config
+│   ├── getDictionary.ts   # Dictionary loader
+│   └── LocaleProvider.tsx # Locale context
+├── lib/                   # db.ts (Prisma client)
+├── test/                  # Global test setup + accessibility tests
 ├── types/                 # Shared global types only
-└── middleware.ts          # Security + locale redirect
+└── middleware.ts          # Locale redirect
 prisma/
 └── schema.prisma          # Database schema
 ```
@@ -58,15 +62,14 @@ prisma/
 
 ## Component Pattern
 
-Each component follows the Server + Client pattern:
+Each component follows this pattern:
 
-- `Hero.tsx` — Server Component (fetches data, no interactivity)
-- `HeroClient.tsx` — Client Component (animations, user interaction, has "use client" directive)
-- `Hero.types.ts` — Props and component-specific types
+- `Hero.tsx` — Component file (`"use client"` if it needs state/effects/hooks, server component otherwise)
+- `Hero.types.ts` — Props and component-specific types (only if needed)
 - `Hero.test.tsx` — Tests (co-located, always test behavior not implementation)
 
-Only create HeroClient.tsx if the component NEEDS client-side interactivity.
-If a component is purely presentational with no state/effects, keep it as a single Hero.tsx.
+Only use `"use client"` when the component actually needs interactivity (state, effects, browser APIs).
+If a component is purely presentational with no state/effects, keep it as a server component.
 
 ## TDD Rules
 
@@ -75,6 +78,7 @@ If a component is purely presentational with no state/effects, keep it as a sing
 - If suggesting a function without a test, STOP and write the test first
 - Run `pnpm test` after every implementation to verify
 - Test user-visible behavior, not implementation details
+- Never import real data (e.g. `projects` from `resume.ts`) as test oracles — use `vi.hoisted` + `vi.mock` to define controlled mock data that covers all edge cases explicitly
 
 ## i18n Rules
 
@@ -93,8 +97,7 @@ If a component is purely presentational with no state/effects, keep it as a sing
 
 ## Security
 
-- middleware.ts handles locale redirect and route protection
-- /backstage/\* routes require authentication
+- middleware.ts handles locale redirect
 - Never expose API keys or secrets in client components
 - Use environment variables for all sensitive config
 - Prisma client only in server-side code (lib/, api/, server components)

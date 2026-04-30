@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Site
+
+Personal portfolio/resume website with bilingual support (pt-BR / en), dark mode, analytics, and a PostgreSQL backend.
+
+## Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript (strict mode)
+- **Styling**: Tailwind CSS 4
+- **Auth**: NextAuth.js v5 (GitHub OAuth, Google OAuth, Magic Link)
+- **Database**: PostgreSQL + Prisma ORM
+- **Testing**: Vitest + Testing Library (co-located)
+- **Package manager**: pnpm
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- PostgreSQL instance (local or remote)
+- pnpm
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Copy `.env.example` to `.env.local` and fill in the values:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+DATABASE_URL=postgresql://...
+NEXTAUTH_SECRET=...
+GITHUB_ID=...
+GITHUB_SECRET=...
+GOOGLE_CLIENT_ID=...
+GOOGLE_CLIENT_SECRET=...
+```
 
-## Learn More
+### Database Setup
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+pnpm prisma migrate dev
+pnpm prisma generate
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Running
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm dev
+```
 
-## Deploy on Vercel
+Open [http://localhost:3000](http://localhost:3000).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Command               | Description                  |
+| --------------------- | ---------------------------- |
+| `pnpm dev`            | Start dev server             |
+| `pnpm build`          | Production build             |
+| `pnpm lint`           | Run ESLint                   |
+| `pnpm test`           | Run tests once               |
+| `pnpm test:watch`     | Run tests in watch mode      |
+| `pnpm test:coverage`  | Run tests with coverage      |
+| `pnpm prisma generate`| Regenerate Prisma client     |
+| `pnpm prisma migrate dev` | Run DB migrations        |
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── [locale]/          # Public pages (pt-BR, en)
+│   ├── api/analytics/     # Page view analytics endpoint
+│   └── page.tsx           # Redirect to default locale
+├── components/
+│   ├── layout/            # Header, Footer, Logo, LocaleSwitcher, MobileNav, ContactDropdown
+│   ├── sections/          # Hero, About, Experience, Projects, Skills, Volunteer
+│   │   └── [section]/     # Sub-components (AboutBio, EducationItem, …)
+│   └── ui/                # Card, ThemeToggle
+├── data/                  # Static resume data (typed)
+├── hooks/                 # useScrollReveal
+├── i18n/
+│   ├── en/                # English translations (JSON per section)
+│   ├── pt-BR/             # Portuguese translations (JSON per section)
+│   ├── config.ts          # Locale config
+│   ├── getDictionary.ts   # Dictionary loader
+│   └── LocaleProvider.tsx # Locale context
+├── lib/                   # db.ts (Prisma client)
+├── test/                  # Global test setup + accessibility tests
+├── types/                 # Shared global types
+└── middleware.ts          # Locale redirect
+prisma/
+└── schema.prisma
+```
+
+## Features
+
+- Bilingual (pt-BR / en) with locale-aware routing
+- Dark mode (default)
+- Profile photo in Hero section (responsive: circular on mobile, rounded rect on desktop)
+- Expandable project descriptions (modal)
+- Page view analytics stored in PostgreSQL
+- WCAG AA accessibility (axe-core verified)
+- SEO: JSON-LD schema, sitemap, robots.txt
+- Mobile-first responsive layout

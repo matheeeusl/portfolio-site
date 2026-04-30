@@ -70,4 +70,10 @@ describe("Hero", () => {
     renderWithLocale("en");
     expect(screen.getByRole("link", { name: en.hero.cta })).toHaveAttribute("href", "#projects");
   });
+
+  it("renders the profile photo", () => {
+    renderWithLocale("en");
+    const img = screen.getByRole("img", { name: personalInfo.name });
+    expect(img).toBeInTheDocument();
+  });
 });

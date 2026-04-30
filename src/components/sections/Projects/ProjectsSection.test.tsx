@@ -1,11 +1,42 @@
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { projects } from "@/data/resume";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
+import type { Project } from "@/types";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import en from "@/i18n/en/common.json";
 import ptBR from "@/i18n/pt-BR/common.json";
 import { ProjectsSection } from "./ProjectsSection";
+
+const mockProjects = vi.hoisted((): Project[] => [
+  {
+    id: "mock-proj-with-image",
+    title: "Mock Project Alpha",
+    description: {
+      en: "Alpha English description",
+      "pt-BR": "Descrição alfa em português",
+    },
+    technologies: ["React", "TypeScript"],
+    githubUrl: "https://github.com/mock/alpha",
+    liveUrl: "https://alpha.example.com",
+    imageUrl: "/alpha.jpg",
+    featured: true,
+  },
+  {
+    id: "mock-proj-without-image",
+    title: "Mock Project Beta",
+    description: {
+      en: "Beta English description",
+      "pt-BR": "Descrição beta em português",
+    },
+    technologies: ["Vue", "JavaScript"],
+    githubUrl: "https://github.com/mock/beta",
+    featured: false,
+  },
+]);
+
+vi.mock("@/data/resume", () => ({
+  projects: mockProjects,
+}));
 
 function renderWithLocale(locale: "en" | "pt-BR") {
   return render(
@@ -34,7 +65,7 @@ describe("ProjectsSection", () => {
     it("renders all project titles", () => {
       renderWithLocale("en");
 
-      for (const project of projects) {
+      for (const project of mockProjects) {
         expect(screen.getByText(project.title)).toBeInTheDocument();
       }
     });
@@ -42,7 +73,7 @@ describe("ProjectsSection", () => {
     it("renders all project descriptions in English", () => {
       renderWithLocale("en");
 
-      for (const project of projects) {
+      for (const project of mockProjects) {
         expect(screen.getByText(project.description.en)).toBeInTheDocument();
       }
     });
@@ -50,7 +81,7 @@ describe("ProjectsSection", () => {
     it("renders all project descriptions in Portuguese", () => {
       renderWithLocale("pt-BR");
 
-      for (const project of projects) {
+      for (const project of mockProjects) {
         expect(
           screen.getByText(project.description["pt-BR"]),
         ).toBeInTheDocument();
@@ -64,7 +95,7 @@ describe("ProjectsSection", () => {
         name: new RegExp(en.projects.viewCode, "i"),
       });
 
-      expect(githubLinks).toHaveLength(projects.length);
+      expect(githubLinks).toHaveLength(mockProjects.length);
     });
 
     it("each GitHub link points to the correct URL", () => {
@@ -75,14 +106,14 @@ describe("ProjectsSection", () => {
       });
 
       githubLinks.forEach((link, index) => {
-        expect(link).toHaveAttribute("href", projects[index].githubUrl);
+        expect(link).toHaveAttribute("href", mockProjects[index].githubUrl);
       });
     });
 
     it("renders a live link only for projects that have one", () => {
       renderWithLocale("en");
 
-      const projectsWithLive = projects.filter((p) => p.liveUrl);
+      const projectsWithLive = mockProjects.filter((p) => p.liveUrl);
 
       const liveLinks = screen.getAllByRole("link", {
         name: new RegExp(en.projects.viewLive, "i"),
@@ -94,7 +125,7 @@ describe("ProjectsSection", () => {
     it("each live link points to the correct URL", () => {
       renderWithLocale("en");
 
-      const projectsWithLive = projects.filter((p) => p.liveUrl);
+      const projectsWithLive = mockProjects.filter((p) => p.liveUrl);
 
       const liveLinks = screen.getAllByRole("link", {
         name: new RegExp(en.projects.viewLive, "i"),
@@ -108,7 +139,7 @@ describe("ProjectsSection", () => {
     it("renders all technology tags for each project", () => {
       renderWithLocale("en");
 
-      for (const project of projects) {
+      for (const project of mockProjects) {
         for (const tech of project.technologies) {
           expect(screen.getAllByText(tech).length).toBeGreaterThan(0);
         }
@@ -120,7 +151,7 @@ describe("ProjectsSection", () => {
     it("renders an img for projects that have imageUrl", () => {
       renderWithLocale("en");
 
-      const projectsWithImage = projects.filter((p) => p.imageUrl);
+      const projectsWithImage = mockProjects.filter((p) => p.imageUrl);
       const images = screen.getAllByRole("img");
 
       expect(images.length).toBeGreaterThanOrEqual(projectsWithImage.length);
@@ -129,9 +160,9 @@ describe("ProjectsSection", () => {
     it("renders a fallback placeholder for projects without imageUrl", () => {
       renderWithLocale("en");
 
-      const projectsWithoutImage = projects.filter((p) => !p.imageUrl);
-
+      const projectsWithoutImage = mockProjects.filter((p) => !p.imageUrl);
       const fallbacks = screen.getAllByTestId("project-image-fallback");
+
       expect(fallbacks).toHaveLength(projectsWithoutImage.length);
     });
   });
@@ -155,7 +186,7 @@ describe("ProjectsSection", () => {
       const user = userEvent.setup();
       renderWithLocale("en");
 
-      const firstProject = projects[0];
+      const firstProject = mockProjects[0];
       const descriptionButton = screen.getByTestId(
         `description-toggle-${firstProject.id}`,
       );
@@ -173,7 +204,7 @@ describe("ProjectsSection", () => {
       const user = userEvent.setup();
       renderWithLocale("en");
 
-      const firstProject = projects[0];
+      const firstProject = mockProjects[0];
       const descriptionButton = screen.getByTestId(
         `description-toggle-${firstProject.id}`,
       );
@@ -193,7 +224,7 @@ describe("ProjectsSection", () => {
       const user = userEvent.setup();
       renderWithLocale("en");
 
-      const firstProject = projects[0];
+      const firstProject = mockProjects[0];
       await user.click(
         screen.getByTestId(`description-toggle-${firstProject.id}`),
       );
@@ -208,7 +239,7 @@ describe("ProjectsSection", () => {
       const user = userEvent.setup();
       renderWithLocale("en");
 
-      const firstProject = projects[0];
+      const firstProject = mockProjects[0];
       await user.click(
         screen.getByTestId(`description-toggle-${firstProject.id}`),
       );

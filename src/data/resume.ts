@@ -186,6 +186,7 @@ export const projects: Project[] = [
       "Docker",
     ],
     githubUrl: "https://github.com/matheeeusl/portfolio-site",
+    imageUrl: "/portfolio-site.jpg",
     featured: true,
   },
   {
@@ -227,9 +228,9 @@ export const projects: Project[] = [
     id: "proj-hipertension",
     title: "Hipertension",
     description: {
-      en: "A full-stack blood pressure and weight tracking app with guest mode, interactive charts, and bilingual support. Features Supabase Auth, Redux Toolkit, BP category classification (ACC/AHA 2017), and static export deployment to GitHub Pages.",
+      en: "A full-stack app for tracking blood pressure, weight, and body temperature with guest mode, interactive combined charts, and bilingual support. Features Supabase Auth, Redux Toolkit, BP and temperature category classification (ACC/AHA 2017), and static export deployment to GitHub Pages.",
       "pt-BR":
-        "Aplicação full-stack de monitoramento de pressão arterial e peso com modo visitante, gráficos interativos e suporte bilíngue. Utiliza Supabase Auth, Redux Toolkit, classificação de categorias de PA (ACC/AHA 2017) e deploy estático via GitHub Pages.",
+        "Aplicação full-stack de monitoramento de pressão arterial, peso e temperatura corporal com modo visitante, gráficos combinados interativos e suporte bilíngue. Utiliza Supabase Auth, Redux Toolkit, classificação de categorias de PA e temperatura (ACC/AHA 2017) e deploy estático via GitHub Pages.",
     },
     technologies: [
       "Next.js",
