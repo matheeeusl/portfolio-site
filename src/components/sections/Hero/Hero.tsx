@@ -27,7 +27,7 @@ export const Hero = () => {
           {/* Photo — top on mobile (small circle), right on desktop (large rounded rect) */}
           <div className="flex justify-center lg:order-last lg:justify-end">
             <Image
-              src="/me.jpg"
+              src="/me.png"
               alt={personalInfo.name}
               width={384}
               height={384}
