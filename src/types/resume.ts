@@ -40,6 +40,7 @@ export interface Project {
   liveUrl?: string;
   imageUrl?: string;
   featured: boolean;
+  wip?: boolean;
 }
 
 export interface Skill {

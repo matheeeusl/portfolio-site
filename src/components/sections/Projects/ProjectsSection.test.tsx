@@ -20,6 +20,7 @@ const mockProjects = vi.hoisted((): Project[] => [
     liveUrl: "https://alpha.example.com",
     imageUrl: "/alpha.jpg",
     featured: true,
+    wip: true,
   },
   {
     id: "mock-proj-without-image",
@@ -164,6 +165,50 @@ describe("ProjectsSection", () => {
       const fallbacks = screen.getAllByTestId("project-image-fallback");
 
       expect(fallbacks).toHaveLength(projectsWithoutImage.length);
+    });
+  });
+
+  describe("WIP badge", () => {
+    it("renders a WIP badge for projects with wip: true", () => {
+      renderWithLocale("en");
+
+      const wipProject = mockProjects.find((p) => p.wip);
+      const wipBadges = screen.getAllByText(en.projects.wip);
+
+      expect(wipBadges.length).toBeGreaterThan(0);
+      expect(wipProject).toBeDefined();
+    });
+
+    it("does not render a WIP badge for projects without wip flag", () => {
+      renderWithLocale("en");
+
+      const nonWipProject = mockProjects.find((p) => !p.wip)!;
+      const cards = screen.getAllByRole("article");
+      const nonWipCard = cards.find((card) =>
+        within(card).queryByText(nonWipProject.title),
+      )!;
+
+      expect(within(nonWipCard).queryByText(en.projects.wip)).not.toBeInTheDocument();
+    });
+
+    it("renders WIP badge in Portuguese", () => {
+      renderWithLocale("pt-BR");
+
+      const wipBadges = screen.getAllByText(ptBR.projects.wip);
+      expect(wipBadges.length).toBeGreaterThan(0);
+    });
+
+    it("shows WIP badge in the modal header for wip projects", async () => {
+      const user = userEvent.setup();
+      renderWithLocale("en");
+
+      const wipProject = mockProjects.find((p) => p.wip)!;
+      await user.click(
+        screen.getByTestId(`description-toggle-${wipProject.id}`),
+      );
+
+      const modal = screen.getByRole("dialog");
+      expect(within(modal).getByText(en.projects.wip)).toBeInTheDocument();
     });
   });
 

@@ -38,9 +38,14 @@ function ProjectModal({
         <div className="mb-4 flex items-start justify-between gap-4">
           <h3
             id="modal-title"
-            className="text-lg font-semibold text-gray-900 dark:text-slate-100"
+            className="flex flex-wrap items-center gap-2 text-lg font-semibold text-gray-900 dark:text-slate-100"
           >
             {project.title}
+            {project.wip && (
+              <span className="inline-flex items-center rounded-full bg-yellow-400/15 px-2 py-0.5 text-xs font-semibold text-yellow-500 dark:text-yellow-400">
+                {t.projects.wip}
+              </span>
+            )}
           </h3>
           <button
             onClick={onClose}
@@ -143,8 +148,13 @@ function ProjectCard({
         </div>
 
         <div className="flex flex-1 flex-col p-6">
-          <h3 className="mb-2 font-semibold text-gray-900 dark:text-slate-100">
+          <h3 className="mb-2 flex flex-wrap items-center gap-2 font-semibold text-gray-900 dark:text-slate-100">
             {project.title}
+            {project.wip && (
+              <span className="inline-flex items-center rounded-full bg-yellow-400/15 px-2 py-0.5 text-xs font-semibold text-yellow-500 dark:text-yellow-400">
+                {t.projects.wip}
+              </span>
+            )}
           </h3>
 
           <button

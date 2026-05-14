@@ -18,9 +18,9 @@ export const personalInfo: PersonalInfo = {
   github: "https://github.com/matheeeusl",
   linkedin: "https://www.linkedin.com/in/matheus-laureano-02876453/",
   bio: {
-    en: "For over 8 years, I have been building resilient, high-scale digital products for global markets. As a Senior Front-end Engineer, I specialize in modern JavaScript frameworks and functional programming, with a deep focus on e-commerce architecture. By combining technical precision with a strong sense of responsibility and delivery, I ensure high-quality results even in fast-paced environments.",
+    en: "For over 8 years, I've been building scalable web and mobile applications for international clients across e-commerce, fintech, and SaaS. As a Senior Front-end Engineer, I specialize in React, TypeScript, and Next.js, with a strong background in functional programming and large-scale architecture. I thrive in US-led nearshore teams, consistently delivering high-quality features and positive client outcomes — from B2B marketplace platforms to enterprise entertainment products.",
     "pt-BR":
-      "Há mais de 8 anos construindo produtos digitais resilientes e de alta escala para mercados globais. Como Engenheiro Front-end Sênior, me especializo em frameworks JavaScript modernos e programação funcional, com foco profundo em arquitetura de e-commerce. Unindo precisão técnica a um forte senso de responsabilidade e entrega, garanto resultados de alta qualidade mesmo em ambientes dinâmicos.",
+      "Há mais de 8 anos construindo aplicações web e mobile escaláveis para clientes internacionais nos setores de e-commerce, fintech e SaaS. Como Engenheiro Front-end Sênior, me especializo em React, TypeScript e Next.js, com sólida experiência em programação funcional e arquitetura de grande escala. Tenho forte atuação em times nearshore com liderança norte-americana, entregando consistentemente features de alta qualidade e resultados positivos para clientes — de plataformas de marketplace B2B a produtos de entretenimento enterprise.",
   },
 };
 
@@ -35,9 +35,9 @@ export const experiences: Experience[] = [
     startDate: "2021-11",
     endDate: null,
     description: {
-      en: "FullStack Labs is a global consultancy focused on providing high-performance engineering for mission-critical projects at major corporations. Within this environment, I developed complex front-end interfaces for clients such as Lighthouse and MGM Resorts in international agile teams. Focused on architecting e-commerce and financial workflows using functional programming to ensure resilient code and performance optimization.",
+      en: "FullStack is a US-led nearshore software consultancy delivering vetted engineering talent to enterprise clients across the Americas. Within international agile teams of 3–7 engineers, I built complex front-end solutions for MGM Resorts (entertainment e-commerce: packages, shopping cart) and Lighthouse (mortgage application flows), working directly with US-based stakeholders. Applied functional programming patterns to deliver resilient, high-performance React and TypeScript codebases at scale.",
       "pt-BR":
-        "A FullStack Labs é uma consultoria global focada em alocar engenharia de alta performance para projetos de grandes corporações. Atuando nesse ecossistema, desenvolvi interfaces front-end complexas para clientes como Lighthouse e MGM Resorts em times ágeis internacionais. Foco na arquitetura de fluxos de e-commerce e sistemas financeiros, aplicando programação funcional para garantir código resiliente e otimização de performance.",
+        "A FullStack é uma consultoria nearshore com liderança norte-americana que disponibiliza talentos de engenharia selecionados para clientes enterprise nas Américas. Em times ágeis internacionais de 3 a 7 engenheiros, desenvolvi soluções front-end complexas para MGM Resorts (e-commerce de entretenimento: pacotes, carrinho de compras) e Lighthouse (fluxos de aplicação de hipotecas), trabalhando diretamente com stakeholders baseados nos EUA. Apliquei padrões de programação funcional para entregar codebases React e TypeScript resilientes e de alta performance em escala.",
     },
     technologies: [
       "React",
@@ -82,9 +82,9 @@ export const experiences: Experience[] = [
     startDate: "2021-06",
     endDate: "2021-11",
     description: {
-      en: "Kyte is a global SaaS startup providing sales and inventory solutions to 40k+ SMBs across 180 countries. Working within a versatile and agile team, I was responsible for developing Kyte Pro web features and implementing dynamic UI components for the mobile ecosystem. Focused on delivering modular and scalable components, ensuring continuous platform evolution and enhancing the overall user experience.",
+      en: "Kyte is a POS and inventory SaaS platform used by 40k+ SMBs across 180+ countries, with integrated web, mobile, and in-person sales channels. Within a fast-paced startup team of ~6 engineers, I developed Pro plan web features and cross-platform mobile experiences in React Native, shipping modular, scalable UI components across both surfaces.",
       "pt-BR":
-        "A Kyte é uma startup SaaS global que provê soluções de vendas e estoque para mais de 40 mil PMEs em 180 países. Atuando em um time ágil e versátil, fui responsável pelo desenvolvimento de funcionalidades do plano Kyte Pro para web e pela implementação de componentes dinâmicos de interface para o ecossistema mobile. Foco na entrega de componentes modulares e escaláveis, garantindo a evolução contínua da plataforma e a melhoria da experiência do usuário final.",
+        "A Kyte é uma plataforma SaaS de PDV e estoque utilizada por mais de 40 mil PMEs em mais de 180 países, com canais de vendas integrados — web, mobile e presencial. Em um time de startup ágil de ~6 engenheiros, desenvolvi funcionalidades web do plano Pro e experiências mobile multiplataforma em React Native, entregando componentes de UI modulares e escaláveis em ambas as superfícies.",
     },
     technologies: [
       "React",
@@ -117,9 +117,9 @@ export const experiences: Experience[] = [
     startDate: "2016-12",
     endDate: "2021-06",
     description: {
-      en: "McFadyen Digital is a global consultancy specialized in e-commerce and large-scale marketplace solutions. Progressing from a Java Intern to a Front-end Developer, I worked on international projects for major brands such as Zebra Technologies and the MiMercado B2B marketplace. I was responsible for developing UI components across complex ecosystems (OCC, Magento, Shopify) and building internal onboarding tools and technical challenges adopted company-wide.",
+      en: "McFadyen Digital is a specialized B2B e-commerce consultancy focused on marketplace enablement and complex digital commerce for global enterprise clients. Progressing from Java Intern to Front-end Developer over 4+ years, I delivered UI components across enterprise ecosystems — including Zebra Technologies' Oracle Commerce Cloud platform and the MiMercado B2B marketplace — in international agile teams. Also built internal onboarding tools and technical challenges that were adopted company-wide, accelerating engineering ramp-up across teams.",
       "pt-BR":
-        "A McFadyen Digital é uma consultoria global especializada em e-commerce e marketplaces de larga escala. Iniciando minha trajetória como estagiário em Java e evoluindo rapidamente para Desenvolvedor Front-end, atuei em projetos internacionais para grandes marcas como Zebra Technologies e o marketplace B2B MiMercado. Fui responsável pelo desenvolvimento de componentes de interface em ecossistemas complexos (OCC, Magento, Shopify) e pela criação de ferramentas internas de onboarding e desafios técnicos adotados em toda a companhia.",
+        "A McFadyen Digital é uma consultoria B2B de e-commerce especializada em habilitação de marketplaces e comércio digital complexo para clientes enterprise globais. Progredindo de Estagiário Java a Desenvolvedor Front-end ao longo de 4+ anos, entreguei componentes de UI em ecossistemas enterprise — incluindo a plataforma Oracle Commerce Cloud da Zebra Technologies e o marketplace B2B MiMercado — em times ágeis internacionais. Também desenvolvi ferramentas internas de onboarding e desafios técnicos que foram adotados em toda a empresa, acelerando o ramp-up de engenharia entre os times.",
     },
     technologies: [
       "React",
@@ -173,9 +173,9 @@ export const projects: Project[] = [
     id: "proj-portfolio",
     title: "Portfolio Site",
     description: {
-      en: "High-performance portfolio architected with Next.js 16 and TypeScript. The project leverages Docker containers and was developed using AI-assisted engineering, focusing on modern CI/CD practices and a clean, responsive UI.",
+      en: "Personal portfolio built with Next.js 16, TypeScript strict mode, and Tailwind CSS 4. Developed as a 7-day AI-assisted engineering challenge, covering bilingual routing (en / pt-BR), server and client component patterns, PostgreSQL with Prisma, NextAuth.js v5, co-located Vitest tests. Containerized with Docker and deployed with CI/CD via GitHub Actions.",
       "pt-BR":
-        "Portfólio de alta performance arquitetado com Next.js 16 e TypeScript. O projeto utiliza containers Docker e foi desenvolvido com auxílio de agentes de IA, focando em práticas modernas de CI/CD e uma interface limpa e responsiva.",
+        "Portfólio pessoal construído com Next.js 16, TypeScript strict mode e Tailwind CSS 4. Desenvolvido como um desafio de engenharia assistida por IA de 7 dias, cobrindo roteamento bilíngue (en / pt-BR), padrões de componentes server e client, PostgreSQL com Prisma, NextAuth.js v5, testes Vitest co-localizados. Containerizado com Docker e implantado com CI/CD via GitHub Actions.",
     },
     technologies: [
       "Next.js",
@@ -270,6 +270,7 @@ export const projects: Project[] = [
     liveUrl: "https://matheeeusl.github.io/baluarte-terminal/",
     imageUrl: "/baluarte_terminal.jpg",
     featured: true,
+    wip: true,
   },
 ];
 
