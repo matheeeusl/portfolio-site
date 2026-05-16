@@ -40,7 +40,7 @@ describe("ExperienceSection", () => {
       const currentRole = experiences.find((e) => e.endDate === null);
       if (currentRole) {
         const item = screen.getByTestId(`experience-${currentRole.id}`);
-        expect(within(item).getByText(new RegExp(ptBR.experience.present, "i"))).toBeInTheDocument();
+        expect(within(item).getByText(new RegExp(`\\b${ptBR.experience.present}\\b`, "i"))).toBeInTheDocument();
       }
     });
   });

@@ -35,9 +35,9 @@ export const experiences: Experience[] = [
     startDate: "2021-11",
     endDate: null,
     description: {
-      en: "FullStack is a US-led nearshore software consultancy delivering vetted engineering talent to enterprise clients across the Americas. Within international agile teams of 3–7 engineers, I built complex front-end solutions for MGM Resorts (entertainment e-commerce: packages, shopping cart) and Lighthouse (mortgage application flows), working directly with US-based stakeholders. Applied functional programming patterns to deliver resilient, high-performance React and TypeScript codebases at scale.",
+      en: "At FullStack Labs, a nearshore consultancy that partners with enterprise clients across the Americas, I build high-impact front-end solutions within collaborative international agile teams. I worked closely with U.S.-based stakeholders to deliver core e-commerce experiences for MGM Resorts International and contributed to mortgage application workflows for Lighthouse. By applying functional programming principles, I help deliver resilient, scalable, and high-performance React and TypeScript codebases. Today, I leverage AI-assisted development workflows using Cline and Claude to accelerate feature delivery.",
       "pt-BR":
-        "A FullStack é uma consultoria nearshore com liderança norte-americana que disponibiliza talentos de engenharia selecionados para clientes enterprise nas Américas. Em times ágeis internacionais de 3 a 7 engenheiros, desenvolvi soluções front-end complexas para MGM Resorts (e-commerce de entretenimento: pacotes, carrinho de compras) e Lighthouse (fluxos de aplicação de hipotecas), trabalhando diretamente com stakeholders baseados nos EUA. Apliquei padrões de programação funcional para entregar codebases React e TypeScript resilientes e de alta performance em escala.",
+        "Na FullStack Labs, uma consultoria nearshore que atende clientes enterprise nas Américas, desenvolvo soluções front-end de alto impacto em times ágeis internacionais e colaborativos. Trabalhei em proximidade com stakeholders nos EUA para entregar experiências centrais de e-commerce para a MGM Resorts International e contribuí para os fluxos de aplicação de hipotecas da Lighthouse. Ao aplicar princípios de programação funcional, ajudo a entregar codebases em React e TypeScript resilientes, escaláveis e de alta performance. Hoje, utilizo fluxos de desenvolvimento assistidos por IA com Cline e Claude para acelerar a entrega de funcionalidades.",
     },
     technologies: [
       "React",
@@ -52,6 +52,8 @@ export const experiences: Experience[] = [
       "JavaScript",
       "MVC",
       "HTML5",
+      "Cline",
+      "Claude Sonnet 4.6",
     ],
     projects: [
       {
@@ -65,9 +67,9 @@ export const experiences: Experience[] = [
       {
         name: "MGM Resorts",
         description: {
-          en: "Entertainment & hospitality platform — developed e-commerce features (packages, shopping cart) in an international agile team.",
+          en: "Entertainment & hospitality platform — developed e-commerce features (packages, shopping cart) in an international agile team. Currently leveraging AI-assisted development (Cline + Claude Sonnet 4.6) to accelerate feature delivery.",
           "pt-BR":
-            "Plataforma de entretenimento e hospitalidade — funcionalidades de e-commerce em equipe ágil internacional.",
+            "Plataforma de entretenimento e hospitalidade — funcionalidades de e-commerce em equipe ágil internacional. Atualmente utilizando desenvolvimento assistido por IA (Cline + Claude Sonnet 4.6) para acelerar a entrega de funcionalidades.",
         },
       },
     ],
@@ -310,8 +312,9 @@ export const skills: Skill[] = [
   {
     name: "AI-Assisted Development",
     category: "devops",
-    level: "intermediate",
+    level: "advanced",
   },
+  { name: "Cline", category: "devops", level: "intermediate" },
 ];
 
 export const volunteers: Volunteer[] = [
