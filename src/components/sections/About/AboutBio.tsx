@@ -1,13 +1,14 @@
 interface AboutBioProps {
   bio: string;
   downloadLabel: string;
+  resumeHref: string;
 }
 
-export const AboutBio = ({ bio, downloadLabel }: AboutBioProps) => (
+export const AboutBio = ({ bio, downloadLabel, resumeHref }: AboutBioProps) => (
   <div>
     <p className="max-w-2xl leading-relaxed text-gray-500 dark:text-slate-400">{bio}</p>
     <a
-      href="/resume.pdf"
+      href={resumeHref}
       download
       className="mt-6 inline-flex items-center gap-2 rounded-lg border border-gray-200 px-5 py-2.5 text-sm font-semibold text-gray-700 transition-colors duration-200 hover:border-blue-500 hover:text-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:border-slate-700 dark:text-slate-300 dark:hover:border-blue-400 dark:hover:text-blue-400"
     >

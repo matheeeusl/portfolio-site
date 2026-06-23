@@ -15,6 +15,11 @@ export const About = () => {
   const { ref: bioRef, className: bioClass, style: bioStyle } = useScrollReveal({ delay: 100 });
   const { ref: eduHeadingRef, className: eduHeadingClass, style: eduHeadingStyle } = useScrollReveal({ delay: 0 });
 
+  const resumeHref =
+    locale === "en"
+      ? "/Matheus_Laureano_Visual_CV_EN.pdf"
+      : "/Matheus_Laureano_Visual_CV.pdf";
+
   return (
     <section id="about" className="py-16 scroll-mt-14" aria-labelledby="about-heading">
       <div className="mx-auto max-w-5xl px-4">
@@ -25,7 +30,7 @@ export const About = () => {
 
         <div className="grid gap-10 lg:grid-cols-2">
           <div ref={bioRef} className={bioClass} style={bioStyle}>
-            <AboutBio bio={personalInfo.bio[locale]} downloadLabel={t.about.downloadResume} />
+            <AboutBio bio={personalInfo.bio[locale]} downloadLabel={t.about.downloadResume} resumeHref={resumeHref} />
           </div>
 
           <div>
