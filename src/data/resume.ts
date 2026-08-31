@@ -62,7 +62,7 @@ export const experiences: Experience[] = [
     description: {
       en: "At FullStack Labs, a nearshore consultancy partnering with enterprise clients across the Americas, I built high-impact front-end solutions within collaborative international agile teams. Refactored a single-page mortgage application with 20+ conditional questions into a fluid multi-step flow for Lighthouse (4-person team), applying branching logic that dynamically showed or hid question groups (e.g., military history hidden for non-veterans) — improving readability and measurably reducing form abandonment. Shipped entertainment e-commerce features for MGM Resorts within an 8-person squad — spending ~1 year on the Booking team and 2+ years on the CART team — collaborating with 6+ internal cross-functional teams. Implemented an interactive SVG seat map enabling real-time seat selection integrated directly into the booking flow. Constructed combined package features (show + accommodation) and executed complex payment flows across 3+ simultaneous repositories, engineering an agnostic cart architecture that resolved Shadow DOM edge cases and mobile-specific bugs. Integrated the booking GraphQL API and loan origination REST endpoints across both clients. Applied lazy loading, code-splitting, and drove performance optimization audits improving Core Web Vitals and Technical SEO.",
       "pt-BR":
-        "Na FullStack Labs, uma consultoria nearshore que atende clientes enterprise nas Américas, desenvolvi soluções front-end de alto impacto em times ágeis internacionais e colaborativos. Refatorei uma aplicação de hipoteca single-page com 20+ perguntas condicionais em um fluxo multi-etapas fluido para a Lighthouse (equipe de 4), aplicando lógica de ramificação que mostrava ou ocultava grupos de perguntas dinamicamente (ex: histórico militar oculto para não-veteranos) — melhorando a legibilidade e reduzindo mensurável o abandono de formulário. Entreguei features de e-commerce de entretenimento para a MGM Resorts em um squad de 8 pessoas — ~1 ano no time de Booking e 2+ anos no time de CART — colaborando com 6+ times internos multifuncionais. Implementei um mapa SVG interativo de assentos permitindo seleção em tempo real integrada diretamente ao fluxo de reservas. Construí features de pacotes combinados (show + acomodação) e executei fluxos de pagamento complexos em 3+ repositórios simultâneos, engenheirando uma arquitetura de carrinho agnóstica que resolveu edge cases de Shadow DOM e bugs mobile. Integrei a API GraphQL de reservas e endpoints REST de originação de empréstimos em ambos os clientes. Apliquei lazy loading, code splitting e conduzi auditorias de performance melhorando Core Web Vitals e SEO técnico.",
+        "Na FullStack Labs, uma consultoria nearshore que atende clientes enterprise nas Américas, desenvolvi soluções front-end de alto impacto em times ágeis internacionais e colaborativos. Refatorei uma aplicação de hipoteca single-page com 20+ perguntas condicionais em um fluxo multi-etapas fluido para a Lighthouse (equipe de 4 pessoas), aplicando lógica de ramificação que mostrava ou ocultava grupos de perguntas dinamicamente (ex: histórico militar oculto para não-veteranos) — melhorando a legibilidade e reduzindo mensurável o abandono de formulário. Entreguei features de e-commerce de entretenimento para a MGM Resorts em um squad de 8 pessoas — ~1 ano no time de Booking e 2+ anos no time de CART — colaborando com 6+ times internos multifuncionais. Implementei um mapa SVG interativo de assentos permitindo seleção em tempo real integrada diretamente ao fluxo de reservas. Construí features de pacotes combinados (show + acomodação) e executei fluxos de pagamento complexos em 3+ repositórios simultâneos, engenheirando uma arquitetura de carrinho agnóstica que resolveu edge cases de Shadow DOM e bugs mobile. Integrei a API GraphQL de reservas e endpoints REST de originação de empréstimos em ambos os clientes. Apliquei lazy loading, code splitting e conduzi auditorias de performance melhorando Core Web Vitals e SEO técnico.",
     },
     technologies: [
       "React",
@@ -333,6 +333,9 @@ export const skills: Skill[] = [
   { name: "Vuestorefront", category: "frontend", level: "advanced" },
   { name: "Tailwind CSS", category: "frontend", level: "advanced" },
   { name: "GraphQL", category: "frontend", level: "intermediate" },
+  { name: "Jest", category: "frontend", level: "intermediate" },
+  { name: "Storybook", category: "frontend", level: "advanced" },
+  { name: "knockoutjs", category: "frontend", level: "intermediate" },
   { name: "JavaScript (ES6+)", category: "frontend", level: "expert" },
   { name: "HTML5 / CSS3 / SASS", category: "frontend", level: "expert" },
   { name: "React Native", category: "frontend", level: "advanced" },
@@ -362,7 +365,6 @@ export const skills: Skill[] = [
   // DevOps & Leadership
   { name: "Docker", category: "devops", level: "intermediate" },
   { name: "Git", category: "devops", level: "advanced" },
-  { name: "Playwright", category: "devops", level: "intermediate" },
   { name: "Automated Testing", category: "devops", level: "advanced" },
   { name: "Mentoring", category: "devops", level: "advanced" },
   { name: "Agile (Scrum/Kanban)", category: "devops", level: "advanced" },
