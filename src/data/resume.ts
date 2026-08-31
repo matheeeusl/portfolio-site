@@ -10,21 +10,46 @@ import type {
 export const personalInfo: PersonalInfo = {
   name: "Matheus Laureano",
   title: {
-    en: "Software Engineer",
-    "pt-BR": "Engenheiro de Software",
+    en: "Full-Stack Engineer",
+    "pt-BR": "Engenheiro Full-Stack",
   },
   location: "Florianópolis, SC - Brazil",
   email: "matheuslaureanol1@gmail.com",
   github: "https://github.com/matheeeusl",
-  linkedin: "https://www.linkedin.com/in/matheus-laureano-02876453/",
+  linkedin: "https://www.linkedin.com/in/laureano-dev/",
   bio: {
-    en: "For over 8 years, I've been building scalable web and mobile applications for international clients across e-commerce, fintech, and SaaS. As a Senior Front-end Engineer, I specialize in React, TypeScript, and Next.js, with a strong background in functional programming and large-scale architecture. I thrive in US-led nearshore teams, consistently delivering high-quality features and positive client outcomes — from B2B marketplace platforms to enterprise entertainment products.",
+    en: "Full-Stack Engineer with 10 years delivering scalable web products for enterprise clients across e-commerce, fintech, and SaaS — from complex UI systems to GraphQL APIs and Node.js services. Specialized in React.js, Next.js, and TypeScript, with deep front-end expertise and hands-on experience in Node.js backend services, performance optimization, and cross-platform mobile development. Proven track record in international remote-first agile teams, consistently shipping high-quality features on schedule. Passionate about clean architecture, developer experience, and AI-assisted engineering workflows.",
     "pt-BR":
-      "Há mais de 8 anos construindo aplicações web e mobile escaláveis para clientes internacionais nos setores de e-commerce, fintech e SaaS. Como Engenheiro Front-end Sênior, me especializo em React, TypeScript e Next.js, com sólida experiência em programação funcional e arquitetura de grande escala. Tenho forte atuação em times nearshore com liderança norte-americana, entregando consistentemente features de alta qualidade e resultados positivos para clientes — de plataformas de marketplace B2B a produtos de entretenimento enterprise.",
+      "Engenheiro Full-Stack com 10 anos entregando produtos web escaláveis para clientes enterprise nos setores de e-commerce, fintech e SaaS — de sistemas de UI complexos a APIs GraphQL e serviços Node.js. Especializado em React.js, Next.js e TypeScript, com profunda expertise em front-end e experiência prática em serviços backend Node.js, otimização de performance e desenvolvimento mobile multiplataforma. Histórico comprovado em times ágeis internacionais com foco em trabalho remoto, entregando consistentemente features de alta qualidade dentro do prazo. Apaixonado por arquitetura limpa, developer experience e fluxos de desenvolvimento assistidos por IA.",
   },
 };
 
 export const experiences: Experience[] = [
+  {
+    id: "exp-freelance",
+    company: "Self-Employed",
+    role: {
+      en: "Freelance Software Engineer",
+      "pt-BR": "Engenheiro de Software Freelance",
+    },
+    startDate: "2025-12",
+    endDate: null,
+    description: {
+      en: "Engineered front-end and full-stack solutions for clients using React, TypeScript, and Next.js. Architecting backend API routes and server-side logic using Node.js, contributing to full-stack feature delivery for client projects. Integrating REST APIs and crafting reusable component libraries tailored to client product requirements. Leveraging Claude Code as a core part of the development workflow, reducing iteration cycles and maintaining code quality through AI-assisted planning, review, and implementation. Developing two production personal projects in parallel: Cineclube, a full-stack film club platform with multi-tenant RLS, real-time voting, and 186-film historical data migration; and Hipertension, a health tracker with ACC/AHA 2017 medical classification with live users in production.",
+      "pt-BR":
+        "Engenheirei soluções front-end e full-stack para clientes utilizando React, TypeScript e Next.js. Arquitetando rotas de API e lógica server-side com Node.js, contribuindo para a entrega de features full-stack em projetos de clientes. Integrando REST APIs e criando bibliotecas de componentes reutilizáveis adaptadas aos requisitos dos clientes. Utilizando Claude Code como parte central do fluxo de desenvolvimento, reduzindo ciclos de iteração e mantendo qualidade de código por meio de planejamento, revisão e implementação assistidos por IA. Desenvolvendo dois projetos pessoais em produção em paralelo: Cineclube, uma plataforma full-stack de cineclube com isolamento multi-tenant via RLS, votação em tempo real e migração histórica de 186 filmes; e Hipertension, um rastreador de saúde com classificação médica ACC/AHA 2017 com usuários reais em produção.",
+    },
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "REST APIs",
+      "Claude Code",
+      "AI-Assisted Development",
+    ],
+    projects: [],
+  },
   {
     id: "exp-fullstacklabs",
     company: "FullStack Labs",
@@ -33,11 +58,11 @@ export const experiences: Experience[] = [
       "pt-BR": "Engenheiro de Software",
     },
     startDate: "2021-11",
-    endDate: null,
+    endDate: "2026-06",
     description: {
-      en: "At FullStack Labs, a nearshore consultancy that partners with enterprise clients across the Americas, I build high-impact front-end solutions within collaborative international agile teams. I worked closely with U.S.-based stakeholders to deliver core e-commerce experiences for MGM Resorts International and contributed to mortgage application workflows for Lighthouse. By applying functional programming principles, I help deliver resilient, scalable, and high-performance React and TypeScript codebases. Today, I leverage AI-assisted development workflows using Cline and Claude to accelerate feature delivery.",
+      en: "At FullStack Labs, a nearshore consultancy partnering with enterprise clients across the Americas, I built high-impact front-end solutions within collaborative international agile teams. Refactored a single-page mortgage application with 20+ conditional questions into a fluid multi-step flow for Lighthouse (4-person team), applying branching logic that dynamically showed or hid question groups (e.g., military history hidden for non-veterans) — improving readability and measurably reducing form abandonment. Shipped entertainment e-commerce features for MGM Resorts within an 8-person squad — spending ~1 year on the Booking team and 2+ years on the CART team — collaborating with 6+ internal cross-functional teams. Implemented an interactive SVG seat map enabling real-time seat selection integrated directly into the booking flow. Constructed combined package features (show + accommodation) and executed complex payment flows across 3+ simultaneous repositories, engineering an agnostic cart architecture that resolved Shadow DOM edge cases and mobile-specific bugs. Integrated the booking GraphQL API and loan origination REST endpoints across both clients. Applied lazy loading, code-splitting, and drove performance optimization audits improving Core Web Vitals and Technical SEO.",
       "pt-BR":
-        "Na FullStack Labs, uma consultoria nearshore que atende clientes enterprise nas Américas, desenvolvo soluções front-end de alto impacto em times ágeis internacionais e colaborativos. Trabalhei em proximidade com stakeholders nos EUA para entregar experiências centrais de e-commerce para a MGM Resorts International e contribuí para os fluxos de aplicação de hipotecas da Lighthouse. Ao aplicar princípios de programação funcional, ajudo a entregar codebases em React e TypeScript resilientes, escaláveis e de alta performance. Hoje, utilizo fluxos de desenvolvimento assistidos por IA com Cline e Claude para acelerar a entrega de funcionalidades.",
+        "Na FullStack Labs, uma consultoria nearshore que atende clientes enterprise nas Américas, desenvolvi soluções front-end de alto impacto em times ágeis internacionais e colaborativos. Refatorei uma aplicação de hipoteca single-page com 20+ perguntas condicionais em um fluxo multi-etapas fluido para a Lighthouse (equipe de 4), aplicando lógica de ramificação que mostrava ou ocultava grupos de perguntas dinamicamente (ex: histórico militar oculto para não-veteranos) — melhorando a legibilidade e reduzindo mensurável o abandono de formulário. Entreguei features de e-commerce de entretenimento para a MGM Resorts em um squad de 8 pessoas — ~1 ano no time de Booking e 2+ anos no time de CART — colaborando com 6+ times internos multifuncionais. Implementei um mapa SVG interativo de assentos permitindo seleção em tempo real integrada diretamente ao fluxo de reservas. Construí features de pacotes combinados (show + acomodação) e executei fluxos de pagamento complexos em 3+ repositórios simultâneos, engenheirando uma arquitetura de carrinho agnóstica que resolveu edge cases de Shadow DOM e bugs mobile. Integrei a API GraphQL de reservas e endpoints REST de originação de empréstimos em ambos os clientes. Apliquei lazy loading, code splitting e conduzi auditorias de performance melhorando Core Web Vitals e SEO técnico.",
     },
     technologies: [
       "React",
@@ -59,17 +84,17 @@ export const experiences: Experience[] = [
       {
         name: "Lighthouse",
         description: {
-          en: "Mortgage platform — built complex form flows and UI components in a large-scale React codebase.",
+          en: "Mortgage platform — refactored a 20+ question single-page form into a fluid multi-step flow with dynamic branching logic (e.g., military history hidden for non-veterans), measurably reducing form abandonment.",
           "pt-BR":
-            "Plataforma de hipotecas — formulários complexos e componentes UI em codebase React de grande escala.",
+            "Plataforma de hipotecas — refatoração de formulário single-page com 20+ perguntas em fluxo multi-etapas com lógica de ramificação dinâmica (ex: histórico militar oculto para não-veteranos), reduzindo mensurável o abandono.",
         },
       },
       {
         name: "MGM Resorts",
         description: {
-          en: "Entertainment & hospitality platform — developed e-commerce features (packages, shopping cart) in an international agile team. Currently leveraging AI-assisted development (Cline + Claude Sonnet 4.6) to accelerate feature delivery.",
+          en: "Entertainment & hospitality platform — ~1 year on Booking team, 2+ years on CART team. Implemented SVG seat map for real-time seat selection, built combined package features (show + accommodation), and engineered an agnostic cart architecture resolving Shadow DOM edge cases and mobile bugs.",
           "pt-BR":
-            "Plataforma de entretenimento e hospitalidade — funcionalidades de e-commerce em equipe ágil internacional. Atualmente utilizando desenvolvimento assistido por IA (Cline + Claude Sonnet 4.6) para acelerar a entrega de funcionalidades.",
+            "Plataforma de entretenimento e hospitalidade — ~1 ano no time de Booking, 2+ anos no time de CART. Implementei mapa SVG interativo de assentos, construí features de pacotes combinados (show + acomodação) e engenheirei arquitetura agnóstica de carrinho resolvendo edge cases de Shadow DOM e bugs mobile.",
         },
       },
     ],
@@ -84,9 +109,9 @@ export const experiences: Experience[] = [
     startDate: "2021-06",
     endDate: "2021-11",
     description: {
-      en: "Kyte is a POS and inventory SaaS platform used by 40k+ SMBs across 180+ countries, with integrated web, mobile, and in-person sales channels. Within a fast-paced startup team of ~6 engineers, I developed Pro plan web features and cross-platform mobile experiences in React Native, shipping modular, scalable UI components across both surfaces.",
+      en: "Kyte is a POS and inventory SaaS startup serving 40,000+ SMBs across 180+ countries with integrated web, mobile, and in-person sales channels. Within a fast-paced team of ~6 engineers, I developed Pro plan web features supporting user retention and platform monetization, and shipped React Native features for iOS and Android apps, enabling tens of thousands of small businesses to manage inventory and process sales from mobile devices.",
       "pt-BR":
-        "A Kyte é uma plataforma SaaS de PDV e estoque utilizada por mais de 40 mil PMEs em mais de 180 países, com canais de vendas integrados — web, mobile e presencial. Em um time de startup ágil de ~6 engenheiros, desenvolvi funcionalidades web do plano Pro e experiências mobile multiplataforma em React Native, entregando componentes de UI modulares e escaláveis em ambas as superfícies.",
+        "A Kyte é uma startup SaaS de PDV e estoque que atende mais de 40 mil PMEs em mais de 180 países com canais de vendas integrados — web, mobile e presencial. Em um time de ~6 engenheiros, desenvolvi funcionalidades web do plano Pro que suportavam retenção de usuários e monetização da plataforma, e entreguei features em React Native para apps iOS e Android, permitindo que dezenas de milhares de pequenas empresas gerenciassem estoque e processassem vendas pelo celular.",
     },
     technologies: [
       "React",
@@ -119,9 +144,9 @@ export const experiences: Experience[] = [
     startDate: "2016-12",
     endDate: "2021-06",
     description: {
-      en: "McFadyen Digital is a specialized B2B e-commerce consultancy focused on marketplace enablement and complex digital commerce for global enterprise clients. Progressing from Java Intern to Front-end Developer over 4+ years, I delivered UI components across enterprise ecosystems — including Zebra Technologies' Oracle Commerce Cloud platform and the MiMercado B2B marketplace — in international agile teams. Also built internal onboarding tools and technical challenges that were adopted company-wide, accelerating engineering ramp-up across teams.",
+      en: "McFadyen Digital is a specialized B2B e-commerce consultancy focused on marketplace enablement for global enterprise clients. Progressing from Java Intern to Front-end Developer over 4+ years, I shipped front-end solutions across 7 enterprise client projects — including Zebra Technologies, MiMercado (ABInBev Z-Tech, Vue.js / Vuestorefront), Indigo, Grupo Nazan, Gimba, Eletrozema, and Alpha — spanning OCC, Shopify, Magento, and KnockoutJS ecosystems. Mentored two interns and led company-wide knowledge-sharing sessions as the first engineer to adopt a new platform technology on the team. Established internal onboarding tools and technical challenge frameworks officially adopted across the entire engineering organization, directly reducing new-hire ramp-up time.",
       "pt-BR":
-        "A McFadyen Digital é uma consultoria B2B de e-commerce especializada em habilitação de marketplaces e comércio digital complexo para clientes enterprise globais. Progredindo de Estagiário Java a Desenvolvedor Front-end ao longo de 4+ anos, entreguei componentes de UI em ecossistemas enterprise — incluindo a plataforma Oracle Commerce Cloud da Zebra Technologies e o marketplace B2B MiMercado — em times ágeis internacionais. Também desenvolvi ferramentas internas de onboarding e desafios técnicos que foram adotados em toda a empresa, acelerando o ramp-up de engenharia entre os times.",
+        "A McFadyen Digital é uma consultoria B2B de e-commerce especializada em habilitação de marketplaces para clientes enterprise globais. Progredindo de Estagiário Java a Desenvolvedor Front-end ao longo de 4+ anos, entreguei soluções front-end em 7 projetos para clientes enterprise — incluindo Zebra Technologies, MiMercado (ABInBev Z-Tech, Vue.js / Vuestorefront), Indigo, Grupo Nazan, Gimba, Eletrozema e Alpha — nos ecossistemas OCC, Shopify, Magento e KnockoutJS. Mentorizei dois estagiários e liderei sessões de compartilhamento de conhecimento em toda a empresa como primeiro engenheiro a adotar uma nova tecnologia de plataforma no time. Estabeleci ferramentas internas de onboarding e frameworks de desafios técnicos adotados oficialmente em toda a organização de engenharia, reduzindo diretamente o tempo de ramp-up de novos contratados.",
     },
     technologies: [
       "React",
@@ -140,30 +165,31 @@ export const experiences: Experience[] = [
       "Shopify (Liquid)",
       "Magento",
       "OCC",
+      "KnockoutJS",
     ],
     projects: [
       {
-        name: "MiMercado",
+        name: "MiMercado (ABInBev Z-Tech)",
         description: {
-          en: "E-commerce storefront on Oracle Commerce Cloud (OCC) for Latin American market.",
+          en: "B2B marketplace built with Vue.js / Vuestorefront for the Latin American market.",
           "pt-BR":
-            "Storefront de e-commerce em Oracle Commerce Cloud (OCC) para mercado latino-americano.",
+            "Marketplace B2B construído com Vue.js / Vuestorefront para o mercado latino-americano.",
         },
       },
       {
         name: "Zebra Technologies",
         description: {
-          en: "B2B e-commerce portal on OCC — complex product catalog and ordering flows.",
+          en: "B2B e-commerce portal on Oracle Commerce Cloud (OCC) — complex product catalog and ordering flows for a publicly recognized McFadyen client.",
           "pt-BR":
-            "Portal B2B de e-commerce em OCC — catálogo de produtos complexo e fluxos de pedido.",
+            "Portal B2B de e-commerce em Oracle Commerce Cloud (OCC) — catálogo de produtos complexo e fluxos de pedido para um cliente reconhecido publicamente pela McFadyen.",
         },
       },
       {
-        name: "Shopify & Magento Projects",
+        name: "Other Clients",
         description: {
-          en: "Multiple client storefronts using Shopify Liquid and Magento — customizations, theming, and feature development.",
+          en: "Indigo, Grupo Nazan, Gimba, Eletrozema, and Alpha — front-end implementations across Shopify, Magento, OCC, and KnockoutJS ecosystems.",
           "pt-BR":
-            "Múltiplos storefronts em Shopify Liquid e Magento — customizações, temas e desenvolvimento de features.",
+            "Indigo, Grupo Nazan, Gimba, Eletrozema e Alpha — implementações front-end nos ecossistemas Shopify, Magento, OCC e KnockoutJS.",
         },
       },
     ],
@@ -175,9 +201,9 @@ export const projects: Project[] = [
     id: "proj-portfolio",
     title: "Portfolio Site",
     description: {
-      en: "Personal portfolio built with Next.js 16, TypeScript strict mode, and Tailwind CSS 4. Developed as a 7-day AI-assisted engineering challenge, covering bilingual routing (en / pt-BR), server and client component patterns, PostgreSQL with Prisma, NextAuth.js v5, co-located Vitest tests. Containerized with Docker and deployed with CI/CD via GitHub Actions.",
+      en: "Full-stack bilingual portfolio (EN/PT-BR) built as a 7-day AI-assisted engineering challenge with TDD, React Server Components, and CI/CD. Covers bilingual routing, server and client component patterns, PostgreSQL with Prisma, NextAuth.js v5, and co-located Vitest tests. Containerized with Docker and deployed via GitHub Actions.",
       "pt-BR":
-        "Portfólio pessoal construído com Next.js 16, TypeScript strict mode e Tailwind CSS 4. Desenvolvido como um desafio de engenharia assistida por IA de 7 dias, cobrindo roteamento bilíngue (en / pt-BR), padrões de componentes server e client, PostgreSQL com Prisma, NextAuth.js v5, testes Vitest co-localizados. Containerizado com Docker e implantado com CI/CD via GitHub Actions.",
+        "Portfólio bilíngue full-stack (EN/PT-BR) desenvolvido como um desafio de engenharia assistida por IA de 7 dias, com TDD, React Server Components e CI/CD. Cobre roteamento bilíngue, padrões de componentes server e client, PostgreSQL com Prisma, NextAuth.js v5 e testes Vitest co-localizados. Containerizado com Docker e implantado via GitHub Actions.",
     },
     technologies: [
       "Next.js",
@@ -189,6 +215,75 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/matheeeusl/portfolio-site",
     imageUrl: "/portfolio-site.jpg",
+    featured: true,
+  },
+  {
+    id: "proj-cineclube",
+    title: "Cineclube",
+    description: {
+      en: "Full-stack film club management app replacing a legacy Google Sheets system, covering the full movie lifecycle (submission → draw → selection → rating). Implemented draw logic with tiebreaker re-voting rounds and cancellation/reopening support via PostgreSQL RPCs. Designed multi-tenant architecture with data isolation via Row Level Security (RLS) in Supabase. Built a real-time voting system with anonymous counting and result visualization. Migrated historical data from a complex spreadsheet (186 films, 233 ratings, 9 members) via Python parsing. Adopted TDD, Server Components, and AI-assisted workflow with Claude Code, including specialized sub-agents and living project conventions (AGENTS.md).",
+      "pt-BR":
+        "App full-stack de gerenciamento de cineclube substituindo um sistema legado em Google Sheets, cobrindo o ciclo completo de filmes (candidatura → sorteio → seleção → avaliação). Implementei lógica de sorteio com desempate por rounds de revotação e suporte a cancelamento/reabertura via RPCs no PostgreSQL. Projetei arquitetura multi-tenant com isolamento de dados via Row Level Security (RLS) no Supabase. Construí sistema de votação em tempo real com contagem anônima e visualização de resultados. Migrei dados históricos de planilha complexa (186 filmes, 233 avaliações, 9 membros) via parsing em Python. Adotei TDD e Server Components como práticas centrais, com fluxo assistido por IA (Claude Code), sub-agentes especializados e documentação viva de convenções do projeto (AGENTS.md).",
+    },
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "TMDB API",
+    ],
+    githubUrl: "https://github.com/matheeeusl/cineclub",
+    liveUrl: "https://cineclube-bond.vercel.app/",
+    imageUrl: "/cineclube.jpg",
+    featured: true,
+    wip: true,
+  },
+  {
+    id: "proj-hipertension",
+    title: "Hipertension",
+    description: {
+      en: "Full-stack health tracking app for blood pressure, weight, and body temperature with ACC/AHA 2017 medical classification and temperature category grading (hypothermia → hyperthermia). Built interactive combined charts (BP + weight + temperature) with period filters, multi-axis display, and per-series toggles. Implemented guest mode with session storage, full CRUD, bilingual support (EN/PT-BR), dark mode, and locale-aware date formatting.",
+      "pt-BR":
+        "Aplicação full-stack de monitoramento de pressão arterial, peso e temperatura corporal com classificação médica ACC/AHA 2017 e categorização de temperatura (hipotermia → hipertermia). Construí gráficos combinados interativos (PA + peso + temperatura) com filtros por período, exibição multi-eixo e toggles por série. Implementei modo visitante com session storage, CRUD completo, suporte bilíngue (EN/PT-BR), dark mode e formatação de datas por locale.",
+    },
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "Redux Toolkit",
+      "RTK Query",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Recharts",
+      "React Hook Form",
+      "Zod",
+    ],
+    githubUrl: "https://github.com/matheeeusl/hipertension",
+    liveUrl: "https://matheeeusl.github.io/hipertension",
+    imageUrl: "/hipertension.jpg",
+    featured: true,
+  },
+  {
+    id: "proj-baluarte-terminal",
+    title: "Baluarte Terminal",
+    description: {
+      en: "An immersive RPG terminal interface inspired by Fallout 4's RobCo terminals. Players explore a fictional facility through password-locked folders with audio logs and interactable systems. Game logic runs on a finite state machine (FSM) via useReducer, and a rogue AI — the Janitor — adds ambient unease through random screen flickers.",
+      "pt-BR":
+        "Interface de terminal RPG imersiva inspirada nos terminais RobCo de Fallout 4. Jogadores exploram uma instalação fictícia por meio de pastas protegidas por senha, logs de áudio e sistemas interagíveis. A lógica do jogo é gerenciada por uma máquina de estados finitos (FSM) via useReducer, e uma IA rogue — o Zelador — adiciona tensão com flickerings aleatórios na tela.",
+    },
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Howler.js",
+      "Storytelling",
+      "Web Design",
+    ],
+    githubUrl: "https://github.com/matheeeusl/baluarte-terminal",
+    liveUrl: "https://matheeeusl.github.io/baluarte-terminal/",
+    imageUrl: "/baluarte_terminal.jpg",
     featured: true,
   },
   {
@@ -226,54 +321,6 @@ export const projects: Project[] = [
     imageUrl: "/reconhecimentoMusical.jpg",
     featured: true,
   },
-  {
-    id: "proj-hipertension",
-    title: "Hipertension",
-    description: {
-      en: "A full-stack app for tracking blood pressure, weight, and body temperature with guest mode, interactive combined charts, and bilingual support. Features Supabase Auth, Redux Toolkit, BP and temperature category classification (ACC/AHA 2017), and static export deployment to GitHub Pages.",
-      "pt-BR":
-        "Aplicação full-stack de monitoramento de pressão arterial, peso e temperatura corporal com modo visitante, gráficos combinados interativos e suporte bilíngue. Utiliza Supabase Auth, Redux Toolkit, classificação de categorias de PA e temperatura (ACC/AHA 2017) e deploy estático via GitHub Pages.",
-    },
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Supabase",
-      "Redux Toolkit",
-      "Tailwind CSS",
-      "shadcn/ui",
-      "Recharts",
-      "React Hook Form",
-      "Zod",
-    ],
-    githubUrl: "https://github.com/matheeeusl/hipertension",
-    liveUrl: "https://matheeeusl.github.io/hipertension",
-    imageUrl: "/hipertension.jpg",
-    featured: true,
-  },
-  {
-    id: "proj-baluarte-terminal",
-    title: "Baluarte Terminal",
-    description: {
-      en: "An immersive RPG terminal interface inspired by Fallout 4's RobCo terminals. Players explore a fictional facility through password-locked folders with audio logs and interactable systems. Game logic runs on a finite state machine (FSM) via useReducer, and a rogue AI — the Janitor — adds ambient unease through random screen flickers.",
-      "pt-BR":
-        "Interface de terminal RPG imersiva inspirada nos terminais RobCo de Fallout 4. Jogadores exploram uma instalação fictícia por meio de pastas protegidas por senha, logs de áudio e sistemas interagíveis. A lógica do jogo é gerenciada por uma máquina de estados finitos (FSM) via useReducer, e uma IA rogue — o Zelador — adiciona tensão com flickerings aleatórios na tela.",
-    },
-    technologies: [
-      "React",
-      "TypeScript",
-      "Vite",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Howler.js",
-      "Storytelling",
-      "Web Design",
-    ],
-    githubUrl: "https://github.com/matheeeusl/baluarte-terminal",
-    liveUrl: "https://matheeeusl.github.io/baluarte-terminal/",
-    imageUrl: "/baluarte_terminal.jpg",
-    featured: true,
-    wip: true,
-  },
 ];
 
 export const skills: Skill[] = [
@@ -294,8 +341,17 @@ export const skills: Skill[] = [
   { name: "Node.js", category: "backend", level: "advanced" },
   { name: "PostgreSQL", category: "backend", level: "intermediate" },
   { name: "Prisma", category: "backend", level: "intermediate" },
+  { name: "Supabase", category: "backend", level: "intermediate" },
   { name: "REST APIs", category: "backend", level: "advanced" },
   { name: "Microservices", category: "backend", level: "intermediate" },
+
+  // State Management
+  { name: "Redux Toolkit", category: "state", level: "advanced" },
+  { name: "RTK Query", category: "state", level: "advanced" },
+  { name: "React Query", category: "state", level: "intermediate" },
+  { name: "Zustand", category: "state", level: "intermediate" },
+  { name: "React Hook Form", category: "state", level: "advanced" },
+  { name: "Zod", category: "state", level: "advanced" },
 
   // E-commerce & Platforms
   { name: "Oracle Commerce Cloud", category: "ecommerce", level: "advanced" },
@@ -306,6 +362,7 @@ export const skills: Skill[] = [
   // DevOps & Leadership
   { name: "Docker", category: "devops", level: "intermediate" },
   { name: "Git", category: "devops", level: "advanced" },
+  { name: "Playwright", category: "devops", level: "intermediate" },
   { name: "Automated Testing", category: "devops", level: "advanced" },
   { name: "Mentoring", category: "devops", level: "advanced" },
   { name: "Agile (Scrum/Kanban)", category: "devops", level: "advanced" },
@@ -410,16 +467,16 @@ export const education: Education[] = [
     id: "edu-senai",
     institution: { en: "SENAI", "pt-BR": "SENAI" },
     degree: {
-      en: "Web Developer",
-      "pt-BR": "Programador Web",
+      en: "Technical Degree in Internet Computing, Programming & Design",
+      "pt-BR": "Técnico em Informática para Internet, Programação e Design",
     },
     startYear: 2012,
     endYear: 2014,
     location: "Tubarão, Brazil",
     description: {
-      en: "Early technical foundation focused on web development and programming logic.",
+      en: "Early technical foundation focused on web development, programming logic, and digital design.",
       "pt-BR":
-        "Base técnica inicial focada em desenvolvimento web e lógica de programação.",
+        "Base técnica inicial focada em desenvolvimento web, lógica de programação e design digital.",
     },
   },
 ];

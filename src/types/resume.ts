@@ -68,6 +68,6 @@ export interface Volunteer {
   description: LocalizedString;
 }
 
-export type SkillCategory = "frontend" | "backend" | "ecommerce" | "devops";
+export type SkillCategory = "frontend" | "backend" | "state" | "ecommerce" | "devops";
 
 export type SkillLevel = "beginner" | "intermediate" | "advanced" | "expert";

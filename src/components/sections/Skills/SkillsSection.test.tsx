@@ -10,6 +10,7 @@ import { SkillsSection } from "./SkillsSection";
 const CATEGORY_TITLES: Record<SkillCategory, string> = {
   frontend: "Frontend & Core",
   backend: "Backend & Data",
+  state: "State Management",
   ecommerce: "E-commerce & Platforms",
   devops: "DevOps & Leadership",
 };

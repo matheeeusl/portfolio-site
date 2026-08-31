@@ -11,9 +11,9 @@
   "hero": {
     "greeting": "Hi, I'm",
     "cta": "Explore Projects",
-    "tagline": "Architecting resilient, high-performance front-end solutions. For over 8 years, transforming complex challenges into exceptional digital experiences for the global market.",
+    "tagline": "Architecting resilient, high-performance front-end and full-stack solutions. Nearly 10 years transforming complex challenges into exceptional digital experiences for the global market.",
     "stats": {
-      "years": "8+ Years",
+      "years": "9+ Years",
       "yearsLabel": "of experience",
       "projects": "10+ Solutions",
       "projectsLabel": "Delivered",
@@ -71,7 +71,7 @@
     "skipToContent": "Skip to content"
   },
   "seo": {
-    "title": "Matheus Laureano | Senior Software Engineer",
-    "description": "Senior Front-end Engineer with 8+ years building resilient, high-scale digital products for global markets. Specialized in React, Next.js, TypeScript and e-commerce architecture."
+    "title": "Matheus Laureano | Full-Stack Engineer",
+    "description": "Full-Stack Engineer with 10 years delivering scalable web products for enterprise clients across e-commerce, fintech, and SaaS. Deep front-end expertise in React, Next.js, TypeScript, and Node.js backend services."
   }
 }
