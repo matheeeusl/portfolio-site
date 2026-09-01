@@ -11,13 +11,22 @@ const CATEGORY_TITLES: Record<SkillCategory, string> = {
   frontend: "Frontend & Core",
   backend: "Backend & Data",
   state: "State Management",
-  ecommerce: "E-commerce & Platforms",
+  testing: "Testing",
+  ecommerce: "E-commerce & AI Tools",
   devops: "DevOps & Leadership",
 };
 
-const categories = [...new Set(skills.map((s) => s.category))] as SkillCategory[];
+const categories = [
+  ...new Set(skills.map((s) => s.category)),
+] as SkillCategory[];
 
-function CategoryCard({ category, index }: { category: SkillCategory; index: number }) {
+function CategoryCard({
+  category,
+  index,
+}: {
+  category: SkillCategory;
+  index: number;
+}) {
   const title = CATEGORY_TITLES[category];
 
   return (
@@ -36,7 +45,7 @@ function CategoryCard({ category, index }: { category: SkillCategory; index: num
           .map((skill) => (
             <li
               key={skill.name}
-              data-testid={`skill-${skill.name}`}
+              data-testid={`skill-${skill.name.trim().toLowerCase()}`}
               className="rounded-full bg-gray-100 px-3 py-1 text-sm font-medium text-gray-700 transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-500/20 hover:text-blue-500 hover:shadow-sm dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-blue-500/20 dark:hover:text-blue-400"
             >
               {skill.name}
@@ -50,13 +59,30 @@ function CategoryCard({ category, index }: { category: SkillCategory; index: num
 export const SkillsSection = () => {
   const locale = useLocale();
   const t = getDictionary(locale);
-  const { ref: headingRef, className: headingClass, style: headingStyle } = useScrollReveal({ delay: 0 });
+  const {
+    ref: headingRef,
+    className: headingClass,
+    style: headingStyle,
+  } = useScrollReveal({ delay: 0 });
 
   return (
-    <section id="skills" className="py-16 scroll-mt-14" aria-labelledby="skills-heading">
+    <section
+      id="skills"
+      className="scroll-mt-14 py-16"
+      aria-labelledby="skills-heading"
+    >
       <div className="mx-auto max-w-5xl px-4">
-        <div ref={headingRef} className={`mb-10 ${headingClass}`} style={headingStyle}>
-          <h2 id="skills-heading" className="text-3xl font-bold text-gray-900 dark:text-slate-100">{t.sections.skills}</h2>
+        <div
+          ref={headingRef}
+          className={`mb-10 ${headingClass}`}
+          style={headingStyle}
+        >
+          <h2
+            id="skills-heading"
+            className="text-3xl font-bold text-gray-900 dark:text-slate-100"
+          >
+            {t.sections.skills}
+          </h2>
           <div className="mt-2 h-0.5 w-10 rounded-full bg-blue-500" />
         </div>
         <div className="grid gap-6 md:grid-cols-2">

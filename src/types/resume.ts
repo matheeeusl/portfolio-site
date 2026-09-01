@@ -26,7 +26,8 @@ export interface Experience {
   role: LocalizedString;
   startDate: string;
   endDate: string | null;
-  description: LocalizedString;
+  summary: LocalizedString;
+  highlights: LocalizedString[];
   technologies: string[];
   projects?: ExperienceProject[];
 }
@@ -68,6 +69,6 @@ export interface Volunteer {
   description: LocalizedString;
 }
 
-export type SkillCategory = "frontend" | "backend" | "state" | "ecommerce" | "devops";
+export type SkillCategory = "frontend" | "backend" | "state" | "testing" | "ecommerce" | "devops";
 
 export type SkillLevel = "beginner" | "intermediate" | "advanced" | "expert";

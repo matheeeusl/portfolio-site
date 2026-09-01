@@ -48,9 +48,15 @@ export const ExperienceItem = ({
         {experience.role[locale]}
       </p>
 
-      <p className="mb-3 max-w-5xl text-sm leading-relaxed text-gray-500 dark:text-slate-400">
-        {experience.description[locale]}
+      <p className="mb-2 max-w-5xl text-sm leading-relaxed text-gray-500 dark:text-slate-400">
+        {experience.summary[locale]}
       </p>
+
+      <ul className="mb-3 max-w-5xl list-disc space-y-1 pl-4 text-sm leading-relaxed text-gray-500 dark:text-slate-400">
+        {experience.highlights.map((highlight) => (
+          <li key={highlight[locale]}>{highlight[locale]}</li>
+        ))}
+      </ul>
 
       <ul className="flex max-w-5xl flex-wrap gap-2">
         {experience.technologies.map((tech) => (

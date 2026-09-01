@@ -20,7 +20,7 @@ export const personalInfo: PersonalInfo = {
   bio: {
     en: "Full-Stack Engineer with 10 years delivering scalable web products for enterprise clients across e-commerce, fintech, and SaaS — from complex UI systems to GraphQL APIs and Node.js services. Specialized in React.js, Next.js, and TypeScript, with deep front-end expertise and hands-on experience in Node.js backend services, performance optimization, and cross-platform mobile development. Proven track record in international remote-first agile teams, consistently shipping high-quality features on schedule. Passionate about clean architecture, developer experience, and AI-assisted engineering workflows.",
     "pt-BR":
-      "Engenheiro Full-Stack com 10 anos entregando produtos web escaláveis para clientes enterprise nos setores de e-commerce, fintech e SaaS — de sistemas de UI complexos a APIs GraphQL e serviços Node.js. Especializado em React.js, Next.js e TypeScript, com profunda expertise em front-end e experiência prática em serviços backend Node.js, otimização de performance e desenvolvimento mobile multiplataforma. Histórico comprovado em times ágeis internacionais com foco em trabalho remoto, entregando consistentemente features de alta qualidade dentro do prazo. Apaixonado por arquitetura limpa, developer experience e fluxos de desenvolvimento assistidos por IA.",
+      "Engenheiro Full-Stack com 10 anos entregando produtos web escaláveis para clientes enterprise nos setores de e-commerce, fintech e SaaS — de sistemas de UI complexos a APIs GraphQL e serviços Node.js. Especializado em React.js, Next.js e TypeScript, com expertise em front-end e experiência prática em serviços backend Node.js, otimização de performance e desenvolvimento mobile multiplataforma. Histórico comprovado em times ágeis internacionais com foco em trabalho remoto, entregando consistentemente features de alta qualidade dentro do prazo. Apaixonado por arquitetura limpa, developer experience e fluxos de desenvolvimento assistidos por IA.",
   },
 };
 
@@ -34,11 +34,33 @@ export const experiences: Experience[] = [
     },
     startDate: "2025-12",
     endDate: null,
-    description: {
-      en: "Engineered front-end and full-stack solutions for clients using React, TypeScript, and Next.js. Architecting backend API routes and server-side logic using Node.js, contributing to full-stack feature delivery for client projects. Integrating REST APIs and crafting reusable component libraries tailored to client product requirements. Leveraging Claude Code as a core part of the development workflow, reducing iteration cycles and maintaining code quality through AI-assisted planning, review, and implementation. Developing two production personal projects in parallel: Cineclube, a full-stack film club platform with multi-tenant RLS, real-time voting, and 186-film historical data migration; and Hipertension, a health tracker with ACC/AHA 2017 medical classification with live users in production.",
+    summary: {
+      en: "Engineered front-end and full-stack solutions for clients using React, TypeScript, and Next.js, with Claude Code as a core part of the workflow.",
       "pt-BR":
-        "Implementei soluções front-end e full-stack para clientes utilizando React, TypeScript e Next.js. Arquitetando rotas de API e lógica server-side com Node.js, contribuindo para a entrega de features full-stack em projetos de clientes. Integrando REST APIs e criando bibliotecas de componentes reutilizáveis adaptadas aos requisitos dos clientes. Utilizando Claude Code como parte central do fluxo de desenvolvimento, reduzindo ciclos de iteração e mantendo qualidade de código por meio de planejamento, revisão e implementação assistidos por IA. Desenvolvendo dois projetos pessoais em produção em paralelo: Cineclube, uma plataforma full-stack de cineclube com isolamento multi-tenant via RLS, votação em tempo real e migração histórica de 186 filmes; e Hipertension, um rastreador de saúde com classificação médica ACC/AHA 2017 com usuários reais em produção.",
+        "Implementei soluções front-end e full-stack para clientes utilizando React, TypeScript e Next.js, com o Claude Code como parte central do fluxo de trabalho.",
     },
+    highlights: [
+      {
+        en: "Architected backend API routes and server-side logic using Node.js, contributing to full-stack feature delivery for client projects.",
+        "pt-BR":
+          "Arquitetei rotas de API e lógica server-side com Node.js, contribuindo para a entrega de features full-stack em projetos de clientes.",
+      },
+      {
+        en: "Integrated REST APIs and crafted reusable component libraries tailored to client product requirements.",
+        "pt-BR":
+          "Integrei REST APIs e criei bibliotecas de componentes reutilizáveis adaptadas aos requisitos dos clientes.",
+      },
+      {
+        en: "Leveraged Claude Code to reduce iteration cycles and maintain code quality through AI-assisted planning, review, and implementation.",
+        "pt-BR":
+          "Utilizei o Claude Code para reduzir ciclos de iteração e manter qualidade de código por meio de planejamento, revisão e implementação assistidos por IA.",
+      },
+      {
+        en: "Developed two production personal projects in parallel: Cineclube, a multi-tenant film club platform with real-time voting and a 186-film historical data migration; and Hipertension, a health tracker with ACC/AHA 2017 medical classification and live production users.",
+        "pt-BR":
+          "Desenvolvi dois projetos pessoais em produção em paralelo: Cineclube, uma plataforma de cineclube multi-tenant com votação em tempo real e migração histórica de 186 filmes; e Hipertension, um rastreador de saúde com classificação médica ACC/AHA 2017 e usuários reais em produção.",
+      },
+    ],
     technologies: [
       "React",
       "Next.js",
@@ -59,11 +81,38 @@ export const experiences: Experience[] = [
     },
     startDate: "2021-11",
     endDate: "2026-06",
-    description: {
-      en: "At FullStack Labs, a nearshore consultancy partnering with enterprise clients across the Americas, I built high-impact front-end solutions within collaborative international agile teams. Refactored a single-page mortgage application with 20+ conditional questions into a fluid multi-step flow for Lighthouse (4-person team), applying branching logic that dynamically showed or hid question groups (e.g., military history hidden for non-veterans) — improving readability and measurably reducing form abandonment. Shipped entertainment e-commerce features for MGM Resorts within an 8-person squad — spending ~1 year on the Booking team and 2+ years on the CART team — collaborating with 6+ internal cross-functional teams. Implemented an interactive SVG seat map enabling real-time seat selection integrated directly into the booking flow. Constructed combined package features (show + accommodation) and executed complex payment flows across 3+ simultaneous repositories, engineering an agnostic cart architecture that resolved Shadow DOM edge cases and mobile-specific bugs. Integrated the booking GraphQL API and loan origination REST endpoints across both clients. Applied lazy loading, code-splitting, and drove performance optimization audits improving Core Web Vitals and Technical SEO.",
+    summary: {
+      en: "Built high-impact front-end solutions for enterprise clients (Lighthouse, MGM Resorts) within collaborative international agile teams at FullStack Labs, a nearshore consultancy.",
       "pt-BR":
-        "Na FullStack Labs, uma consultoria nearshore que atende clientes enterprise nas Américas, desenvolvi soluções front-end de alto impacto em times ágeis internacionais e colaborativos. Refatorei uma aplicação de hipoteca single-page com 20+ perguntas condicionais em um fluxo multi-etapas fluido para a Lighthouse (equipe de 4 pessoas), aplicando lógica de ramificação que mostrava ou ocultava grupos de perguntas dinamicamente (ex: histórico militar oculto para não-veteranos) — melhorando a legibilidade e reduzindo mensurável o abandono de formulário. Entreguei features de e-commerce de entretenimento para a MGM Resorts em um squad de 8 pessoas — ~1 ano no time de Booking e 2+ anos no time de CART — colaborando com 6+ times internos multifuncionais. Implementei um mapa SVG interativo de assentos permitindo seleção em tempo real integrada diretamente ao fluxo de reservas. Construí features de pacotes combinados (show + acomodação) e executei fluxos de pagamento complexos em 3+ repositórios simultâneos, engenheirando uma arquitetura de carrinho agnóstica que resolveu edge cases de Shadow DOM e bugs mobile. Integrei a API GraphQL de reservas e endpoints REST de originação de empréstimos em ambos os clientes. Apliquei lazy loading, code splitting e conduzi auditorias de performance melhorando Core Web Vitals e SEO técnico.",
+        "Desenvolvi soluções front-end de alto impacto para clientes enterprise (Lighthouse, MGM Resorts) em times ágeis internacionais na FullStack Labs, consultoria nearshore.",
     },
+    highlights: [
+      {
+        en: "Refactored a 20+ question single-page mortgage application into a fluid multi-step flow for Lighthouse, applying dynamic branching logic (e.g., military history hidden for non-veterans) that measurably reduced form abandonment.",
+        "pt-BR":
+          "Refatorei uma aplicação de hipoteca single-page com 20+ perguntas em um fluxo multi-etapas fluido para a Lighthouse, aplicando lógica de ramificação dinâmica (ex: histórico militar oculto para não-veteranos) que reduziu mensuravelmente o abandono de formulário.",
+      },
+      {
+        en: "Shipped entertainment e-commerce features for MGM Resorts across the Booking and CART teams (3+ years), collaborating with 6+ internal cross-functional teams.",
+        "pt-BR":
+          "Entreguei features de e-commerce de entretenimento para a MGM Resorts nos times de Booking e CART (3+ anos), colaborando com 6+ times internos multifuncionais.",
+      },
+      {
+        en: "Implemented an interactive SVG seat map enabling real-time seat selection integrated directly into the booking flow.",
+        "pt-BR":
+          "Implementei um mapa SVG interativo de assentos permitindo seleção em tempo real integrada diretamente ao fluxo de reservas.",
+      },
+      {
+        en: "Engineered an agnostic cart architecture resolving Shadow DOM edge cases and mobile-specific bugs across combined package (show + accommodation) and payment flows spanning 3+ simultaneous repositories.",
+        "pt-BR":
+          "Implementei uma arquitetura de carrinho agnóstica resolvendo edge cases de Shadow DOM e bugs mobile em features de pacotes combinados (show + acomodação) e fluxos de pagamento complexos em 3+ repositórios simultâneos.",
+      },
+      {
+        en: "Integrated the booking GraphQL API and loan origination REST endpoints; drove Core Web Vitals and Technical SEO improvements through lazy loading, code-splitting, and performance audits.",
+        "pt-BR":
+          "Integrei a API GraphQL de reservas e endpoints REST de originação de empréstimos; conduzi melhorias de Core Web Vitals e SEO técnico por meio de lazy loading, code splitting e auditorias de performance.",
+      },
+    ],
     technologies: [
       "React",
       "Next.js",
@@ -94,7 +143,7 @@ export const experiences: Experience[] = [
         description: {
           en: "Entertainment & hospitality platform — ~1 year on Booking team, 2+ years on CART team. Implemented SVG seat map for real-time seat selection, built combined package features (show + accommodation), and engineered an agnostic cart architecture resolving Shadow DOM edge cases and mobile bugs.",
           "pt-BR":
-            "Plataforma de entretenimento e hospitalidade — ~1 ano no time de Booking, 2+ anos no time de CART. Implementei mapa SVG interativo de assentos, construí features de pacotes combinados (show + acomodação) e engenheirei arquitetura agnóstica de carrinho resolvendo edge cases de Shadow DOM e bugs mobile.",
+            "Plataforma de entretenimento e hospitalidade — ~1 ano no time de Booking, 2+ anos no time de CART. Implementei mapa SVG interativo de assentos, construí features de pacotes combinados (show + acomodação) e implementei arquitetura agnóstica de carrinho resolvendo edge cases de Shadow DOM e bugs mobile.",
         },
       },
     ],
@@ -108,11 +157,23 @@ export const experiences: Experience[] = [
     },
     startDate: "2021-06",
     endDate: "2021-11",
-    description: {
-      en: "Kyte is a POS and inventory SaaS startup serving 40,000+ SMBs across 180+ countries with integrated web, mobile, and in-person sales channels. Within a fast-paced team of ~6 engineers, I developed Pro plan web features supporting user retention and platform monetization, and shipped React Native features for iOS and Android apps, enabling tens of thousands of small businesses to manage inventory and process sales from mobile devices.",
+    summary: {
+      en: "Developed web and mobile features for Kyte, a POS/inventory SaaS serving 40,000+ SMBs across 180+ countries, within a fast-paced team of ~6 engineers.",
       "pt-BR":
-        "A Kyte é uma startup SaaS de PDV e estoque que atende mais de 40 mil PMEs em mais de 180 países com canais de vendas integrados — web, mobile e presencial. Em um time de ~6 engenheiros, desenvolvi funcionalidades web do plano Pro que suportavam retenção de usuários e monetização da plataforma, e entreguei features em React Native para apps iOS e Android, permitindo que dezenas de milhares de pequenas empresas gerenciassem estoque e processassem vendas pelo celular.",
+        "Desenvolvi funcionalidades web e mobile para a Kyte, SaaS de PDV e estoque que atende mais de 40 mil PMEs em mais de 180 países, em um time ágil de ~6 engenheiros.",
     },
+    highlights: [
+      {
+        en: "Built Pro plan web features supporting user retention and platform monetization.",
+        "pt-BR":
+          "Desenvolvi funcionalidades web do plano Pro que suportavam retenção de usuários e monetização da plataforma.",
+      },
+      {
+        en: "Shipped React Native features for iOS and Android apps, enabling tens of thousands of small businesses to manage inventory and process sales from mobile devices.",
+        "pt-BR":
+          "Entreguei features em React Native para apps iOS e Android, permitindo que dezenas de milhares de pequenas empresas gerenciassem estoque e processassem vendas pelo celular.",
+      },
+    ],
     technologies: [
       "React",
       "React Native",
@@ -143,11 +204,28 @@ export const experiences: Experience[] = [
     },
     startDate: "2016-12",
     endDate: "2021-06",
-    description: {
-      en: "McFadyen Digital is a specialized B2B e-commerce consultancy focused on marketplace enablement for global enterprise clients. Progressing from Java Intern to Front-end Developer over 4+ years, I shipped front-end solutions across 7 enterprise client projects — including Zebra Technologies, MiMercado (ABInBev Z-Tech, Vue.js / Vuestorefront), Indigo, Grupo Nazan, Gimba, Eletrozema, and Alpha — spanning OCC, Shopify, Magento, and KnockoutJS ecosystems. Mentored two interns and led company-wide knowledge-sharing sessions as the first engineer to adopt a new platform technology on the team. Established internal onboarding tools and technical challenge frameworks officially adopted across the entire engineering organization, directly reducing new-hire ramp-up time.",
+    summary: {
+      en: "Progressed from Java Intern to Front-end Developer over 4+ years at McFadyen Digital, a B2B e-commerce consultancy, shipping solutions across 7 enterprise client projects.",
       "pt-BR":
-        "A McFadyen Digital é uma consultoria B2B de e-commerce especializada em habilitação de marketplaces para clientes enterprise globais. Progredindo de Estagiário Java a Desenvolvedor Front-end ao longo de 4+ anos, entreguei soluções front-end em 7 projetos para clientes enterprise — incluindo Zebra Technologies, MiMercado (ABInBev Z-Tech, Vue.js / Vuestorefront), Indigo, Grupo Nazan, Gimba, Eletrozema e Alpha — nos ecossistemas OCC, Shopify, Magento e KnockoutJS. Mentorizei dois estagiários e liderei sessões de compartilhamento de conhecimento em toda a empresa como primeiro engenheiro a adotar uma nova tecnologia de plataforma no time. Estabeleci ferramentas internas de onboarding e frameworks de desafios técnicos adotados oficialmente em toda a organização de engenharia, reduzindo diretamente o tempo de ramp-up de novos contratados.",
+        "Progredi de Estagiário Java a Desenvolvedor Front-end ao longo de 4+ anos na McFadyen Digital, consultoria B2B de e-commerce, entregando soluções em 7 projetos para clientes enterprise.",
     },
+    highlights: [
+      {
+        en: "Delivered front-end implementations across Zebra Technologies, MiMercado (ABInBev Z-Tech, Vue.js / Vuestorefront), Indigo, Grupo Nazan, Gimba, Eletrozema, and Alpha, spanning OCC, Shopify, Magento, and KnockoutJS ecosystems.",
+        "pt-BR":
+          "Entreguei implementações front-end para Zebra Technologies, MiMercado (ABInBev Z-Tech, Vue.js / Vuestorefront), Indigo, Grupo Nazan, Gimba, Eletrozema e Alpha, nos ecossistemas OCC, Shopify, Magento e KnockoutJS.",
+      },
+      {
+        en: "Mentored two interns and led company-wide knowledge-sharing sessions as the first engineer to adopt a new platform technology on the team.",
+        "pt-BR":
+          "Mentorizei dois estagiários e liderei sessões de compartilhamento de conhecimento em toda a empresa como primeiro engenheiro a adotar uma nova tecnologia de plataforma no time.",
+      },
+      {
+        en: "Established internal onboarding tools and technical challenge frameworks officially adopted across the entire engineering organization, directly reducing new-hire ramp-up time.",
+        "pt-BR":
+          "Estabeleci ferramentas internas de onboarding e frameworks de desafios técnicos adotados oficialmente em toda a organização de engenharia, reduzindo diretamente o tempo de ramp-up de novos contratados.",
+      },
+    ],
     technologies: [
       "React",
       "Vue.js",
@@ -330,15 +408,16 @@ export const skills: Skill[] = [
   { name: "TypeScript", category: "frontend", level: "expert" },
   { name: "Functional Programming", category: "frontend", level: "advanced" },
   { name: "Vue.js", category: "frontend", level: "advanced" },
-  { name: "Vuestorefront", category: "frontend", level: "advanced" },
   { name: "Tailwind CSS", category: "frontend", level: "advanced" },
-  { name: "GraphQL", category: "frontend", level: "intermediate" },
-  { name: "Jest", category: "frontend", level: "intermediate" },
   { name: "Storybook", category: "frontend", level: "advanced" },
   { name: "knockoutjs", category: "frontend", level: "intermediate" },
   { name: "JavaScript (ES6+)", category: "frontend", level: "expert" },
   { name: "HTML5 / CSS3 / SASS", category: "frontend", level: "expert" },
   { name: "React Native", category: "frontend", level: "advanced" },
+  { name: "Vite", category: "frontend", level: "advanced" },
+  { name: "Framer Motion", category: "frontend", level: "intermediate" },
+  { name: "shadcn/ui", category: "frontend", level: "advanced" },
+  { name: "Recharts", category: "frontend", level: "intermediate" },
 
   // Backend & Data
   { name: "Node.js", category: "backend", level: "advanced" },
@@ -346,7 +425,10 @@ export const skills: Skill[] = [
   { name: "Prisma", category: "backend", level: "intermediate" },
   { name: "Supabase", category: "backend", level: "intermediate" },
   { name: "REST APIs", category: "backend", level: "advanced" },
+  { name: "GraphQL", category: "backend", level: "intermediate" },
   { name: "Microservices", category: "backend", level: "intermediate" },
+  { name: "Python", category: "backend", level: "intermediate" },
+  { name: "Machine Learning", category: "backend", level: "beginner" },
 
   // State Management
   { name: "Redux Toolkit", category: "state", level: "advanced" },
@@ -356,24 +438,29 @@ export const skills: Skill[] = [
   { name: "React Hook Form", category: "state", level: "advanced" },
   { name: "Zod", category: "state", level: "advanced" },
 
-  // E-commerce & Platforms
+  // Testing
+  { name: "Jest", category: "testing", level: "advanced" },
+  { name: "React Testing Library", category: "testing", level: "advanced" },
+  { name: "Vitest", category: "testing", level: "advanced" },
+  { name: "Playwright", category: "testing", level: "intermediate" },
+
+  // E-commerce & AI Tools
   { name: "Oracle Commerce Cloud", category: "ecommerce", level: "advanced" },
   { name: "Shopify (Liquid)", category: "ecommerce", level: "advanced" },
   { name: "Magento", category: "ecommerce", level: "intermediate" },
-  { name: "Storybook", category: "ecommerce", level: "advanced" },
+  { name: "Vuestorefront", category: "ecommerce", level: "advanced" },
+  {
+    name: "AI-Assisted Development",
+    category: "ecommerce",
+    level: "advanced",
+  },
+  { name: "Cline", category: "ecommerce", level: "intermediate" },
 
   // DevOps & Leadership
   { name: "Docker", category: "devops", level: "intermediate" },
   { name: "Git", category: "devops", level: "advanced" },
-  { name: "Automated Testing", category: "devops", level: "advanced" },
   { name: "Mentoring", category: "devops", level: "advanced" },
   { name: "Agile (Scrum/Kanban)", category: "devops", level: "advanced" },
-  {
-    name: "AI-Assisted Development",
-    category: "devops",
-    level: "advanced",
-  },
-  { name: "Cline", category: "devops", level: "intermediate" },
 ];
 
 export const volunteers: Volunteer[] = [

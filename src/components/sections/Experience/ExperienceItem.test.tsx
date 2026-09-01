@@ -9,7 +9,11 @@ const base: Experience = {
   role: { en: "Senior Engineer", "pt-BR": "Engenheiro Sênior" },
   startDate: "Jan 2020",
   endDate: "Dec 2022",
-  description: { en: "Built things.", "pt-BR": "Construiu coisas." },
+  summary: { en: "Built things.", "pt-BR": "Construiu coisas." },
+  highlights: [
+    { en: "Shipped feature A.", "pt-BR": "Entregou a feature A." },
+    { en: "Improved metric B.", "pt-BR": "Melhorou a métrica B." },
+  ],
   technologies: ["React", "TypeScript"],
 };
 
@@ -46,14 +50,26 @@ describe("ExperienceItem", () => {
     expect(screen.getByText(/Present/)).toBeInTheDocument();
   });
 
-  it("renders the description in English", () => {
+  it("renders the summary in English", () => {
     render(<ExperienceItem experience={base} index={0} locale="en" presentLabel="Present" />);
     expect(screen.getByText("Built things.")).toBeInTheDocument();
   });
 
-  it("renders the description in Portuguese", () => {
+  it("renders the summary in Portuguese", () => {
     render(<ExperienceItem experience={base} index={0} locale="pt-BR" presentLabel="Presente" />);
     expect(screen.getByText("Construiu coisas.")).toBeInTheDocument();
+  });
+
+  it("renders all highlights in English", () => {
+    render(<ExperienceItem experience={base} index={0} locale="en" presentLabel="Present" />);
+    expect(screen.getByText("Shipped feature A.")).toBeInTheDocument();
+    expect(screen.getByText("Improved metric B.")).toBeInTheDocument();
+  });
+
+  it("renders all highlights in Portuguese", () => {
+    render(<ExperienceItem experience={base} index={0} locale="pt-BR" presentLabel="Presente" />);
+    expect(screen.getByText("Entregou a feature A.")).toBeInTheDocument();
+    expect(screen.getByText("Melhorou a métrica B.")).toBeInTheDocument();
   });
 
   it("renders all technologies", () => {

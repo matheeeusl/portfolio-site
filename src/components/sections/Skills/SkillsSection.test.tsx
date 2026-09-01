@@ -11,7 +11,8 @@ const CATEGORY_TITLES: Record<SkillCategory, string> = {
   frontend: "Frontend & Core",
   backend: "Backend & Data",
   state: "State Management",
-  ecommerce: "E-commerce & Platforms",
+  testing: "Testing",
+  ecommerce: "E-commerce & AI Tools",
   devops: "DevOps & Leadership",
 };
 
@@ -64,7 +65,9 @@ describe("SkillsSection", () => {
     it("renders all skill names", () => {
       renderWithLocale("en");
       for (const skill of skills) {
-        expect(screen.getByTestId(`skill-${skill.name}`)).toBeInTheDocument();
+        expect(
+          screen.getByTestId(`skill-${skill.name.trim().toLowerCase()}`),
+        ).toBeInTheDocument();
       }
     });
   });
