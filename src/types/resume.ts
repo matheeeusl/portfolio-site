@@ -55,7 +55,7 @@ export interface Education {
   institution: LocalizedString;
   degree: LocalizedString;
   startYear: number;
-  endYear: number;
+  endYear: number | null;
   location: string;
   description: LocalizedString;
 }

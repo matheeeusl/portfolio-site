@@ -534,6 +534,25 @@ export const volunteers: Volunteer[] = [
 
 export const education: Education[] = [
   {
+    id: "edu-anhanguera",
+    institution: {
+      en: "UNIPDS (in partnership with Anhanguera)",
+      "pt-BR": "UNIPDS (em parceria com Anhanguera)",
+    },
+    degree: {
+      en: "Postgraduate Degree in Applied AI Engineering",
+      "pt-BR": "Pós-Graduação em Engenharia de IA Aplicada",
+    },
+    startYear: 2026,
+    endYear: null,
+    location: "Florianópolis, Brazil",
+    description: {
+      en: "12-month program focused on practical AI engineering skills for experienced developers, covering LLM fundamentals, generative AI APIs and prompt engineering, autonomous agent development, AI-integrated systems architecture, data processing and model fine-tuning, and AI security and governance, taught by Google Developer Experts and industry practitioners.",
+      "pt-BR":
+        "Programa de 12 meses focado em habilidades práticas de engenharia de IA para desenvolvedores experientes, cobrindo fundamentos de LLMs, APIs de IA generativa e prompt engineering, desenvolvimento de agentes autônomos, arquitetura de sistemas integrados com IA, processamento de dados e fine-tuning de modelos, além de segurança e governança de IA, com instrução de Google Developer Experts e profissionais de mercado.",
+    },
+  },
+  {
     id: "edu-ufsc",
     institution: {
       en: "Federal University of Santa Catarina (UFSC)",

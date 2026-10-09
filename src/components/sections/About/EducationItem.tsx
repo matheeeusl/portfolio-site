@@ -7,9 +7,10 @@ interface EducationItemProps {
   entry: Education;
   index: number;
   locale: Locale;
+  presentLabel?: string;
 }
 
-export const EducationItem = ({ entry, index, locale }: EducationItemProps) => (
+export const EducationItem = ({ entry, index, locale, presentLabel }: EducationItemProps) => (
   <Card as="li" index={index} className="border-gray-200 bg-gray-50 p-4 dark:border-slate-800">
     <div className="mb-1 flex items-center gap-2">
       <span aria-hidden="true">🎓</span>
@@ -17,7 +18,7 @@ export const EducationItem = ({ entry, index, locale }: EducationItemProps) => (
     </div>
     <p className="text-sm text-gray-500 dark:text-slate-400">{entry.degree[locale]}</p>
     <p className="mt-1 text-sm text-gray-400 dark:text-slate-500">
-      {entry.startYear} – {entry.endYear}
+      {entry.startYear} – {entry.endYear ?? presentLabel}
     </p>
     <p className="mt-2 text-sm leading-relaxed text-gray-500 dark:text-slate-400">
       {entry.description[locale]}

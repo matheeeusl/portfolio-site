@@ -39,6 +39,19 @@ describe("EducationItem", () => {
     expect(screen.getByText(/2018.*2022/)).toBeInTheDocument();
   });
 
+  it("renders the present label when endYear is null", () => {
+    const inProgress: Education = { ...entry, id: "edu-wip", endYear: null };
+    render(
+      <EducationItem
+        entry={inProgress}
+        index={0}
+        locale="en"
+        presentLabel="Present"
+      />,
+    );
+    expect(screen.getByText(/2018.*Present/)).toBeInTheDocument();
+  });
+
   it("renders the description in English", () => {
     render(<EducationItem entry={entry} index={0} locale="en" />);
     expect(screen.getByText("Focused on testing.")).toBeInTheDocument();

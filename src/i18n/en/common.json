@@ -30,6 +30,9 @@
     "volunteer": "Beyond the Code",
     "contact": "Contact"
   },
+  "education": {
+    "present": "Present"
+  },
   "experience": {
     "present": "Present",
     "showProjects": "Show projects",

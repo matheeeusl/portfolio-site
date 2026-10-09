@@ -77,6 +77,7 @@ export const About = () => {
                   entry={entry}
                   index={i}
                   locale={locale}
+                  presentLabel={t.education.present}
                 />
               ))}
             </ul>

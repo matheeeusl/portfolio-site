@@ -30,6 +30,9 @@
     "volunteer": "Além do Código",
     "contact": "Contato"
   },
+  "education": {
+    "present": "Em andamento"
+  },
   "experience": {
     "present": "Atual",
     "showProjects": "Ver projetos",
