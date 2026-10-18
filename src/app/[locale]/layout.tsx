@@ -7,7 +7,7 @@ import { LocaleProvider } from "@/i18n/LocaleProvider";
 import { getDictionary } from "@/i18n/getDictionary";
 import { Analytics } from "@/components/Analytics";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://matheeeusl.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mlaureano.com.br";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

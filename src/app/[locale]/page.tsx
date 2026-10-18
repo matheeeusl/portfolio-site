@@ -9,7 +9,7 @@ import { SkillsSection } from "@/components/sections/Skills/SkillsSection";
 import { VolunteerSection } from "@/components/sections/Volunteer/VolunteerSection";
 import { personalInfo } from "@/data/resume";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://matheeeusl.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mlaureano.com.br";
 
 export default async function Home({
   params,
