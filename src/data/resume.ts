@@ -296,6 +296,32 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: "proj-cypher-system",
+    title: "Cypher System",
+    description: {
+      en: "A bilingual (EN/PT-BR) platform for the Cypher System tabletop RPG, rebuilding a community rules reference that was a single, very heavy page into a modern, much faster static site with 1,700+ pages per language (1,222 abilities, 141 foci, 103 descriptors, 166 cyphers) and built-in search. It also includes a character-creation wizard with a character sheet and play mode (pools, damage track, XP, tier advancement, inventory, notes, print view) and a public, stateless GraphQL API. Built as a pnpm monorepo with its own design system (\"Salvage Console\", documented in Storybook), rules content as Zod-validated bilingual YAML, and a pure TypeScript rules engine that returns coded errors translated by the UI. One decision I'm proud of: the app stores a character's choices, not its derived stats, and re-derives them through the engine, so a rules fix automatically reaches every existing character.",
+      "pt-BR":
+        "Plataforma bilíngue (EN/PT-BR) para o RPG de mesa Cypher System, reconstruindo uma referência de regras da comunidade que era uma única página muito pesada em um site estático moderno e muito mais rápido, com mais de 1.700 páginas por idioma (1.222 habilidades, 141 focos, 103 descritores, 166 cyphers) e busca integrada. Inclui também um assistente de criação de personagens com ficha e modo de jogo (Reservas, trilha de dano, XP, avanço de patamar, inventário, anotações e versão para impressão) e uma API GraphQL pública e sem estado. Construída como monorepo pnpm com design system próprio (\"Salvage Console\", documentado no Storybook), conteúdo de regras em YAML bilíngue validado com Zod e um motor de regras em TypeScript puro que devolve erros com código, traduzidos pela interface. Uma decisão da qual me orgulho: o app guarda as escolhas do personagem, não os atributos derivados, e os recalcula pelo motor, então uma correção de regra chega sozinha a todos os personagens já salvos.",
+    },
+    technologies: [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Astro",
+      "GraphQL",
+      "Fastify",
+      "PostgreSQL",
+      "Tailwind CSS",
+      "Vitest",
+      "Playwright",
+      "Vercel",
+    ],
+    githubUrl: "https://github.com/matheeeusl/cypher-system",
+    liveUrl: "https://csrd.app",
+    imageUrl: "/cypher-system.jpg",
+    featured: true,
+  },
+  {
     id: "proj-cineclube",
     title: "Cineclube",
     description: {
