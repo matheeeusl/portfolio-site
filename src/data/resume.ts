@@ -56,9 +56,9 @@ export const experiences: Experience[] = [
           "Utilizei o Claude Code para reduzir ciclos de iteração e manter qualidade de código por meio de planejamento, revisão e implementação assistidos por IA.",
       },
       {
-        en: "Developed two production personal projects in parallel: Cineclube, a multi-tenant film club platform with real-time voting and a 186-film historical data migration; and Hipertension, a health tracker with ACC/AHA 2017 medical classification and live production users.",
+        en: "Developed three production personal projects in parallel: Cypher System, a bilingual TTRPG platform (rules reference with 1,700+ pages per language, character builder, and public GraphQL API) built as a monorepo with a pure TypeScript rules engine and its own design system; Cineclube, a multi-tenant film club platform with real-time voting and a 186-film historical data migration; and Hipertension, a health tracker with ACC/AHA 2017 medical classification and live production users.",
         "pt-BR":
-          "Desenvolvi dois projetos pessoais em produção em paralelo: Cineclube, uma plataforma de cineclube multi-tenant com votação em tempo real e migração histórica de 186 filmes; e Hipertension, um rastreador de saúde com classificação médica ACC/AHA 2017 e usuários reais em produção.",
+          "Desenvolvi três projetos pessoais em produção em paralelo: Cypher System, uma plataforma bilíngue de RPG de mesa (referência de regras com mais de 1.700 páginas por idioma, criador de personagens e API GraphQL pública) construída como monorepo com motor de regras em TypeScript puro e design system próprio; Cineclube, uma plataforma de cineclube multi-tenant com votação em tempo real e migração histórica de 186 filmes; e Hipertension, um rastreador de saúde com classificação médica ACC/AHA 2017 e usuários reais em produção.",
       },
     ],
     technologies: [
@@ -67,6 +67,8 @@ export const experiences: Experience[] = [
       "TypeScript",
       "Node.js",
       "REST APIs",
+      "GraphQL",
+      "PostgreSQL",
       "Claude Code",
       "AI-Assisted Development",
     ],
