@@ -42,6 +42,7 @@ export interface Project {
   imageUrl?: string;
   featured: boolean;
   wip?: boolean;
+  hidden?: boolean;
 }
 
 export interface Skill {
@@ -69,6 +70,12 @@ export interface Volunteer {
   description: LocalizedString;
 }
 
-export type SkillCategory = "frontend" | "backend" | "state" | "testing" | "ecommerce" | "devops";
+export type SkillCategory =
+  | "frontend"
+  | "backend"
+  | "state"
+  | "testing"
+  | "ecommerce"
+  | "devops";
 
 export type SkillLevel = "beginner" | "intermediate" | "advanced" | "expert";

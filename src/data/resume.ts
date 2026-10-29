@@ -424,6 +424,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/matheeeusl/reconhecimentoMusical",
     imageUrl: "/reconhecimentoMusical.jpg",
     featured: true,
+    hidden: true,
   },
 ];
 
@@ -592,9 +593,9 @@ export const education: Education[] = [
     endYear: 2022,
     location: "Florianópolis, Brazil",
     description: {
-      en: "Solid foundation in computer science fundamentals, algorithms, and software engineering at one of Brazil's leading technical universities.",
+      en: "Solid foundation in computer science fundamentals, algorithms, and software engineering at one of Brazil's leading technical universities. Undergraduate thesis on AI applied to music: compared machine learning models trained on small datasets with traditional tuners for musical note detection, using Python and audio processing.",
       "pt-BR":
-        "Formação sólida em fundamentos de computação, algoritmos e engenharia de software em uma das principais referências técnicas do país.",
+        "Formação sólida em fundamentos de computação, algoritmos e engenharia de software em uma das principais referências técnicas do país. TCC sobre IA aplicada à música: comparei modelos de aprendizado de máquina treinados com datasets reduzidos e afinadores tradicionais na identificação de notas musicais, com Python e processamento de áudio.",
     },
   },
   {

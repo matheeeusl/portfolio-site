@@ -246,15 +246,17 @@ export const ProjectsSection = () => {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project, i) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              index={i}
-              locale={locale}
-              t={t}
-            />
-          ))}
+          {projects
+            .filter((project) => !project.hidden)
+            .map((project, i) => (
+              <ProjectCard
+                key={project.id}
+                project={project}
+                index={i}
+                locale={locale}
+                t={t}
+              />
+            ))}
         </div>
       </div>
     </section>
